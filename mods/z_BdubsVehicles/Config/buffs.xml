@@ -1,0 +1,35 @@
+<configs>	
+	
+<!--	<append xpath="/buffs/buff[@name='buffStatusCheck01']">
+		<effect_group name="inbiomesnowVehicle">
+		   <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="SnowVehicle">
+				<requirement name="!HasBuff" buff="SnowVehicle"/>
+				<requirement name="InBiome" biome="1"/>
+			</triggered_effect>
+			 <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="SnowVehicle">
+				<requirement name="!InBiome" biome="1"/>
+			</triggered_effect>
+		</effect_group>	
+	</append>
+
+
+<append xpath="buffs">
+	<buff name="SnowVehicle">
+		<stack_type value="ignore"/>
+		<duration value="0"/>
+		<update_rate value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="1" buff="BuffSlowVehicle">
+				<requirement name="EntityTagCompare" target="other" tags="vehicle"/>
+				<requirement name="!EntityTagCompare" target="other" tags="SnowVehicle"/>
+			</triggered_effect>
+	</buff>
+	<buff name="BuffSlowVehicle">
+		<stack_type value="ignore"/>
+		<duration value="0"/>
+		<update_rate value="1"/>
+			
+	</buff>
+</append>
+-->
+
+</configs>

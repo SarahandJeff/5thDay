@@ -1,0 +1,1377 @@
+<configs>
+
+	<append xpath="/blocks" >	
+
+	
+<!--snj edits -->
+
+<block name="cntvehicleMaster"><!-- New masters for Repairing sedan wrecks 3 stage system not in use ATM -->
+		<property name="CreativeMode" value="None"/>
+		<property name="Class" value="Loot"/>
+		<property name="LootList" value="cars"/>
+		<property name="ItemTypeIcon" value="explosion"/>
+		<property name="Shape" value="ModelEntity"/>
+		<property name="Model" value="#Entities/Vehicles?Car/car_black_dmg0Prefab.prefab"/>
+		<!--<property name="DisplayType" value="blockMulti"/> 
+		<property name="MultiBlockDim" value="2,2,6"/> -->
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MaxDamage" value="300"/>
+		<property class="RepairItems">
+		<property name="resourceForgedIron" value="20"/>
+		</property>
+		<property name="ImposterDontBlock" value="true"/>
+		<property name="BigDecorationRadius" value="5"/>
+		<property name="CanDecorateOnSlopes" value="false"/>
+		<property name="IsTerrainDecoration" value="true"/>
+		<property name="PlacementDistance" value="6"/>
+		<property name="FilterTags" value="floot"/>
+		<property name="Stage2Health" value="1"/>
+		<drop event="Destroy" count="0"/>
+		<drop event="Fall" name="resourceScrapIron" count="150" prob="0.4" stick_chance="0"/>
+		<property class="Explosion">
+		<property name="ParticleIndex" value="4"/> <!-- which prefab/particle is used -->
+		<property name="RadiusBlocks" value="3.5"/> <!-- damage radius for blocks -->
+		<property name="BlockDamage" value="70"/> <!-- damage for blocks in the center of the explosion -->
+		<property name="RadiusEntities" value="5"/> <!-- damage radius for entities -->
+		<property name="EntityDamage" value="550"/> <!-- damage for entities in the center of the explosion -->
+		</property>
+		<property name="FilterTags" value="MC_building,SC_automotive"/>
+</block>
+ 
+<block name="RepairableHumvee"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CustomIcon" value="Humvee"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/Hummer.unity3d?Humvee1_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableBoxTruck"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="BoxTruckplain"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/BoxTruck.unity3d?BoxTruckplain_b"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableBRDM"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="BRDM2"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/BRDM1.unity3d?BRDM2desert_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableBuggy"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="Buggy"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/Buggy1.unity3d?Buggy_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableCharger"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="Chargerblack"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/Charger1.unity3d?Chargerblack_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableCruiser"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="Cruiser"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/Cruiser1.unity3d?Cruiser_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableHDirtBike"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="DirtBike"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/db1.unity3d?Dirt_Bike_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableGNX"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="GNX"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/GNX.unity3d?GNXblack_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableGolfCart"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="GolfCart"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/GolfCart.unity3d?GolfCart_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="1,1,1"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableJunker"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="Junker"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/Junker1.unity3d?Junker_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableLMTV"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="LMTV"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/LMTV1.unity3d?LMTV_b"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableMarauder"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="Marauder"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/Marauder1.unity3d?vehicleMarauder_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableMD500"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="MD500"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/MD500.unity3d?MD500heli_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableMRAP"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="MRAP"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/MRAP1.unity3d?MRAPclean_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairablePickup"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="Pickup"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/pup1.unity3d?Pickup_b"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+
+<block name="RepairableStallionBlue"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="Sblue"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/Stallion1.unity3d?Stallionblue_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableUAZ"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="UAZ"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/UAZ1.unity3d?UAZ_b"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableWillyJeep"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="vehicleWillyJeepplaceable"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/Willy_Jeep.unity3d?Willy_Jeep_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableWillyJeepTopless"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="vehicleWillyJeepToplessplaceable"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/Willy_Jeep.unity3d?Willy_Jeeptopless_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<block name="RepairableWorkTruck"> <!--New Wreck copies for repairing Custom vehicles -->
+		<property name="CustomIcon" value="WorkTruck"/>
+		<property name="Extends" value="cntvehicleMaster"/>
+		<property name="CreativeMode" value="Player"/>
+		<property name="TintColor" value="409C18"/>
+		<property name="LootList" value="cars"/>
+		<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/OOBS.unity3d?Old_Pickup_b.prefab"/>
+		<property name="DisplayType" value="blockMulti"/>
+		<property name="Material" value="Mmetal"/>
+		<property name="MultiBlockDim" value="2,2,5"/>
+		<property name="ModelOffset" value="0,0,0"/>
+		<property name="VerticalOffset" value="0"/>
+		<!-- Salvage -->
+		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+		<drop event="Destroy" count="0"/>
+		<!--<property name="DowngradeBlock" value="cntCar03SedanDamage2Master"/>-->
+</block>
+
+<!--snj edits -->
+	
+	
+		<block name="BoxTruckplain_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/BoxTruck.unity3d?BoxTruckplain_b"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="BoxTruckplain" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		
+		
+		<block name="BRDM2desert_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/BRDM1.unity3d?BRDM2desert_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="BRDM2desert" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Buggy_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Buggy1.unity3d?Buggy_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Buggy" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Chargerblack_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Charger1.unity3d?Chargerblack_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Chargerblack" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		
+		
+		<block name="Chargergreen_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Charger1.unity3d?Chargergreen_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Chargergreen" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Chargergreen2_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Charger1.unity3d?Chargergreen2_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Chargergreen2" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Chargerorange_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Charger1.unity3d?Chargerorange_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Chargerorange" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		
+		<block name="Cruiser_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Cruiser1.unity3d?Cruiser_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Cruiser" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Cruiser2_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Cruiser1.unity3d?Cruiser2_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Cruiser2" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="DirtBike_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/db1.unity3d?Dirt_Bike_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="DirtBike" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		
+		
+		<block name="GNXblack_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/GNX.unity3d?GNXblack_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="GNX" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="GNXred_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/GNX.unity3d?GNXred_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="GNXred" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="GolfCart_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/GolfCart.unity3d?GolfCart_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="GolfCart" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		
+		
+		<block name="Humvee_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Hummer.unity3d?Humvee1_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Humvee" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Humvee2_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Hummer.unity3d?Humvee2_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="HumveeTopless" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Junker_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Junker1.unity3d?Junker_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Junker" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Junker2_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Junker1.unity3d?Junker2_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Junker2" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="LMTV_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/LMTV1.unity3d?LMTV_b"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="LMTV" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Marauder_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Marauder1.unity3d?vehicleMarauder_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Marauder" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Marauderblack_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Marauder1.unity3d?vehicleMarauderblack_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Marauderblack" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="MD500_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/MD500.unity3d?MD500heli_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="MD500" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="MRAPrusty_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/MRAP1.unity3d?MRAPrusty_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="MRAPrusty" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="MRAPclean_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/MRAP1.unity3d?MRAPclean_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="MRAP" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Nova_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Nova1.unity3d?Nova_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Nova" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		
+		
+		<block name="Pickup_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/pup1.unity3d?Pickup_b"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Pickup" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Rat_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Rat1.unity3d?Rat_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Rat" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Rat2_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Rat1.unity3d?Rat2_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Rat2" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="OldSemi_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Semi1.unity3d?OldSemi_b"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Oldsemi" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		
+		<block name="Stallionblue_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Stallion1.unity3d?Stallionblue_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Sblue" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Stalliongreen_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Stallion1.unity3d?Stalliongreen_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Sgreen" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Stallionred_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Stallion1.unity3d?Stallionred_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Sred" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="Stallionwhite_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Stallion1.unity3d?Stallionwhite_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="Swhite" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="UAZ_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/UAZ1.unity3d?UAZ_b"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="UAZ" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="UH60_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/uh60.unity3d?UH60heli_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="UH60" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="WillyJeep_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Willy_Jeep.unity3d?Willy_Jeep_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="vehicleWillyJeepplaceable" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="WillyJeepTopless_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/Willy_Jeep.unity3d?Willy_Jeeptopless_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="vehicleWillyJeepToplessplaceable" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		
+		<block name="WorkTruck_b">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="LootList" value="cars"/>
+			<property name="Model" value="#@modfolder:Resources/OOBS.unity3d?Old_Pickup_b.prefab"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="WorkTruck" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="350"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>	
+		</block>
+		<block name="BVbillboard">
+			<property name="Material" value="Mmetal"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/BVB.unity3d?bvBillboard"/>
+			<property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Stabilitysupport" value="false"/>
+			<property name="MaxDamage" value="1500"/>
+			<property name="MultiBlockDim" value="10,9,2"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="BigDecorationRadius" value="10"/>
+			<property name="CanDecorateOnSlopes" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceForgedIron" value="10"/>
+				<property name="resourceWood" value="5"/>
+			</property>
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Harvest" name="resourceWood" count="15,25" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceForgedIron" count="3,8" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceMechanicalParts" count="3,5" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceMetalPipe" count="5,25" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceScrapIron" count="15,25" tag="allHarvest"/>
+			<drop event="Destroy" name="resourceScrapIron" count="10,35"/>
+			<property name="FilterTags" value="fdecor"/>
+			<property name="SortOrder1" value="70a0"/>
+		</block>
+		
+		
+		<block name="TraderMechanic_b">
+			<property name="Material" value="Morganic"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/TM.unity3d?TraderMechanic1_b"/><property name="ModelOffset" value="0,0,0"/>
+			<property name="Place" value="TowardsPlacerInverted"/>			
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="MultiBlockDim" value="1,2,1"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>	
+			<property name="CustomIcon" value="" />
+			<property name="Stabilitysupport" value="false"/>
+			<property name="CanPickup" value="false"/>
+			<property name="MaxDamage" value="1000"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Stacknumber" value="5"/>
+			<property name="EconomicValue" value="1000"/>
+			<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>			
+			<property name="FilterTags" value=""/>
+			<property name="SortOrder1" value=""/>	
+			<property name="Class" value="VendingMachine"/>
+			<property name="TraderID" value="75"/>
+			<property name="NavObject" value="trader" />
+		</block>
+		
+		<block name="spawnTJ2">
+			<property name="Extends" value="spawnTrader"/>
+			<property name="SpawnClass" value="npcTraderJoel2"/>
+		</block>
+
+
+		
+	</append>
+
+</configs>

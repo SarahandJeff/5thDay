@@ -1,0 +1,29 @@
+<snj>
+<append xpath="/Sounds">
+<SoundDataNode name="MetalBatDing"> <AudioSource name="Sounds/AudioSource_Impact"/>
+	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="#@modfolder:Assets/HOH_Melee_Weapons_bats.unity3d?Metal_bat_hit"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/melee_light_hit_silly1" AltSound="true"/>
+	<LowestPitch name="0.9"/>
+	<HighestPitch name="1.0"/>
+	<LocalCrouchVolumeScale value="0.3"/>
+     <CrouchNoiseScale value="0.5"/>
+      <NoiseScale value="1"/>
+       <MaxVoices value="3"/> 
+       <MaxRepeatRate value="0.01"/>
+ </SoundDataNode>
+<SoundDataNode name="MetalBatDingPower"> <AudioSource name="Sounds/AudioSource_Impact"/>
+	<Noise ID="1" noise="7" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="#@modfolder:Assets/HOH_Melee_Weapons_bats.unity3d?Metal_bat_hit_power"/>
+	<AudioClip ClipName="Sounds/Twitch/Silly/melee_light_hit_silly1" AltSound="true"/>
+	<LowestPitch name="0.9"/>
+	<HighestPitch name="1.0"/>
+	<LocalCrouchVolumeScale value="0.3"/>
+     <CrouchNoiseScale value="0.5"/>
+      <NoiseScale value="1"/>
+       <MaxVoices value="3"/> 
+       <MaxRepeatRate value="0.01"/>
+ </SoundDataNode>
+
+</append>
+</snj>

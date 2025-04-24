@@ -1,0 +1,128 @@
+<snj>
+	<append xpath="/recipes">
+			<recipe name="HOH_Recycler" count="1" craft_area="workbench">
+				<ingredient name="resourceForgedIron" count="50"/>
+				<ingredient name="resourceMechanicalParts" count="20"/>
+				<ingredient name="resourceElectricParts" count="10"/>
+				<ingredient name="HOH_Recycler_Broken" count="1"/>
+			</recipe>
+		<!--scrapping recipes-->
+			<recipe name="resourceScrapBrass" count="350" craft_time="30"  craft_area="HOH_Recycler">
+				<ingredient name="resourceRadiator" count="1"/>
+			</recipe>
+			<recipe name="resourceScrapBrass" count="200" craft_time="30"  craft_area="HOH_Recycler">
+				<ingredient name="chandelierLight" count="1"/>
+			</recipe>
+			<recipe name="resourceScrapLead" count="150" craft_time="15"  craft_area="HOH_Recycler">
+				<ingredient name="carBattery" count="1"/>
+			</recipe>
+			<recipe name="resourceMechanicalParts" count="30" craft_time="15"  craft_area="HOH_Recycler">
+				<ingredient name="smallEngine" count="1"/>
+			</recipe>
+		<!--scrapping ammo-->
+			<!--9mm-->
+			<recipe name="ammo9mmTip" count="100" craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="ammo9mmCase" count="100"/>
+				<secondary_output name="resourceSmokelessPowder" count="200"/>
+				<ingredient name="ammo9mmBulletBall" count="100"/>
+			</recipe>
+			<recipe name="ammo9mmTip" count="100" craft_time="30"  craft_area="HOH_Recycler">
+				<secondary_output name="ammo9mmCase" count="100"/>
+				<secondary_output name="resourceSmokelessPowder" count="300"/>
+				<ingredient name="ammo9mmBulletHP" count="100"/>
+			</recipe>
+			<recipe name="ammo9mmTip" count="100" craft_time="30"  craft_area="HOH_Recycler">
+				<secondary_output name="ammo9mmCase" count="100"/>
+				<secondary_output name="resourceSmokelessPowder" count="400"/>
+				<ingredient name="ammo9mmBulletAP" count="100"/>
+			</recipe>
+			<!--50AEmm-->
+			<recipe name="ammo50aeTip" count="100"  craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="resourceSmokelessPowder" count="500"/>
+				<ingredient name="ammo50ae" count="100"/>
+				<secondary_output name="ammo50aeCase" count="100"/>
+			</recipe>
+			<recipe name="ammo50aeTip" count="100"  craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="resourceSmokelessPowder" count="600"/>
+				<ingredient name="ammo50aeHP" count="100"/>
+				<secondary_output name="ammo50aeCase" count="100"/>
+			</recipe>
+			<recipe name="ammo50aeTip" count="100"  craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="resourceSmokelessPowder" count="700"/>
+				<ingredient name="ammo50aeAP" count="100"/>
+				<secondary_output name="ammo50aeCase" count="100"/>
+			</recipe>
+			<!--45mm-->
+			<recipe name="ammo45ACPTip" count="100"  craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="ammo45ACPCase" count="100"/>
+				<ingredient name="ammo45ACP" count="100"/>
+				<secondary_output name="resourceSmokelessPowder" count="300"/>
+			</recipe>
+			<recipe name="ammo45ACPTip" count="100"  craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="ammo45ACPCase" count="100"/>
+				<ingredient name="ammoHP45ACP" count="100"/>
+				<secondary_output name="resourceSmokelessPowder" count="300"/>
+			</recipe>
+			<recipe name="ammo45ACPTip" count="100"  craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="ammo45ACPCase" count="100"/>
+				<ingredient name="ammoAP45ACP" count="100"/>
+				<secondary_output name="resourceSmokelessPowder" count="400"/>
+			</recipe>
+			<!--556mm-->
+			<recipe name="ammo556Tip" count="100"  craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="resourceSmokelessPowder" count="600"/>
+				<ingredient name="ammo556" count="100"/>
+				<secondary_output name="ammo556Case" count="100"/>
+			</recipe>
+			<recipe name="ammo556Tip" count="100"  craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="resourceSmokelessPowder" count="700"/>
+				<ingredient name="ammo556HP" count="100"/>
+				<secondary_output name="ammo556Case" count="100"/>
+			</recipe>
+			<recipe name="ammo556Tip" count="100"  craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="resourceSmokelessPowder" count="800"/>
+				<ingredient name="ammo556AP" count="100"/>
+				<secondary_output name="ammo556Case" count="100"/>
+			</recipe>
+			<!--762mm-->
+			<recipe name="ammo762Tip" count="100"  craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="resourceSmokelessPowder" count="800"/>
+				<ingredient name="ammo762mmBulletBall" count="100"/>
+				<secondary_output name="ammo762Case" count="100"/>
+			</recipe>
+			<recipe name="ammo762Tip" count="100"  craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="resourceSmokelessPowder" count="900"/>
+				<ingredient name="ammo762mmBulletHP" count="100"/>
+				<secondary_output name="ammo762Case" count="100"/>
+			</recipe>
+			<recipe name="ammo762Tip" count="100"  craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="resourceSmokelessPowder" count="1000"/>
+				<ingredient name="ammo762mmBulletAP" count="100"/>
+				<secondary_output name="ammo762Case" count="100"/>
+			</recipe>
+			<!--50BMGmm-->
+			<recipe name="ammo50BMGTip" count="100"  craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="resourceSmokelessPowder" count="2000"/>
+				<ingredient name="ammo50BMG" count="100"/>
+				<secondary_output name="ammo50BMGCase" count="100"/>
+			</recipe>
+			<recipe name="ammo50BMGTip" count="100"  craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="resourceSmokelessPowder" count="3000"/>
+				<ingredient name="ammo127HEIAP" count="100"/>
+				<secondary_output name="ammo50BMGCase" count="100"/>
+			</recipe>
+		
+			<!--SHOTGUN-->
+			
+			<recipe name="ammo12gaCartridge" count="100"  craft_time="30" craft_area="HOH_Recycler">
+				<secondary_output name="resourceSmokelessPowder" count="300"/>
+				<ingredient name="ammoShotgunShell" count="100"/>
+				<secondary_output name="resourceScrapLead" count="100"/>
+			</recipe>
+			
+			
+				
+	</append>
+</snj>	
+
+

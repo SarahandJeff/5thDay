@@ -1,0 +1,25 @@
+<snj>
+<set xpath="/progression/crafting_skills/crafting_skill[@name='perkArmor']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @tags='smallBackpack']/@tags">MilitarysmallBackpack</set>
+<set xpath="/progression/crafting_skills/crafting_skill[@name='perkArmor']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @tags='mediumBackpack']/@tags">MilitarymediumBackpack</set>
+<set xpath="/progression/crafting_skills/crafting_skill[@name='perkArmor']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @tags='largeBackpack']/@tags">MilitaryLargeBackpack</set>
+
+
+
+
+<set xpath="/progression/crafting_skills/crafting_skill[@name='perkBrawler']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @level='1,75']/@level">1,100</set>
+<set xpath="/progression/crafting_skills/crafting_skill[@name='perkBrawler']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @level='11,75']/@level">40,100</set>
+<set xpath="/progression/crafting_skills/crafting_skill[@name='perkBrawler']/effect_group/passive_effect[@name='RecipeTagUnlocked' and @level='36,75']/@level">75,100</set>
+
+<set xpath="/progression/crafting_skills/crafting_skill[@name='perkBrawler']/display_entry[@item='meleeWpnKnucklesT0LeatherKnuckles']/@unlock_level">1,10,25,30,35,40</set>
+<set xpath="/progression/crafting_skills/crafting_skill[@name='perkBrawler']/display_entry[@item='meleeWpnKnucklesT1IronKnuckles']/@unlock_level">40,45,50,60,65,70</set>
+<set xpath="/progression/crafting_skills/crafting_skill[@name='perkBrawler']/display_entry[@item='meleeWpnKnucklesT3SteelKnuckles']/@unlock_level">75,80,85,90,95,98</set>
+
+
+<set xpath="/progression/crafting_skills/crafting_skill[@name='perkBrawler']/effect_group/passive_effect[@name='CraftingTier' and @tags='meleeWpnKnucklesT0LeatherKnuckles']/@level">10,25,30,35,40,100</set>
+<set xpath="/progression/crafting_skills/crafting_skill[@name='perkBrawler']/effect_group/passive_effect[@name='CraftingTier' and @tags='meleeWpnKnucklesT1IronKnuckles']/@level">45,50,60,65,70,100</set>
+<set xpath="/progression/crafting_skills/crafting_skill[@name='perkBrawler']/effect_group/passive_effect[@name='CraftingTier' and @tags='meleeWpnKnucklesT3SteelKnuckles']/@value">1,2,3,4,5,5</set>
+<set xpath="/progression/crafting_skills/crafting_skill[@name='perkBrawler']/effect_group/passive_effect[@name='CraftingTier' and @tags='meleeWpnKnucklesT3SteelKnuckles']/@level">80,85,90,95,98,100</set>
+
+
+
+</snj>

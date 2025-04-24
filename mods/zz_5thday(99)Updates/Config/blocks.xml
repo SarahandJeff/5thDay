@@ -1,0 +1,149 @@
+<snj>
+<set xpath="//block[@name='damagedWheelSmallFlat']/property[@param1='damagedWheel']/@param1">HOHBikeWheel</set>
+
+
+<append xpath="//block[@name='DamagedNPCVan']">
+    <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+	<property name="ShowModelOnFall" value="false"/>
+ </append>
+<append xpath="//block[@name='DamagedBeetle']">
+    <drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+	<property name="ShowModelOnFall" value="false"/>
+ </append>
+
+
+<remove xpath="//block[@name='MiliShelfSml']/drop"/>
+ <append xpath="//block[@name='MiliShelfSml']">
+     <drop event="Destroy" name="MiliShelfSml" count="1" tool_category="Disassemble" />
+  </append>
+ <remove xpath="//block[@name='MiliShelfLrg']/drop"/>
+ <append xpath="//block[@name='MiliShelfLrg']">
+     <drop event="Destroy" name="MiliShelfLrg" count="1" tool_category="Disassemble" />
+  </append>
+
+
+<append xpath="/blocks">
+	
+<block name="IZYBlockshotgunpack_shotgunrack1">
+	<property name="CreativeMode" value="Player"/>
+	<property name="CustomIcon" value="IZYBlockshotgunpack_shotgunrack1" />
+	<property name="Class" value="Loot"/>
+	<property name="LootList" value="HOHChestlrg"/>
+	<property name="Material" value="Mmetal_weak"/>
+	<property name="Stacknumber" value="10"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="Model" value="#@modfolder:Assets/IZYshotgunpack_Blocks01.unity3d?IZYshotgunwoodrack.Prefab"/>
+	<property name="Texture" value="282"/>
+	<property name="MultiBlockDim" value="1,2,1"/>
+	<property name="ModelOffset" value=".07,0,0"/>
+	<property name="Collide" value="movement,melee"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="EconomicValue" value="1"/>
+	<property name="MaxDamage" value="3000"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property class="RepairItems">
+		<property name="resourceScrapIron" value="20"/>
+	</property>
+	<drop event="Harvest" name="resourceScrapIron" count="10" tag="allHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+	<property name="UpgradeSound" value="place_block_metal"/>
+	<property name="SortOrder1" value="M240"/>
+	<property name="SortOrder2" value="0000"/>
+	<property name="Group" value="Decor/Miscellaneous"/>
+	<property name="FilterTags" value="MC_building"/>
+</block>
+
+<block name="IZYBlockshotgunpack_shotgunracklocker1">
+	<property name="CreativeMode" value="Player"/>
+	<property name="CustomIcon" value="IZYBlockshotgunpack_shotgunracklocker1" />
+	<property name="Class" value="Loot"/>
+	<property name="Stacknumber" value="10"/>
+	<property name="LootList" value="HOHChestlrg"/>
+	<property name="Material" value="Mmetal_weak"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="Model" value="#@modfolder:Assets/IZYshotgunpack_Blocks01.unity3d?IZYshotgunstoragelocker.Prefab"/>
+	<property name="Texture" value="282"/>
+	<property name="MultiBlockDim" value="1,2,1"/>
+	<property name="ModelOffset" value="0,0,0"/>
+	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="EconomicValue" value="1"/>
+	<property name="MaxDamage" value="5000"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property class="RepairItems">
+		<property name="resourceScrapIron" value="20"/>
+	</property>
+	<drop event="Harvest" name="resourceScrapIron" count="10" tag="allHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+	<property name="UpgradeSound" value="place_block_metal"/>
+	<property name="SortOrder1" value="M240"/>
+	<property name="SortOrder2" value="0000"/>
+	<property name="Group" value="Decor/Miscellaneous"/>
+	<property name="FilterTags" value="MC_building"/>
+</block>
+
+<block name="IZYBlockshotgunpack_shotgunAmmoTray">
+	<property name="CreativeMode" value="Player"/>
+	<property name="CustomIcon" value="IZYBlockshotgunpack_shotgunAmmoTray" />
+	<property name="Class" value="Loot"/>
+	<property name="Stacknumber" value="10"/>
+	<property name="LootList" value="HOHChestlrg"/>
+	<property name="Material" value="Mmetal_weak"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="Model" value="#@modfolder:Assets/IZYshotgunpack_Blocks01.unity3d?IZYshotguntrayammo.Prefab"/>
+	<property name="Texture" value="282"/>
+	<property name="MultiBlockDim" value="1,1,1"/>
+	<property name="ModelOffset" value="0,0,0"/>
+	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="EconomicValue" value="1"/>
+	<property name="MaxDamage" value="3500"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property class="RepairItems">
+		<property name="resourceScrapIron" value="20"/>
+	</property>
+	<drop event="Harvest" name="resourceScrapIron" count="10" tag="allHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+	<property name="UpgradeSound" value="place_block_metal"/>
+	<property name="SortOrder1" value="M240"/>
+	<property name="SortOrder2" value="0000"/>
+	<property name="Group" value="Decor/Miscellaneous"/>
+	<property name="FilterTags" value="MC_building"/>
+</block>
+
+<block name="IZYBlockshotgunpack_shotgunAmmoWallrack1">
+	<property name="CreativeMode" value="Player"/>
+	<property name="CustomIcon" value="IZYBlockshotgunpack_shotgunAmmoWallrack1" />
+	<property name="Class" value="Loot"/>
+	<property name="Stacknumber" value="10"/>
+	<property name="LootList" value="HOHChestlrg"/>
+	<property name="Material" value="Mmetal_weak"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="Model" value="#@modfolder:Assets/IZYshotgunpack_Blocks01.unity3d?IZYshotgunwallshelfAmmo.Prefab"/>
+	<property name="Texture" value="282"/>
+	<property name="MultiBlockDim" value="1,1,1"/>
+	<property name="ModelOffset" value="0,0,0"/>
+	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="EconomicValue" value="1"/>
+	<property name="MaxDamage" value="2500"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property class="RepairItems">
+		<property name="resourceScrapIron" value="20"/>
+	</property>
+	<drop event="Harvest" name="resourceScrapIron" count="10" tag="allHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+	<property name="UpgradeSound" value="place_block_metal"/>
+	<property name="SortOrder1" value="M240"/>
+	<property name="SortOrder2" value="0000"/>
+	<property name="Group" value="Decor/Miscellaneous"/>
+	<property name="FilterTags" value="MC_building"/>
+</block>
+
+</append>
+ 
+</snj>

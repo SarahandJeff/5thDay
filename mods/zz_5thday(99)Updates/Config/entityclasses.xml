@@ -1,0 +1,11 @@
+<snj>
+<append xpath="/entity_classes/entity_class[@name='vehicleBMX']/property[@name='Tags']/@value">,takeable</append>
+<append xpath="/entity_classes/entity_class[@name='vehicletricycle']/property[@name='Tags']/@value">,takeable</append>
+<append xpath="/entity_classes/entity_class[@name='vehicleVMVespa']/property[@name='Tags']/@value">,takeable</append>
+<append xpath="/entity_classes/entity_class[@name='vehicleWitosQuad']/property[@name='Tags']/@value">,takeable</append>
+<append xpath="/entity_classes/entity_class[@name='vehicleSnowMobile']/property[@name='Tags']/@value">,takeable</append>
+
+
+
+
+</snj>

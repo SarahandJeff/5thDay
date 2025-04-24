@@ -1,0 +1,12 @@
+<snj>
+	<append xpath="/lootcontainers/lootgroup[@name='groupToilet01']">
+		<item name="resourceTurd" count="1,3" loot_prob_template="high"/>
+	</append>
+
+	<append xpath="/lootcontainers">
+		<lootgroup name="twitch_humanturd" count="all">
+			<item name="resourceTurd" count="25,50"/>
+		</lootgroup>
+	</append>
+	
+</snj>

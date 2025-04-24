@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <Name value="VehicleMadnessModlet_v5_Beta_4" /> 
+    <DisplayName value="Vehicle Madness for V1.0 " />
+    <Version value="1.0.5.4" compat="1.0"/>
+    <Description value="Lets Drive *New Version Aug 2024*" /> <!-- (Optional) More text to show on UIs -->
+    <Author value="Ragsy2145,ActiniumTiger" />
+    <Website value="https://community.7daystodie.com/topic/21143-vehicle-madness-mod/"/> 
+</xml>
