@@ -1,9 +1,0 @@
-<snj>
-<append xpath="//item[@name='ammo9mmTip']/property[@name='Group']/@value">,RecyclingAmmo</append>
-<append xpath="//item[@name='ammo45ACPTip']/property[@name='Group']/@value">,RecyclingAmmo</append>
-<append xpath="//item[@name='ammo50aeTip']/property[@name='Group']/@value">,RecyclingAmmo</append>
-<append xpath="//item[@name='ammo556Tip']/property[@name='Group']/@value">,RecyclingAmmo</append>
-<append xpath="//item[@name='ammo762Tip']/property[@name='Group']/@value">,RecyclingAmmo</append>
-<append xpath="//item[@name='ammo50BMGTip']/property[@name='Group']/@value">,RecyclingAmmo</append>
-<append xpath="//item[@name='ammo12gaCartridge']/property[@name='Group']/@value">,RecyclingAmmo</append>
-</snj>

@@ -1,8 +1,0 @@
-<snj>
-
-<remove xpath="/quests/quest[@id='quest_tier1complete']/reward[starts-with(@id,'vehicleGolfCartplaceable')]"/>
-<insertAfter xpath="//quest[@id='quest_tier1complete']/reward[@id='casinoCoin']">
-	<reward type="Item" id="vehicleVMVespaPlaceable" ischosen="true" isfixed="true" value="1" />
-</insertAfter>
-
-</snj>

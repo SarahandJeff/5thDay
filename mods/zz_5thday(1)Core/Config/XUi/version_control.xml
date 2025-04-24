@@ -1,5 +1,0 @@
-<snj>
-<append xpath="/windows/window[@name='windowCompass']">
-		<label name="5thdayVersion" pos="900, 0" depth="0" size="250,33" text="5d v:3.9" font_size="22"  color="[white]" justify="center" />
-	</append>
-</snj>
