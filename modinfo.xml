@@ -6,7 +6,7 @@
 
 Detailed well as detailed as I can make it lit of changes.
 * Removed magazines
-* Removed skills and skill points everything is learn by doing, using & some crafting
+* Removed skills and skill points everything is learn by doing, using and some crafting
 * Workbench crafting is changed. You need to find items or the workbench itself in the world and craft or repair from that.
 * Some workbenchs require s-core wireless power. Basically have to have a battery bank or generator running within 10 blocks.
 * Cooking requires a propane camp stove and black propane tank. Fueled by a white propane tank (can be found in large tanks)
@@ -15,7 +15,7 @@ Detailed well as detailed as I can make it lit of changes.
    + Machine guns must be level 50+ to unlock the ability to use a SMG.
    + Shotguns must be level 50+ to unlock the ability to use a rifle.
 * only way to level a weapon is to use it.
-* We added a weighted backpack system thanks to s-core. there are 4 backpacks. Civilian aka starter. Small, Medium & Large military 
+* We added a weighted backpack system thanks to s-core. there are 4 backpacks. Civilian aka starter. Small, Medium and Large military 
   backpacks each level increases your carrying capacity. These are crafted by leveling your armor skills. Leveling armor can be done a few ways. By crafting cloth, letting your armor take damage and lastly by crafting armor mods.
 * Biome protection is a thing. Each biome has a so called biome boss. They are tied to your trader reputation. While in the forrest 
   biome when you reach level 10 or higher you have a 3% chance every 5 minutes to spawn the forrest boss.
