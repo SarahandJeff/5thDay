@@ -1,0 +1,30 @@
+key,english
+zBayComputer,Z-Bay Online
+zBayComputerDesc,"Z-Bay Online sell goods online. Without going to the trader."
+casinoCoin,Crappy Brass Coins
+casinoCoinDesc,A Crappy Brass Coins. After the epidemic and war these brass coins became the main currency for trading around here.\n\nCan be smelted in a forge to craft firearm ammunition but might wanna holdem also.
+
+
+zombieExperimentZ,Failed Experiment
+zombieExperimentZFeral,Pissed Failed Experiment
+
+zombieParasite,Purple People Eater
+zombieParasiteFeral,Pissed Purple People Eater
+zombieFatParasite,Booty Cheeks
+zombieFatParasiteFeral,Pissed Booty Cheeks
+zombieArmy1,Soldier Z
+zombieArmy1Feral,Feral Soldier Z
+zombieFreshFemale1,Fresh Female Z
+zombieFreshFemale1Feral,Feral Fresh Female Z
+zombieFreshFemale2,Fresh Female Z
+zombieFreshFemale2Feral,Feral Fresh Female Z
+zombieFreshFemale3,Fresh Female Z
+zombieFreshFemale3Feral,Feral Fresh Female Z
+zombieFreshFemale4,Fresh Female Z
+zombieFreshFemale4Feral,Feral Fresh Female Z
+zombieFreshFemale5,Fresh Female Z
+zombieFreshFemale5Feral,Feral Fresh Female Z
+zombieFreshMale1,Fresh Male Z
+zombieFreshMale1Feral,Feral Fresh Male Z
+zombieFreshMale2,Fresh Male Z
+zombieFreshMale2Feral,Feral Fresh Male Z

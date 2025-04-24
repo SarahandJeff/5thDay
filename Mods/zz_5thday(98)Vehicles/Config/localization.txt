@@ -1,0 +1,15 @@
+key,english
+Buggy_Rep_P10_Static,"Broken down sand rail buggy"
+HOHVanilla4x4BreakableH_b,"Broken down off road truck"
+HOHVanillaMiniBikeBreakable5_static,"Broken down mini-bike"
+HOHVanillaMotorcycleBreakable5_static,"Broken down motorcycle"
+
+
+Buggy_Rep_P10,[FFB400][-][00FF00]SandRail Buggy (Stage: 8/8)[-]\n[FFB400]Mechanic Impact Gun Required (Jeep Fluid Kit)[-]
+Buggy_Rep_P9,[FFB400][-][00FF00]SandRail Buggy (Stage: 7/8)[-]\n[FFB400]Mechanic Impact Gun Required (5 Wheels)[-]
+Buggy_Rep_P8b,[FFB400][-][00FF00]SandRail Buggy (Stage: 6/8)[-]\n[FFB400]Mechanic Impact Gun Required (1 Ignition)[-]
+Buggy_Rep_P8a,[FFB400][-][00FF00]SandRail Buggy (Stage: 5/8)[-]\n[FFB400]Mechanic Impact Gun Required (1 Car Battery)[-]
+Buggy_Rep_P8,[FFB400][-][00FF00]SandRail Buggy (Stage: 4/8)[-]\n[FFB400]Mechanic Impact Gun Required (2 Headlights)[-]
+Buggy_Rep_P7,[FFB400][-][00FF00]SandRail Buggy (Stage: 3/8)[-]\n[FFB400]Mechanic Impact Gun Required (Restored Engine)[-]
+Buggy_Rep_P6,[FFB400][-][00FF00]SandRail Buggy (Stage: 2/8)[-]\n[FFB400]Mechanic Impact Gun Required (Car Seats)[-]
+Buggy_Rep_P3,[FFB400][-][00FF00]SandRail Buggy (Stage: 1/8)[-]\n[FFB400]Mechanic Impact Gun Required (100 Pipe)[-]

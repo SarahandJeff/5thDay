@@ -1,0 +1,48 @@
+<snj>
+<append xpath="/items">
+<item name="HOHCostumeJigsaw">
+			<property name="DescriptionKey" value="CostumeDesc"/>
+			<property name="Group" value="Clothing,Tailor"/>
+			<property name="Tags" value="Costume"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mcloth"/>
+			<property name="Weight" value="1"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<effect_group tiered="false">
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="mediumBackpackCheck"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="mediumBackpackCheck"/>
+			</effect_group>
+			
+		</item>
+		</append>
+
+
+<append xpath="//item[@name='vehicletricyclePlaceable']">
+<effect_group tiered="false">
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="BuffJigsaw"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="BuffJigsaw"/>
+			</effect_group>
+</append>
+
+
+
+<append xpath="//item[@name='ammoShotgunShell']/property[@name='Tags']/@value">,spread</append>
+<append xpath="//item[@name='ammoShotgunSlug']/property[@name='Tags']/@value">,slug</append>
+<append xpath="//item[@name='ammoShotgunBreachingSlug']/property[@name='Tags']/@value">,breach</append>
+<append xpath="//item[@name='vehicleBMXPlaceable']/property[(@name='Tags')]/@value">,Bike</append>		
+
+
+
+
+
+
+
+
+
+
+
+
+</snj>

@@ -1,0 +1,23 @@
+<snj>
+<append xpath="/blocks">
+    <block name="HOH_Food_Crate">
+        <property name="Material" value="Mwood"/>
+        <property name="Shape" value="ModelEntity"/>
+        <property name="CustomIcon" value="Crate-Empty1"/>
+        <property name="Model" value="#@modfolder:Assets/HOH_FoodCrate.unity3d?HOH_Food_Crate"/>
+        <property name="ModelOffset" value="0,0,0"/>
+        <property name="ImposterExchange" value="imposterBlock" param1="19"/>
+        <property name="WaterFlow" value="permitted"/>
+        <property name="Collide" value="sight,movement,melee,bullet,arrow,rocket"/>
+        <property name="Path" value="solid"/>
+        <property name="MaxDamage" value="200"/>
+        <drop event="Destroy" name="resourceWood" count="3" tag="allHarvest"/>
+        <drop event="Fall" name="terrDestroyedStone" count="1" prob="0.5" stick_chance="1"/>
+        <property name="SortOrder1" value="B278"/>
+        <property name="SortOrder2" value="0600"/>
+        <property name="FilterTags" value="MC_building,SC_commercial,SC_construction,SC_decor"/>
+        <property name="Class" value="Loot"/>
+		<property name='LootList' value='Food_Crate'/>
+    </block>
+</append>
+</snj>

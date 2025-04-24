@@ -1,0 +1,7 @@
+<snj>
+
+
+    
+    <remove xpath="//trader_item_group/item[@name='vehicleHumveebody']"/>
+    
+</snj>
