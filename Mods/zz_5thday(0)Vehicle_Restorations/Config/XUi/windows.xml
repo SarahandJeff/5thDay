@@ -7,7 +7,7 @@
 
 				<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true">
 
-					<grid name="inventory" rows="1" cols="6" pos="30,125" cell_width="60" cell_height="60" controller="WorkstationToolGrid" repeat_content="true" 
+					<grid name="inventory" rows="1" cols="6" pos="0,125" cell_width="60" cell_height="60" controller="WorkstationToolGrid" repeat_content="true" 
 					required_tools="meleeToolSalvageT1Wrench,HOHRatchetSet,toolHOHWireCutters,toolHOHCompressor,toolHOHRollingToolBox,toolHOHEngineHoist" required_tools_only="true">
 						<item_stack controller="RequiredItemStack" name="0"/>
 					</grid>

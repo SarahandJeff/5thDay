@@ -19,6 +19,50 @@
 			<recipe name="resourceMechanicalParts" count="30" craft_time="15"  craft_area="HOH_Recycler">
 				<ingredient name="smallEngine" count="1"/>
 			</recipe>
+			<recipe name="resourceElectricParts" count="2" craft_time="15"  craft_area="HOH_Recycler">
+				<secondary_output name="resourceScrapIron" count="3"/>
+				<ingredient name="cntToaster" count="1"/>
+			</recipe>
+			<recipe name="resourceElectricParts" count="4" craft_time="15"  craft_area="HOH_Recycler">
+				<secondary_output name="resourceScrapIron" count="30"/>
+				<secondary_output name="resourceScrapPolymers" count="20"/>
+				<ingredient name="cntRetroFridgeVer2Open" count="1"/>
+			</recipe>
+			<recipe name="resourceElectricParts" count="4" craft_time="15"  craft_area="HOH_Recycler">
+				<secondary_output name="resourceScrapIron" count="30"/>
+				<secondary_output name="resourceScrapPolymers" count="20"/>
+				<ingredient name="cntFridgeStainlessSteelVer2Open" count="1"/>
+			</recipe>
+			<recipe name="resourceElectricParts" count="3" craft_time="15"  craft_area="HOH_Recycler">
+				<secondary_output name="resourceScrapIron" count="3"/>
+				<ingredient name="cntCoffeeMaker" count="1"/>
+			</recipe>
+			<recipe name="resourceElectricParts" count="3" craft_time="15"  craft_area="HOH_Recycler">
+				<secondary_output name="resourceScrapIron" count="7"/>
+				<ingredient name="cntCoffeeMakerCommercial" count="1"/>
+			</recipe>
+			<recipe name="resourceElectricParts" count="4" craft_time="15"  craft_area="HOH_Recycler">
+				<secondary_output name="resourceScrapIron" count="30"/>
+				<secondary_output name="resourceScrapPolymers" count="20"/>
+				<ingredient name="cntWasherOpen" count="1"/>
+			</recipe>
+			<recipe name="resourceElectricParts" count="4" craft_time="15"  craft_area="HOH_Recycler">
+				<secondary_output name="resourceScrapIron" count="30"/>
+				<secondary_output name="resourceScrapPolymers" count="20"/>
+				<ingredient name="cntDryerOpen" count="1"/>
+			</recipe>
+			<recipe name="resourceScrapPolymers" count="40" craft_time="15"  craft_area="HOH_Recycler">
+				<ingredient name="cntWaterCoolerBottle" count="1"/>
+			</recipe>
+			<recipe name="resourceElectricParts" count="2" craft_time="15"  craft_area="HOH_Recycler">
+				<secondary_output name="resourceScrapPolymers" count="20"/>
+				<ingredient name="meleeToolSalvageT3ImpactDriver5d" count="1"/>
+			</recipe>
+
+
+
+
+
 		<!--scrapping ammo-->
 			<!--9mm-->
 			<recipe name="ammo9mmTip" count="100" craft_time="30" craft_area="HOH_Recycler">

@@ -19,9 +19,6 @@
 			<property name="HeatMapTime" value="5000"/>
 			<property name="HeatMapFrequency" value="1000"/>
 			<property name="Stacknumber" value="1"/>
-			<property name="RequirePower" value="true"/>
-			<property name="RequiredPower" value="7"/>
-
 			<property class="Workstation">
 				<property name="Modules" value="output"/>
 				<property name="CraftingAreaRecipes" value="composter"/>
@@ -30,7 +27,7 @@
 			<property name="OpenSound" value="open_workbench"/>
 			<property name="CloseSound" value="close_workbench"/>
 			<property name="WorkstationJournalTip" value="workbenchTip"/>
-
+			<property name="RequirePower" value="true"/>
 			<property class="RepairItems">
 				<property name="resourceForgedIron" value="25"/>
 				<property name="resourceMechanicalParts" value="20"/>

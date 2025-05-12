@@ -6,13 +6,13 @@
 
 
 
-<append xpath="/progression/crafting_skills/crafting_skill[@name='perkWrenches']">
-	<display_entry item="apoc_hammer" unlock_level="1,10,20,30,40,50" />
-	<effect_group>
-        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,250" value="1" tags="apoc_hammer" />
+<append xpath="/progression/crafting_skills/crafting_skill[@name='perkWrenches']/display_entry[@icon='cntDewCollector']">
+		<unlock_entry item="apoc_hammer" unlock_tier="1" />
+ </append>
+ <append xpath="/progression/crafting_skills/crafting_skill[@name='perkWrenches']/effect_group">
+	    <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,250" value="1" tags="apoc_hammer" />
         <passive_effect name="CraftingTier" operation="base_add" level="10,20,30,40,50,250" value="1,2,3,4,5,5" tags="apoc_hammer" />
-      </effect_group>
-</append>
+    </append>
 <append xpath="/progression/crafting_skills/crafting_skill[@name='perkBrawler']">
 	<display_entry item="KillerBunnyElectricKnuckles" unlock_level="80,85,90,95,100" />
 	<effect_group>
@@ -38,13 +38,13 @@
 				</effect_group>
 </append>
 <append xpath="/progression/crafting_skills/crafting_skill[@name='perkShotguns']">
-			     <display_entry icon="5d_doubleBarrelShotgun" name_key="ShottyT1" has_quality="true" unlock_level="2,15,25,35,45,55">
+			     <display_entry icon="5d_doubleBarrelShotgun" name_key="Double Barrel" has_quality="true" unlock_level="2,15,25,35,45,55">
 					<unlock_entry item="5d_doubleBarrelShotgun" unlock_tier="1" recipes="5d_doubleBarrelShotgun" />
 				</display_entry>
-				<display_entry icon="5thday_SPAS12" name_key="ShottyT2" has_quality="true" unlock_level="51,60,70,80,90,110">
+				<display_entry icon="5thday_SPAS12" name_key="SSpas 12" has_quality="true" unlock_level="51,60,70,80,90,110">
 					<unlock_entry item="5thday_SPAS12" unlock_tier="1" recipes="5thday_SPAS12" />
 				</display_entry>
-				<display_entry icon="5thday_Shotgun_Auto" name_key="ShottyT3" has_quality="true" unlock_level="101,110,120,130,140,150">
+				<display_entry icon="5thday_Shotgun_Auto" name_key="Auto Shotgun" has_quality="true" unlock_level="101,110,120,130,140,150">
 					<unlock_entry item="5thday_Shotgun_Auto" unlock_tier="1" recipes="5thday_Shotgun_Auto" />
 				</display_entry>
 	           

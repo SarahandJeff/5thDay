@@ -251,42 +251,18 @@ HOHVanilla4x4Breakable2,blocks,block,,,[FFB400][-][00FF00]4x4 Truck (Stage: 2/6)
 HOHVanilla4x4Breakable1,blocks,block,,,[FFB400][-][00FF00]4x4 Truck (Stage: 1/6)[-]\n[FFB400]Mechanic Impact Gun Required (4x4 Chassis)[-],,,,,
 HOHVanilla4x4BreakableH_b,blocks,block,,,4x4 Truck Damaged,,,,,
 
-
-HOHAmbulance6,blocks,block,,,[FFB400][-][00FF00]Ambulance (Stage: 6/6)[-]\n[FFB400]Mechanic Impact Gun Required (Commercial Fluid Kit)[-],,,,,
-HOHAmbulance5,blocks,block,,,[FFB400][-][00FF00]Ambulance (Stage: 5/6)[-]\n[FFB400]Mechanic Impact Gun Required (4 Car Batteries)[-],,,,,
-HOHAmbulance4,blocks,block,,,[FFB400][-][00FF00]Ambulance (Stage: 4/6)[-]\n[FFB400]Mechanic Impact Gun Required (Restored Engine)[-],,,,,
-HOHAmbulance3,blocks,block,,,[FFB400][-][00FF00]Ambulance (Stage: 3/6)[-]\n[FFB400]Mechanic Impact Gun Required (Restored Transmission)[-],,,,,
-HOHAmbulance2,blocks,block,,,[FFB400][-][00FF00]Ambulance (Stage: 2/6)[-]\n[FFB400]Mechanic Impact Gun Required (4 Car Wheels)[-],,,,,
-HOHAmbulance1,blocks,block,,,[FFB400][-][00FF00]Ambulance (Stage: 1/6)[-]\n[FFB400]Mechanic Impact Gun Required (BoxTruck Chassis)[-],,,,,
-HOHAmbulance_static,blocks,block,,,Broken down Ambulance,,,,,
-
-RepairableBrownJeep7,blocks,block,,,[FFB400][-][00FF00]Brown Jeep (Stage: 7/7)[-]\n[FFB400]Mechanic Impact Gun Required (Jeep Fluid Kit)[-],,,,,
-RepairableBrownJeep6,blocks,block,,,[FFB400][-][00FF00]Brown Jeep (Stage: 6/7)[-]\n[FFB400]Mechanic Impact Gun Required (Car Battery)[-],,,,,
-RepairableBrownJeep5,blocks,block,,,[FFB400][-][00FF00]Brown Jeep (Stage: 5/7)[-]\n[FFB400]Mechanic Impact Gun Required (Restored Engine)[-],,,,,
-RepairableBrownJeep4,blocks,block,,,[FFB400][-][00FF00]Brown Jeep (Stage: 4/7)[-]\n[FFB400]Mechanic Impact Gun Required (Restored Transmission)[-],,,,,
-RepairableBrownJeep3,blocks,block,,,[FFB400][-][00FF00]Brown Jeep (Stage: 3/7)[-]\n[FFB400]Mechanic Impact Gun Required (2 Car Wheels)[-],,,,,
-RepairableBrownJeep2,blocks,block,,,[FFB400][-][00FF00]Brown Jeep (Stage: 2/7)[-]\n[FFB400]Mechanic Impact Gun Required (2 Car Wheels)[-],,,,,
-RepairableBrownJeep1,blocks,block,,,[FFB400][-][00FF00]Brown Jeep (Stage: 1/7)[-]\n[FFB400]Mechanic Impact Gun Required (4x4 Chassis)[-],,,,,
-
-RepairableExplorer7,blocks,block,,,[FFB400][-][00FF00]Tactical Jeep (Stage: 7/7)[-]\n[FFB400]Mechanic Impact Gun Required (Jeep Fluid Kit)[-],,,,,
-RepairableExplorer6,blocks,block,,,[FFB400][-][00FF00]Tactical Jeep (Stage: 6/7)[-]\n[FFB400]Mechanic Impact Gun Required (Restored Engine)[-],,,,,
-RepairableExplorer5,blocks,block,,,[FFB400][-][00FF00]Tactical Jeep (Stage: 5/7)[-]\n[FFB400]Mechanic Impact Gun Required (Restored Transmission)[-],,,,,
-RepairableExplorer4,blocks,block,,,[FFB400][-][00FF00]Tactical Jeep (Stage: 4/7)[-]\n[FFB400]Mechanic Impact Gun Required (2 Car Batteries)[-],,,,,
-RepairableExplorer3,blocks,block,,,[FFB400][-][00FF00]Tactical Jeep (Stage: 3/7)[-]\n[FFB400]Mechanic Impact Gun Required (2 Car Wheels)[-],,,,,
-RepairableExplorer2,blocks,block,,,[FFB400][-][00FF00]Tactical Jeep (Stage: 2/7)[-]\n[FFB400]Mechanic Impact Gun Required (2 Car Wheels)[-],,,,,
-RepairableExplorer1,blocks,block,,,[FFB400][-][00FF00]Tactical Jeep (Stage: 1/7)[-]\n[FFB400]Mechanic Impact Gun Required (4x4 Chassis)[-],,,,,
-
-RepairableBrownQuad5,blocks,block,,,[FFB400][-][00FF00]Brown Quad (Stage: 5/5)[-]\n[FFB400]Mechanic Impact Gun Required ()[-],,,,,
-RepairableBrownQuad4,blocks,block,,,[FFB400][-][00FF00]Brown Quad (Stage: 4/5)[-]\n[FFB400]Mechanic Impact Gun Required ()[-],,,,,
-RepairableBrownQuad3,blocks,block,,,[FFB400][-][00FF00]Brown Quad (Stage: 3/5)[-]\n[FFB400]Mechanic Impact Gun Required ()[-],,,,,
-RepairableBrownQuad2,blocks,block,,,[FFB400][-][00FF00]Brown Quad (Stage: 2/5)[-]\n[FFB400]Mechanic Impact Gun Required ()[-],,,,,
-RepairableBrownQuad1,blocks,block,,,[FFB400][-][00FF00]Brown Quad (Stage: 1/5)[-]\n[FFB400]Mechanic Impact Gun Required ()[-],,,,,
-
-
-
 HOHMiniBikefluidKit,items,item,,,Fluids for Mini-Bikes,,,,,
 HOHBikefluidKit,items,item,,,Fluids for Motorcycles,,,,,
 HOHJeepfluidKit,items,item,,,Fluids for Jeeps,,,,,
 HOHTruckfluidKit,items,item,,,Fluids for Trucks,,,,,
 HOHCommercialTruckfluidKit,items,item,,,Fluids for Commercial Trucks,,,,,
 meleeToolSalvageT3ImpactDriver5d,items,item,,,Mechanic Impact Gun,,,,,
+
+toolTirePlugKit,items,item,,,Repair kit for punctured tires,,,,,
+toolTirePlugKitDesc,items,item,,,This kit is needed for Vehicle Repair Kits,,,,,
+resourceTirePlug,items,item,,,just a simple peice of cloth covered in oil,,,,,
+resourceTirePlugDesc,items,item,,,just a simple peice of cloth covered in oil,,,,,
+toolNeedleNosePliers,items,item,,,simple pliers,,,,,
+toolNeedleNosePliersDesc,items,item,,,simple pliers,,,,,
+toolTirePlug,items,item,,,just a metal shank,,,,,
+toolTirePlugDesc,items,item,,,just a metal shank,,,,,

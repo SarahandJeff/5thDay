@@ -19,7 +19,7 @@
 			</action>
 			<action class="AddItems">
 				<property name="added_items" value="resourceTurd" />
-				<property name="added_item_counts" value="1" />
+				<property name="added_item_counts" value="10" />
 				<property name="phase" value="3" />
 			</action>
 		</action_sequence>

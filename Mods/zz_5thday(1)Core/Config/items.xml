@@ -152,6 +152,16 @@
 	<property name="Weight" value="1"/>
 </append>	
 <Append xpath="/items">
+<item name="foodlevelRedeem">
+			<property name="Extends" value="schematicMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="adminQuestTicketMaster"/>
+			<property name="CustomIconTint" value="FF0000"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="HOH_Cooking_XP" operation="set" value="@HOH_Cooking_lvl_Next_Needed"/>
+				
+			</effect_group>
+		</item>
 <item name="questlevelRedeem">
 			<property name="Extends" value="schematicMaster"/>
 			<property name="CreativeMode" value="Player"/>
@@ -885,22 +895,22 @@
 		</effect_group>
 	</insertAfter >
 	<set xpath="//item[starts-with(@name,'medical')]/property[@name='UnlockedBy']/@value">PerkHealthandBody</set>
-	<set xpath="//item[@name='meleeToolRepairT1ClawHammer']/property[@name='UnlockedBy']/@value">PerkWrenches</set>
-	<set xpath="//item[@name='meleeToolRepairT3Nailgun']/property[@name='UnlockedBy']/@value">PerkWrenches</set>
+	<set xpath="//item[@name='meleeToolRepairT1ClawHammer']/property[@name='UnlockedBy']/@value">perkWrenches</set>
+	<set xpath="//item[@name='meleeToolRepairT3Nailgun']/property[@name='UnlockedBy']/@value">perkWrenches</set>
 	<!--
 
 
     <set xpath="//item[starts-with(@name='armor')]/property[@name='UnlockedBy']/@value">PerkHOHArmor</set><append xpath="//item[starts-with(@name='armor')]/property[@name='Tags']/@value">,PerkHOHarmor</append><set xpath="//item[starts-with(@name='resourceCloth')]/property[@name='UnlockedBy']/@value">PerkHOHArmor</set><set xpath="//item[starts-with(@name='resourceMilitaryFiber')]/property[@name='UnlockedBy']/@value">PerkHOHArmor</set>
 -->
-	<set xpath="//item[starts-with(@name,'vehicle')]/property[@name='UnlockedBy']/@value">PerkWrenches</set>
+	<set xpath="//item[starts-with(@name,'vehicle')]/property[@name='UnlockedBy']/@value">perkWrenches</set>
 	<set xpath="//item[starts-with(@name,'gunExplosives')]/property[@name='UnlockedBy']/@value">PerkTraps</set>
 	<set xpath="//item[starts-with(@name,'gunBot') and not (contains(@name,'Drone'))]/property[@name='UnlockedBy']/@value">PerkTraps</set>
 	<set xpath="//item[starts-with(@name,'gunBot') and contains(@name,'Drone')]/property[@name='UnlockedBy']/@value">PerkWrenches</set>
 	<set xpath="//item[starts-with(@name,'ammoRocket')]/property[@name='UnlockedBy']/@value">PerkTraps</set>
-	<set xpath="//item[starts-with(@name,'ammoGasCan')]/property[@name='UnlockedBy']/@value">PerkWrenches</set>
+	<set xpath="//item[starts-with(@name,'ammoGasCan')]/property[@name='UnlockedBy']/@value">perkWrenches</set>
 	<set xpath="//item[starts-with(@name,'toolBellows')]/property[@name='UnlockedBy']/@value">PerkWrenches</set>
-	<set xpath="//item[starts-with(@name,'toolAnvil')]/property[@name='UnlockedBy']/@value">PerkWrenches</set>
-	<set xpath="//item[starts-with(@name,'toolForgeCrucible')]/property[@name='UnlockedBy']/@value">PerkWrenches</set>
+	<set xpath="//item[starts-with(@name,'toolAnvil')]/property[@name='UnlockedBy']/@value">perkWrenches</set>
+	<set xpath="//item[starts-with(@name,'toolForgeCrucible')]/property[@name='UnlockedBy']/@value">perkWrenches</set>
 	<set xpath="//item[starts-with(@name,'thrown')]/property[@name='UnlockedBy']/@value">PerkTraps</set>
 	<set xpath="//item[@name='resourceLockPick']/property[@name='UnlockedBy']/@value">PerkStealing</set>
 	<set xpath="//item[starts-with(@name,'resourceGunPowderBundle')]/property[@name='UnlockedBy']/@value">PerkTraps</set>
@@ -911,8 +921,8 @@
 	<set xpath="//item[starts-with(@name,'resourceMilitaryFiber')]/property[@name='UnlockedBy']/@value">perkArmor</set>-->
 	<set xpath="//item[starts-with(@name,'resourceRocketTip')]/property[@name='UnlockedBy']/@value">PerkTraps</set>
 	<set xpath="//item[starts-with(@name,'resourceRocketCasing')]/property[@name='UnlockedBy']/@value">PerkTraps</set>
-	<set xpath="//item[starts-with(@name,'resourceOil')]/property[@name='UnlockedBy']/@value">PerkWrenches</set>
-	<set xpath="//item[starts-with(@name,'carBattery')]/property[@name='UnlockedBy']/@value">PerkWrenches</set>
+	<set xpath="//item[starts-with(@name,'resourceOil')]/property[@name='UnlockedBy']/@value">perkWrenches</set>
+	<set xpath="//item[starts-with(@name,'carBattery')]/property[@name='UnlockedBy']/@value">perkWrenches</set>
 	<append xpath="//item[starts-with(@name,'thrown')]/property[@name='Tags']/@value">,PerkHOHTraps</append>
 		
 	<append xpath="//item[starts-with(@name,'thrownAmmoMolotovCocktail')]/property[@name='Tags']/@value">,molly</append>
@@ -2747,7 +2757,58 @@
 			<property name="Stacknumber" value="1"/>
 			
 			</item>
-
+	<item name="fryingpan">
+			<property name="CreativeMode" value="Player"/>
+			<property name="HoldType" value="45"/>
+			<property name="CustomIcon" value="fryingpan"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Miron"/>
+			<property name="Stacknumber" value="3"/>
+			<!-- STK loot -->
+			<property name="EconomicValue" value="200"/>
+			<property name="EconomicSellScale" value=".1"/>
+			<property name="Group" value="Tools/Traps,Food/Cooking"/>
+			<property name="ItemTypeIcon" value="campfire"/>
+			<effect_group tiered="false">
+				<passive_effect name="CraftingTime" operation="base_set" value="10" tags="boiledWater"/>
+			</effect_group>
+		</item>
+		<item name="kettle">
+			<property name="CreativeMode" value="Player"/>
+			<property name="HoldType" value="45"/>
+			<property name="CustomIcon" value="kettle"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Miron"/>
+			<property name="Stacknumber" value="3"/>
+			<!-- STK loot -->
+			<property name="EconomicValue" value="200"/>
+			<property name="EconomicSellScale" value=".1"/>
+			<property name="Group" value="Tools/Traps,Food/Cooking"/>
+			<property name="ItemTypeIcon" value="campfire"/>
+			<effect_group tiered="false">
+				<passive_effect name="CraftingTime" operation="perc_add" value="-.1"/>
+				<display_value name="dCraftingTime" value="-.1"/>
+			</effect_group>
+		</item>
+		<item name="stockpot">
+			<property name="CreativeMode" value="Player"/>
+			<property name="HoldType" value="45"/>
+			<property name="CustomIcon" value="stockpot"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Miron"/>
+			<property name="Stacknumber" value="3"/>
+			<!-- STK loot -->
+			<property name="EconomicValue" value="200"/>
+			<property name="EconomicSellScale" value=".1"/>
+			<property name="Group" value="Tools/Traps,Food/Cooking"/>
+			<property name="ItemTypeIcon" value="campfire"/>
+			<effect_group tiered="false">
+				<passive_effect name="CraftingTime" operation="base_set" value="10" tags="boiledWater"/>
+			</effect_group>
+		</item>
 </append>
 
 
@@ -3084,6 +3145,30 @@
 	</property>
 </item>
 
+<item name="wrenchlevelRedeem">
+			<property name="Extends" value="schematicMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="adminQuestTicketMaster"/>
+			<property name="CustomIconTint" value="FF0000"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="HOH_Wrenches_XP" operation="set" value="@HOH_Wrenches_lvl_Next_Needed"/>
+				
+			</effect_group>
+		</item>
+<item name="wrenchlevelRedeem-0">
+			<property name="Extends" value="schematicMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="adminQuestTicketMaster"/>
+			<property name="CustomIconTint" value="FF0000"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="HOH_Wrenches_XP" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="HOH_Wrenches_lvl" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="HOH_Wrenches_lvl_Next_Needed" operation="set" value="100"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="HOH_Wrenches_Perk_Tracker" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkWrenches" level="1"/>
+			</effect_group>
+		</item>
+		
 
 
 </append>		
@@ -3098,6 +3183,9 @@
 		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WrenchBlockTrackerActivate"/>
 		<triggered_effect trigger="onSelfDestroyedBlock" action="ModifyCVar" cvar="WrenchBlockCounter" operation="add" value="1"/>
 	</append>
+
+
+
 <include filename="items/item_weights.xml"/>
 <include filename="items/TAFA_changes.xml"/>
 

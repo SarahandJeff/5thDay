@@ -24,7 +24,7 @@
 		<remove xpath="//windows/window[@name='newContinueGame']/rect/rect/rect/grid//gameoption[@name='DropOnQuit']" />
 
 <!--<remove xpath="/windows/window[@name='newsScreen']"/>-->
-<remove xpath="/windows/window[@name='mainMenuLogo']"/>
+<!--<remove xpath="/windows/window[@name='mainMenuLogo']"/>-->
 <set xpath="/windows/window[@name='menuBackground']/texture[@name='bgTexture']/@texture">@modfolder:UIAtlases/ItemIconAtlas/background.png</set>
 
 <set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsBasic']/grid/gameoption[@name='BloodMoonFrequency']/@values">0,1,5,10</set>
@@ -62,6 +62,10 @@
 		</rect>
 	</window>
 	</append>
+	<set xpath="/windows/window[@name='mainMenuLogo']">
+		<!--<texture depth="3" color="[white]" texture="@modfolder:/UI/MainMenu/7DTD_logo.png" name="gameLogo" anchor_left="#cam,0.5,-20" anchor_bottom="#cam,0.5,70" anchor_right="#cam,0.5,-20" anchor_top="#cam,0.5,490" pivot="center" keep_aspect_ratio="BasedOnHeight" aspect_ratio="2.3" />-->
+		<label name="5thDayVersion" pos="500, 500" depth="0" size="250,33" text="5d v:4.0" font_size="42" effect="outline" color="[white]" justify="right" />
+	</set>
 
 
 </snj>

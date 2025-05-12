@@ -622,6 +622,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Axes_lvl_Next_Needed" operation="multiply" value="@HOH_Axes_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Axes_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkAxes" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkHOHAxes" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Axes_lvl_Perm" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Axes_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Axes has increased!"/>
@@ -748,6 +749,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Pickaxes_lvl_Next_Needed" operation="multiply" value="@HOH_Pickaxes_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Pickaxes_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkPickaxes" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHPickaxes" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Pickaxes_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Pickaxes has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -813,6 +815,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Pickaxes_lvl_Next_Needed" operation="multiply" value="@HOH_Pickaxes_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Pickaxes_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkPickaxes" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHPickaxes" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Pickaxes_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Pickaxes has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -1062,6 +1065,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Shovels_lvl_Next_Needed" operation="multiply" value="@HOH_Shovels_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Shovels_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkShovels" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkHOHShovels" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Shovels_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba]Your Skill with Shovels has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -1181,9 +1185,26 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Wrenches_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkWrenches" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Wrenches_Perk_Tracker" operation="add" value="1"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="SetProgressionLevel" progression_name="PerkHOHWrenches" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="addProgressionLevel" progression_name="PerkHOHWrenches" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Wrenches has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetProgressionLevel" progression_name="perkGreaseMonkey" level="1">
+						<requirement name="CVarCompare" cvar="HOH_Wrenches_lvl" operation="EQ" value="50"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetProgressionLevel" progression_name="perkGreaseMonkey" level="2">
+						<requirement name="CVarCompare" cvar="HOH_Wrenches_lvl" operation="EQ" value="100"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetProgressionLevel" progression_name="perkGreaseMonkey" level="3">
+						<requirement name="CVarCompare" cvar="HOH_Wrenches_lvl" operation="EQ" value="150"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetProgressionLevel" progression_name="perkGreaseMonkey" level="4">
+						<requirement name="CVarCompare" cvar="HOH_Wrenches_lvl" operation="EQ" value="200"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="SetProgressionLevel" progression_name="perkGreaseMonkey" level="5">
+						<requirement name="CVarCompare" cvar="HOH_Wrenches_lvl" operation="EQ" value="250"/>
+				</triggered_effect>
 			</effect_group>
 			<effect_group name="HOH_Wrenches_Level_Progress">
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Wrenches_Xp_Total" operation="set" value="@HOH_Wrenches_XP"/>
@@ -1413,6 +1434,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Rifles_lvl_Next_Needed" operation="multiply" value="@HOH_Rifles_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Rifles_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkRifles" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHRifles" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Rifles_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Rifles has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -1585,6 +1607,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_MachineGun_lvl_Next_Needed" operation="multiply" value="@HOH_MachineGun_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_MachineGun_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkMachineGun" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHMachineGuns" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_MachineGun_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Machine Guns has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -1796,6 +1819,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Brawler_lvl_Next_Needed" operation="multiply" value="@HOH_Brawler_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Brawler_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkBrawler" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHBrawler" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Brawler_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Brawler has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -1942,6 +1966,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Spears_lvl_Next_Needed" operation="multiply" value="@HOH_Spears_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Spears_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkSpears" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHSpears" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Spears_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Spears has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -2109,6 +2134,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Shotguns_lvl_Next_Needed" operation="multiply" value="@HOH_Shotguns_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Shotguns_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkShotguns" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHShotguns" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Shotguns_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Shotguns has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -2202,6 +2228,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Clubs_lvl_Next_Needed" operation="multiply" value="@HOH_Clubs_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Clubs_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkClubs" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHClubs" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Clubs_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Clubs has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -2357,6 +2384,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Sledges_lvl_Next_Needed" operation="multiply" value="@HOH_Sledges_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Sledges_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkSledges" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHSledge" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Sledges_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Sledges has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -2512,6 +2540,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Knifes_lvl_Next_Needed" operation="multiply" value="@HOH_Knifes_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Knifes_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkKnifes" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHKnifes" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Knifes_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Knifes has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -2623,6 +2652,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Bows_lvl_Next_Needed" operation="multiply" value="@HOH_Bows_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Bows_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkBows" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHBows" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Bows_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Bows has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -2758,6 +2788,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Pistols_lvl_Next_Needed" operation="multiply" value="@HOH_Pistols_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Pistols_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkPistols" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHPistols" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Pistols_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Pistols has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -2915,6 +2946,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_SMG_lvl_Next_Needed" operation="multiply" value="@HOH_SMG_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_SMG_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkSMG" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHSMG" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_SMG_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with SMG has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -3047,6 +3079,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Cooking_lvl_Next_Needed" operation="multiply" value="@HOH_Cooking_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Cooking_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkCooking" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHCooking" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Cooking_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$MetabolismDuration" operation="add" value="-0.00333"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$MetabolismResist" operation="add" value="-0.05"/>
@@ -3324,6 +3357,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Farming_lvl_Next_Needed" operation="multiply" value="@HOH_Farming_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Farming_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkFarming" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHFarming" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Farming_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Farming has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -3390,6 +3424,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Traps_lvl_Next_Needed" operation="multiply" value="@HOH_Traps_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Traps_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkTraps" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHTraps" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Traps_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Traps has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -3564,6 +3599,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Stealing_lvl_Next_Needed" operation="multiply" value="@HOH_Stealing_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Stealing_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkStealing" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHStealing" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Stealing_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Stealing has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -3589,6 +3625,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Hunting_XP" operation="subtract" value="@HOH_Hunting_lvl_Next_Needed"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Hunting_lvl_Next_Needed" operation="multiply" value="@HOH_Hunting_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Hunting_lvl" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHHunting" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Hunting_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Hunting has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -3690,6 +3727,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Olympics_XP" operation="subtract" value="@HOH_Olympics_lvl_Next_Needed"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Olympics_lvl_Next_Needed" operation="multiply" value="@HOH_Olympics_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Olympics_lvl" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHOlympics" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkOlympics" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Olympics_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Olympics has increased!"/>
@@ -3742,6 +3780,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Stealth_lvl_Next_Needed" operation="multiply" value="@HOH_Stealth_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Stealth_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkStealth" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHStealth" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Stealth_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Stealth has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -3785,6 +3824,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_HealthandBody_lvl_Next_Needed" operation="multiply" value="@HOH_HealthandBody_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_HealthandBody_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkHealthandBody" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="PerkHOHHealthandBody" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_HealthandBody_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with HealthandBody has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -3902,11 +3942,299 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_lvl_Next_Needed" operation="multiply" value="@HOH_Armor_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkArmor" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkHOHArmor" level="1"/>
+				
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Armor has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
 			</effect_group>
 		
+
+
+
+
+<!-- armor crafting xp add  -->
+<!--armorPrimitiveHelmet,armorPrimitiveOutfit,armorPrimitiveGloves,armorPrimitiveBoots-->
+			<effect_group name="armorprimative">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorPrimitiveHelmet" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorPrimitiveHelmet" operation="LT" value="@_craftCount_armorPrimitiveHelmet" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorPrimitiveHelmet" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorprimative">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorPrimitiveOutfit" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorPrimitiveOutfit" operation="LT" value="@_craftCount_armorPrimitiveOutfit" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorPrimitiveOutfit" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorprimative">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorPrimitiveGloves" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorPrimitiveGloves" operation="LT" value="@_craftCount_armorPrimitiveGloves" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorPrimitiveGloves" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorprimative">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorPrimitiveBoots" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorPrimitiveBoots" operation="LT" value="@_craftCount_armorPrimitiveBoots" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorPrimitiveBoots" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorFarmer">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorFarmerHelmet" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorFarmerHelmet" operation="LT" value="@_craftCount_armorFarmerHelmet" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorFarmerHelmet" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorFarmer">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorFarmerOutfit" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorFarmerOutfit" operation="LT" value="@_craftCount_armorFarmerOutfit" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorFarmerOutfit" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorFarmer">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorFarmerGloves" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorFarmerGloves" operation="LT" value="@_craftCount_armorFarmerGloves" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorFarmerGloves" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorFarmer">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorFarmerBoots" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorFarmerBoots" operation="LT" value="@_craftCount_armorFarmerBoots" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorFarmerBoots" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+	
+
+			<effect_group name="armorLumberjack">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorLumberjackHelmet" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorLumberjackHelmet" operation="LT" value="@_craftCount_armorLumberjackHelmet" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorLumberjackHelmet" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorLumberjack">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorLumberjackOutfit" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorLumberjackOutfit" operation="LT" value="@_craftCount_armorLumberjackOutfit" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorLumberjackOutfit" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorLumberjack">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorLumberjackGloves" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorLumberjackGloves" operation="LT" value="@_craftCount_armorLumberjackGloves" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorLumberjackGloves" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorLumberjack">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorLumberjackBoots" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorLumberjackBoots" operation="LT" value="@_craftCount_armorLumberjackBoots" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorLumberjackBoots" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+
+			<effect_group name="armorMiner">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorMinerHelmet" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorMinerHelmet" operation="LT" value="@_craftCount_armorMinerHelmet" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorMinerHelmet" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorMiner">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorMinerOutfit" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorMinerOutfit" operation="LT" value="@_craftCount_armorMinerOutfit" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorMinerOutfit" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorMiner">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorMinerGloves" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorMinerGloves" operation="LT" value="@_craftCount_armorMinerGloves" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorMinerGloves" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorMiner">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorMinerBoots" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorMinerBoots" operation="LT" value="@_craftCount_armorMinerBoots" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorMinerBoots" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+
+			<effect_group name="armorScavenger">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorScavengerHelmet" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorScavengerHelmet" operation="LT" value="@_craftCount_armorScavengerHelmet" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorScavengerHelmet" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorScavenger">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorScavengerOutfit" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorScavengerOutfit" operation="LT" value="@_craftCount_armorScavengerOutfit" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorScavengerOutfit" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorScavenger">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorScavengerGloves" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorScavengerGloves" operation="LT" value="@_craftCount_armorScavengerGloves" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorScavengerGloves" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorScavenger">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorScavengerBoots" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorScavengerBoots" operation="LT" value="@_craftCount_armorScavengerBoots" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorScavengerBoots" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+
+			<effect_group name="armorBiker">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorBikerHelmet" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorBikerHelmet" operation="LT" value="@_craftCount_armorBikerHelmet" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorBikerHelmet" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorBiker">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorBikerOutfit" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorBikerOutfit" operation="LT" value="@_craftCount_armorBikerOutfit" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorBikerOutfit" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorBiker">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorBikerGloves" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorBikerGloves" operation="LT" value="@_craftCount_armorBikerGloves" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorBikerGloves" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorBiker">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorBikerBoots" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorBikerBoots" operation="LT" value="@_craftCount_armorBikerBoots" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorBikerBoots" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+
+			<effect_group name="armorCommando">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorCommandoHelmet" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorCommandoHelmet" operation="LT" value="@_craftCount_armorCommandoHelmet" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorCommandoHelmet" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorCommando">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorCommandoOutfit" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorCommandoOutfit" operation="LT" value="@_craftCount_armorCommandoOutfit" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorCommandoOutfit" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorCommando">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorCommandoGloves" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorCommandoGloves" operation="LT" value="@_craftCount_armorCommandoGloves" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorCommandoGloves" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorCommando">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorCommandoBoots" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorCommandoBoots" operation="LT" value="@_craftCount_armorCommandoBoots" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorCommandoBoots" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+
+			<effect_group name="armorEnforcer">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorEnforcerHelmet" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorEnforcerHelmet" operation="LT" value="@_craftCount_armorEnforcerHelmet" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorEnforcerHelmet" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorEnforcer">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorEnforcerOutfit" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorEnforcerOutfit" operation="LT" value="@_craftCount_armorEnforcerOutfit" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorEnforcerOutfit" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorEnforcer">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorEnforcerGloves" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorEnforcerGloves" operation="LT" value="@_craftCount_armorEnforcerGloves" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorEnforcerGloves" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorEnforcer">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorEnforcerBoots" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorEnforcerBoots" operation="LT" value="@_craftCount_armorEnforcerBoots" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorEnforcerBoots" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+
+			<effect_group name="armorAssassin">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorAssassinHelmet" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorAssassinHelmet" operation="LT" value="@_craftCount_armorAssassinHelmet" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorAssassinHelmet" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorAssassin">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorAssassinOutfit" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorAssassinOutfit" operation="LT" value="@_craftCount_armorAssassinOutfit" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorAssassinOutfit" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorAssassin">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorAssassinGloves" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorAssassinGloves" operation="LT" value="@_craftCount_armorAssassinGloves" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorAssassinGloves" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			<effect_group name="armorAssassin">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorAssassinBoots" operation="LT" value="1"/>
+				<requirement name="CVarCompare" cvar="processedCount_armorAssassinBoots" operation="LT" value="@_craftCount_armorAssassinBoots" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_armorAssassinBoots" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="200" />
+			</effect_group>
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <!-- armor mods xp add-->
+
 			<effect_group name="modArmorBandolier">
 				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
 				<requirement name="CVarCompare" cvar="processedCount_modArmorBandolier" operation="LT" value="@_craftCount_modArmorBandolier" />
@@ -3989,7 +4317,7 @@
 				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
 				<requirement name="CVarCompare" cvar="processedCount_resourceArmorCraftingKit" operation="LT" value="@_craftCount_resourceArmorCraftingKit" />
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_resourceArmorCraftingKit" operation="add" value="1" />
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="5" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="15" />
 			</effect_group>
 			<effect_group name="armor damage">
 				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
@@ -4007,6 +4335,15 @@
 					<requirement name="IsNight"/>
 				</triggered_effect>
 			</effect_group>
+
+			<effect_group name="repairKitArmor">
+				<requirement name="CVarCompare" cvar="HOH_Armor_lvl" operation="LT" value="200"/>
+				<requirement name="CVarCompare" cvar="processedCount_repairKitArmor" operation="LT" value="@_craftCount_repairKitArmor" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="processedCount_repairKitArmor" operation="add" value="1" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_XP" operation="add" value="10" />
+			</effect_group>
+
+
 			<effect_group name="HOH_Armor_Level_Progress">
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_Xp_Total" operation="set" value="@HOH_Armor_XP"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Armor_Level_Next" operation="set" value="@HOH_Armor_lvl_Next_Needed"/>
@@ -4025,6 +4362,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Questing_lvl_Next_Needed" operation="multiply" value="@HOH_Questing_Multiplier"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Questing_lvl" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkQuesting" level="1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddProgressionLevel" progression_name="perkHOHQuesting" level="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Questing_Perk_Tracker" operation="add" value="1"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="[804cba][I]Your Skill with Questing has increased!"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="levelup"/>
@@ -5802,12 +6140,12 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Quest_Xp_Total" operation="divide" value="@HOH_Quest_Level_Next"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Quest_lvl_Next_Display" operation="set" value="@HOH_Quest_Xp_Total"/>
 			</effect_group>
-			<effect_group>
+			<!--<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Wrenches_XP" operation="add" value="@HOH_Wrenches_XP_Temp_Break"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Wrenches_XP_Temp_Break" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Wrenches_XP" operation="add" value="@HOH_Wrenches_XP_Temp"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="HOH_Wrenches_XP_Temp" operation="set" value="0"/>
-			</effect_group>
+			</effect_group>-->
 		</buff>
 		<!-- *** buffAnimalTracker -->
 		<!-- TRIGGERED_BY: Progression = PerkHOHHunting -->

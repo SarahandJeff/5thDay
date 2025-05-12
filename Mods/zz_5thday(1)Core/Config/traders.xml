@@ -61,12 +61,11 @@
 	 	
 		
 		 
-	 	<item name="vehicleVMAmbulanceDamagedPlaceable"/>
-		
+	 
 		<item name="vehicleSnowMobilePlaceable"/>
 		<item name="vehicleTruck4x4Placeable"/>
 		<item name="vehicleWitosFAVPlaceable"/>
-		<item name="vehicleMD500placeable"/>
+	
 		
 	 </trader_item_group>
 </append>
@@ -481,4 +480,14 @@
 			<item name="CFIDCardBlue" count="1,2" prob="0.04"/>
 			<item name="CFIDCardRed" count="1,2" prob="0.03"/>
     </append>
+
+
+
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='groupDyeMods']">
+<item name="modDyeArcherGreen"/>
+	<item name="modDyeArcherRed"/>
+	<item name="modDyeArcherBlue"/>
+	<item name="modDyeArcherPink"/>
+	<item name="modDyeArcherOrange"/>
+</append>
 </snj>

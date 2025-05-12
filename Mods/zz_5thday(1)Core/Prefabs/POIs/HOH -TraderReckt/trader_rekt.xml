@@ -55,7 +55,7 @@
       <property name="2" value="51, 4, 52" />
       <property name="3" value="51, 5, 54" />
     </property>
-    <property class="challenge_sinks">
+    <property class="challenge_sinks,WrenchXPGain">
       <property name="0" value="54, 3, 47" />
     </property>
     <property class="challenge_gore">
@@ -73,15 +73,15 @@
     </property>
   </property>
   <property class="Stats">
-    <property name="TotalVertices" value="1083953" />
-    <property name="TotalTriangles" value="524610" />
+    <property name="TotalVertices" value="1074406" />
+    <property name="TotalTriangles" value="517291" />
     <property class="BlockEntities">
-      <property name="Vertices" value="964160" />
-      <property name="Triangles" value="438836" />
+      <property name="Vertices" value="971484" />
+      <property name="Triangles" value="440816" />
     </property>
     <property class="ChunkMeshes0">
-      <property name="Vertices" value="106737" />
-      <property name="Triangles" value="68204" />
+      <property name="Vertices" value="89602" />
+      <property name="Triangles" value="58549" />
     </property>
     <property class="ChunkMeshes1">
       <property name="Vertices" value="0" />
@@ -100,8 +100,8 @@
       <property name="Triangles" value="0" />
     </property>
     <property class="ChunkMeshes5">
-      <property name="Vertices" value="9130" />
-      <property name="Triangles" value="15448" />
+      <property name="Vertices" value="9394" />
+      <property name="Triangles" value="15804" />
     </property>
   </property>
 </prefab>

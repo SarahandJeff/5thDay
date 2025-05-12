@@ -1,0 +1,3638 @@
+<Config>
+
+<insertAfter xpath="/quests/quest[@id='tier1_fetch']">  
+	
+	<quest id="tier1_flogi_desperate_defence">
+		<property name="name_key" value="tier1_flogi_desperate_defence_name" />
+		<property name="subtitle_key" value="flogi_desperate_defence_subtitle"/>
+		<property name="description_key" value="flogi_desperate_defence_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="1" param1="difficulty" />
+		<property name="offer_key" value="flogi_desperate_defence_offer" param1="offer" />
+		<property name="statement_key" value="flogi_desperate_defence_statement"/>
+		<property name="response_key" value="flogi_desperate_defence_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_desperate_defence_completion"/>
+		
+		
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="RandomTaggedPOIGotoSDX, SCore">
+					<property name="phase" value="1" />
+					<property name="nav_object" value="quest" />
+					<!-- Include POIs only if they have any of these tags -->
+					<property name="include_tags" value="wilderness,countryresidential,rural" />
+					<!-- Exclude POIs if they have any of these tags -->
+					<property name="exclude_tags" value="residential,industrial" />
+					<property name="distance" value="1000" />
+					<property name="poi_tier" value="1" param1="poi_tier"/>
+				</objective>
+			</if>
+				
+			<else>
+				<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+					<property name="biome_filter" value="" param1="biome_filter"/>
+					<property name="nav_object" value="quest"/>
+					<property name="poi_tier" value="1" param1="poi_tier"/>
+				</objective>
+			</else>
+		</conditional>
+		
+
+		<objective type="RallyPoint">
+					<property name="phase" value="2"/>
+					<property name="nav_object" value="rally" />
+		</objective>
+		
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="10"/>
+		</objective>
+		
+		<objective type="ClearSleepers">
+					<property name="phase" value="3"/>
+					<property name="nav_object" value="sleeper_volume"/>
+		</objective>
+		
+		<objective type="Time" time="3" value="450" phase="3" >
+		</objective>
+
+		<action type="GameEvent" >
+			<property name="event" value="tier1_flogi_desperate_defence_start"/>
+			<property name="phase" value="4"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="4"/>
+			<property name="radius" value="10"/>
+		</objective>
+		
+		
+	   <objective type="EntityKill" entity_names="Any Zombie" value="30" phase="4" />
+
+	   
+	   
+	   	<objective type="GameEvent">
+			<property name="event" value="tier1_flogi_desperate_defence_stop" />
+			<property name="event_tag" value="Game" />
+			<property name="phase" value="5"/>
+			<property name="hidden" value="true"/>
+			<property name="force_phase_finish" value="true"/>
+		</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="6"/>
+		</action>
+	   		
+		<objective type="ReturnToNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+		
+		
+		
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Item" id="casinoCoin" value="800"/>
+		
+		
+		
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+		
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="250" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="1"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="1"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="1"/>
+			</if>
+		</conditional>
+		
+		
+	</quest>
+	
+	
+	<quest id="tier2_flogi_desperate_defence">
+		<property name="name_key" value="tier2_flogi_desperate_defence_name" />
+		<property name="subtitle_key" value="flogi_desperate_defence_subtitle"/>
+		<property name="description_key" value="flogi_desperate_defence_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="2" param1="difficulty" />
+		<property name="offer_key" value="flogi_desperate_defence_offer" param1="offer" />
+		<property name="statement_key" value="flogi_desperate_defence_statement"/>
+		<property name="response_key" value="flogi_desperate_defence_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_desperate_defence_completion"/>
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="RandomTaggedPOIGotoSDX, SCore">
+					<property name="phase" value="1" />
+					<property name="nav_object" value="quest" />
+					<!-- Include POIs only if they have any of these tags -->
+					<property name="include_tags" value="wilderness,countryresidential,rural" />
+					<!-- Exclude POIs if they have any of these tags -->
+					<property name="exclude_tags" value="residential,industrial" />
+					<property name="distance" value="1000" />
+					<property name="poi_tier" value="2" param1="poi_tier"/>
+				</objective>
+			</if>
+				
+			<else>
+				<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+					<property name="biome_filter" value="" param1="biome_filter"/>
+					<property name="nav_object" value="quest"/>
+					<property name="poi_tier" value="2" param1="poi_tier"/>
+				</objective>
+			</else>
+		</conditional>
+
+		<objective type="RallyPoint">
+					<property name="phase" value="2"/>
+					<property name="nav_object" value="rally" />
+		</objective>
+		
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="10"/>
+		</objective>
+		
+		<objective type="ClearSleepers">
+					<property name="phase" value="3"/>
+					<property name="nav_object" value="sleeper_volume"/>
+		</objective>
+		
+		<objective type="Time" time="3" value="450" phase="3" >
+		</objective>
+
+		<action type="GameEvent" >
+			<property name="event" value="tier2_flogi_desperate_defence_start"/>
+			<property name="phase" value="4"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="4"/>
+			<property name="radius" value="10"/>
+		</objective>
+		
+		
+	   <objective type="EntityKill" entity_names="Any Zombie" value="50" phase="4" />
+
+	   
+	   
+	   	<objective type="GameEvent">
+			<property name="event" value="tier2_flogi_desperate_defence_stop" />
+			<property name="event_tag" value="Game" />
+			<property name="phase" value="5"/>
+			<property name="hidden" value="true"/>
+			<property name="force_phase_finish" value="true"/>
+		</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="6"/>
+		</action>
+	   		
+		<objective type="ReturnToNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+		
+		
+
+		<reward type="Exp" value="6000"/>
+		<reward type="Item" id="casinoCoin" value="1000"/>
+		
+		
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="500" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="2"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="2"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="2"/>
+			</if>
+		</conditional>
+		
+		
+	</quest>
+	
+	<quest id="tier3_flogi_desperate_defence">
+		<property name="name_key" value="tier3_flogi_desperate_defence_name" />
+		<property name="subtitle_key" value="flogi_desperate_defence_subtitle"/>
+		<property name="description_key" value="flogi_desperate_defence_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="3" param1="difficulty" />
+		<property name="offer_key" value="flogi_desperate_defence_offer" param1="offer" />
+		<property name="statement_key" value="flogi_desperate_defence_statement"/>
+		<property name="response_key" value="flogi_desperate_defence_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_desperate_defence_completion"/>
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="RandomTaggedPOIGotoSDX, SCore">
+					<property name="phase" value="1" />
+					<property name="nav_object" value="quest" />
+					<!-- Include POIs only if they have any of these tags -->
+					<property name="include_tags" value="wilderness,countryresidential,rural" />
+					<!-- Exclude POIs if they have any of these tags -->
+					<property name="exclude_tags" value="residential,industrial" />
+					<property name="distance" value="1000" />
+					<property name="poi_tier" value="3" param1="poi_tier"/>
+				</objective>
+			</if>
+				
+			<else>
+				<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+					<property name="biome_filter" value="" param1="biome_filter"/>
+					<property name="nav_object" value="quest"/>
+					<property name="poi_tier" value="3" param1="poi_tier"/>
+				</objective>
+			</else>
+		</conditional>
+
+		<objective type="RallyPoint">
+					<property name="phase" value="2"/>
+					<property name="nav_object" value="rally" />
+		</objective>
+		
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="10"/>
+		</objective>
+		
+		<objective type="ClearSleepers">
+					<property name="phase" value="3"/>
+					<property name="nav_object" value="sleeper_volume"/>
+		</objective>
+		
+		<objective type="Time" time="3" value="750" phase="3" >
+		</objective>
+
+		<action type="GameEvent" >
+			<property name="event" value="tier3_flogi_desperate_defence_start"/>
+			<property name="phase" value="4"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="4"/>
+			<property name="radius" value="10"/>
+		</objective>
+		
+		
+	   <objective type="EntityKill" entity_names="Any Zombie" value="70" phase="4" />
+
+	   
+	   
+	   	<objective type="GameEvent">
+			<property name="event" value="tier3_flogi_desperate_defence_stop" />
+			<property name="event_tag" value="Game" />
+			<property name="phase" value="5"/>
+			<property name="hidden" value="true"/>
+			<property name="force_phase_finish" value="true"/>
+		</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="6"/>
+		</action>
+	   		
+		<objective type="ReturnToNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+		
+		
+
+		<reward type="Exp" value="7500"/>
+		<reward type="Item" id="casinoCoin" value="1500"/>
+		
+	
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+		
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="750" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="3"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="3"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="3"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	
+	<quest id="tier4_flogi_desperate_defence">
+		<property name="name_key" value="tier4_flogi_desperate_defence_name" />
+		<property name="subtitle_key" value="flogi_desperate_defence_subtitle"/>
+		<property name="description_key" value="flogi_desperate_defence_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="4" param1="difficulty" />
+		<property name="offer_key" value="flogi_desperate_defence_offer" param1="offer" />
+		<property name="statement_key" value="flogi_desperate_defence_statement"/>
+		<property name="response_key" value="flogi_desperate_defence_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_desperate_defence_completion"/>
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="RandomTaggedPOIGotoSDX, SCore">
+					<property name="phase" value="1" />
+					<property name="nav_object" value="quest" />
+					<!-- Include POIs only if they have any of these tags -->
+					<property name="include_tags" value="wilderness,countryresidential,rural" />
+					<!-- Exclude POIs if they have any of these tags -->
+					<property name="exclude_tags" value="residential,industrial" />
+					<property name="distance" value="1000" />
+					<property name="poi_tier" value="4" param1="poi_tier"/>
+				</objective>
+			</if>
+				
+			<else>
+				<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+					<property name="biome_filter" value="" param1="biome_filter"/>
+					<property name="nav_object" value="quest"/>
+					<property name="poi_tier" value="4" param1="poi_tier"/>
+				</objective>
+			</else>
+		</conditional>
+
+		<objective type="RallyPoint">
+					<property name="phase" value="2"/>
+					<property name="nav_object" value="rally" />
+		</objective>
+		
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="10"/>
+		</objective>
+		
+		<objective type="ClearSleepers">
+					<property name="phase" value="3"/>
+					<property name="nav_object" value="sleeper_volume"/>
+		</objective>
+		
+		<objective type="Time" time="3" value="1000" phase="3" >
+		</objective>
+
+		<action type="GameEvent" >
+			<property name="event" value="tier4_flogi_desperate_defence_start"/>
+			<property name="phase" value="4"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="4"/>
+			<property name="radius" value="10"/>
+		</objective>
+		
+		
+	   <objective type="EntityKill" entity_names="Any Zombie" value="100" phase="4" />
+
+	   
+	   
+	   	<objective type="GameEvent">
+			<property name="event" value="tier4_flogi_desperate_defence_stop" />
+			<property name="event_tag" value="Game" />
+			<property name="phase" value="5"/>
+			<property name="hidden" value="true"/>
+			<property name="force_phase_finish" value="true"/>
+		</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="6"/>
+		</action>
+	   		
+		<objective type="ReturnToNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+		
+		
+
+		<reward type="Exp" value="10000"/>
+		<reward type="Item" id="casinoCoin" value="2000"/>
+		
+		
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+		
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="1000" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="4"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="4"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="4"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	<quest id="tier5_flogi_desperate_defence">
+		<property name="name_key" value="tier5_flogi_desperate_defence_name" />
+		<property name="subtitle_key" value="flogi_desperate_defence_subtitle"/>
+		<property name="description_key" value="flogi_desperate_defence_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="5" param1="difficulty" />
+		<property name="offer_key" value="flogi_desperate_defence_offer" param1="offer" />
+		<property name="statement_key" value="flogi_desperate_defence_statement"/>
+		<property name="response_key" value="flogi_desperate_defence_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_desperate_defence_completion"/>
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="RandomTaggedPOIGotoSDX, SCore">
+					<property name="phase" value="1" />
+					<property name="nav_object" value="quest" />
+					<!-- Include POIs only if they have any of these tags -->
+					<property name="include_tags" value="wilderness,countryresidential,rural" />
+					<!-- Exclude POIs if they have any of these tags -->
+					<property name="exclude_tags" value="residential,industrial" />
+					<property name="distance" value="1000" />
+					<property name="poi_tier" value="5" param1="poi_tier"/>
+				</objective>
+			</if>
+				
+			<else>
+				<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+					<property name="biome_filter" value="" param1="biome_filter"/>
+					<property name="nav_object" value="quest"/>
+					<property name="poi_tier" value="5" param1="poi_tier"/>
+				</objective>
+			</else>
+		</conditional>
+
+		<objective type="RallyPoint">
+					<property name="phase" value="2"/>
+					<property name="nav_object" value="rally" />
+		</objective>
+		
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="10"/>
+		</objective>
+		
+		<objective type="ClearSleepers">
+					<property name="phase" value="3"/>
+					<property name="nav_object" value="sleeper_volume"/>
+		</objective>
+		
+		<objective type="Time" time="3" value="1200" phase="3" >
+		</objective>
+
+		<action type="GameEvent" >
+			<property name="event" value="tier5_flogi_desperate_defence_start"/>
+			<property name="phase" value="4"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="4"/>
+			<property name="radius" value="10"/>
+		</objective>
+		
+		
+	   <objective type="EntityKill" entity_names="Any Zombie" value="125" phase="4" />
+
+	   
+	   
+	   	<objective type="GameEvent">
+			<property name="event" value="tier5_flogi_desperate_defence_stop" />
+			<property name="event_tag" value="Game" />
+			<property name="phase" value="5"/>
+			<property name="hidden" value="true"/>
+			<property name="force_phase_finish" value="true"/>
+		</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="6"/>
+		</action>
+	   		
+		<objective type="ReturnToNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+		
+		
+
+		<reward type="Exp" value="20000"/>
+		<reward type="Item" id="casinoCoin" value="3000"/>
+		
+		
+			
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="1500" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="5"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="5"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="5"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	<quest id="tier6_flogi_desperate_defence">
+		<property name="name_key" value="tier6_flogi_desperate_defence_name" />
+		<property name="subtitle_key" value="flogi_desperate_defence_subtitle"/>
+		<property name="description_key" value="flogi_desperate_defence_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="5" param1="difficulty" />
+		<property name="offer_key" value="flogi_desperate_defence_offer" param1="offer" />
+		<property name="statement_key" value="flogi_desperate_defence_statement"/>
+		<property name="response_key" value="flogi_desperate_defence_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+		<property name="spawn_multiplier" value="4" param1="spawn_multiplier" />
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_desperate_defence_completion"/>
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="RandomTaggedPOIGotoSDX, SCore">
+					<property name="phase" value="1" />
+					<property name="nav_object" value="quest" />
+					<!-- Include POIs only if they have any of these tags -->
+					<property name="include_tags" value="wilderness,countryresidential,rural" />
+					<!-- Exclude POIs if they have any of these tags -->
+					<property name="exclude_tags" value="residential,industrial" />
+					<property name="distance" value="1000" />
+					<property name="poi_tier" value="5" param1="poi_tier"/>
+				</objective>
+			</if>
+				
+			<else>
+				<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+					<property name="biome_filter" value="" param1="biome_filter"/>
+					<property name="nav_object" value="quest"/>
+					<property name="poi_tier" value="5" param1="poi_tier"/>
+				</objective>
+			</else>
+		</conditional>
+
+		<objective type="RallyPoint">
+					<property name="phase" value="2"/>
+					<property name="nav_object" value="rally" />
+		</objective>
+		
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="10"/>
+		</objective>
+		
+		<objective type="ClearSleepers">
+					<property name="phase" value="3"/>
+					<property name="nav_object" value="sleeper_volume"/>
+		</objective>
+		
+		<objective type="Time" time="3" value="1200" phase="3" >
+		</objective>
+
+		<action type="GameEvent" >
+			<property name="event" value="tier6_flogi_desperate_defence_start"/>
+			<property name="phase" value="4"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="4"/>
+			<property name="radius" value="10"/>
+		</objective>
+		
+		
+	   <objective type="EntityKill" entity_names="Any Zombie" value="175" phase="4" />
+
+	   
+	   
+	   	<objective type="GameEvent">
+			<property name="event" value="tier6_flogi_desperate_defence_stop" />
+			<property name="event_tag" value="Game" />
+			<property name="phase" value="5"/>
+			<property name="hidden" value="true"/>
+			<property name="force_phase_finish" value="true"/>
+		</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="6"/>
+		</action>
+	   		
+		<objective type="ReturnToNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+		
+		
+
+		<reward type="Exp" value="25000"/>
+		<reward type="Item" id="casinoCoin" value="3500"/>
+		
+			
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				
+			
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="2000" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="6"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="6"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="6"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	<quest id="tier1_flogi_explosives">
+		<property name="name_key" value="tier1_flogi_explosives_name" />
+		<property name="subtitle_key" value="flogi_explosives_subtitle"/>
+		<property name="description_key" value="flogi_explosives_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="1" param1="difficulty" />
+		<property name="offer_key" value="flogi_explosives_offer" param1="offer" />
+		<property name="statement_key" value="flogi_explosives_statement"/>
+		<property name="response_key" value="flogi_explosives_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+		<property name="spawn_multiplier" value="2" param1="spawn_multiplier" />
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_explosives_completion"/>
+
+		
+
+				<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="nav_object" value="quest"/>
+					<property name="poi_tier" value="1" param1="poi_tier"/>
+				</objective>
+
+		
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+			<property name="nav_object" value="rally"/>
+		</objective>
+
+		<objective type="FetchFromContainer">
+			<property name="phase" value="3"/>
+			<property name="quest_item_ID" value="1"/>
+			<property name="item_count" value="1"/>
+			<property name="default_container" value="cntFetchQuestSatchel"/>
+			<property name="nav_object" value="fetch_container"/>
+		</objective>
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="25"/>
+		</objective>
+
+		
+		<objective type="ReturnToNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="4"/>
+		</action>
+		
+		
+
+		<reward type="Exp" value="3000"/>
+		<reward type="Item" id="casinoCoin" value="400"/>
+		<reward type="Item" id="thrownQuestBomb" value="5"/>
+		<reward type="Item" id="flogi_block_bomb" value="5"/>
+		
+		
+		
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+				
+		
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="250" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="1"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="1"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="1"/>
+			</if>
+		</conditional>
+		
+		
+	</quest>
+	
+	
+	<quest id="tier2_flogi_explosives">
+		<property name="name_key" value="tier2_flogi_explosives_name" />
+		<property name="subtitle_key" value="flogi_explosives_subtitle"/>
+		<property name="description_key" value="flogi_explosives_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="2" param1="difficulty" />
+		<property name="offer_key" value="flogi_explosives_offer" param1="offer" />
+		<property name="statement_key" value="flogi_explosives_statement"/>
+		<property name="response_key" value="flogi_explosives_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+		<property name="spawn_multiplier" value="2" param1="spawn_multiplier" />
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_explosives_completion"/>
+
+		
+		<objective type="RandomPOIGoto">
+			<property name="phase" value="1"/>
+			<property name="nav_object" value="quest"/>
+			<property name="poi_tier" value="2" param1="poi_tier"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+			<property name="nav_object" value="rally"/>
+		</objective>
+
+		<objective type="FetchFromContainer">
+					<property name="phase" value="3"/>
+					<property name="quest_item_ID" value="1"/>
+					<property name="item_count" value="1"/>
+					<property name="default_container" value="cntFetchQuestSatchel"/>
+					<property name="nav_object" value="fetch_container" />
+		</objective>
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="25"/>
+		</objective>
+
+		
+		<objective type="ReturnToNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="4"/>
+		</action>
+		
+		
+		
+
+		<reward type="Exp" value="4500"/>
+		<reward type="Item" id="casinoCoin" value="500"/>
+		<reward type="Item" id="thrownQuestBomb" value="5"/>
+		<reward type="Item" id="flogi_block_bomb" value="5"/>
+		
+		
+		
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+			
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="500" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="2"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="2"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="2"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	
+	<quest id="tier3_flogi_explosives">
+		<property name="name_key" value="tier3_flogi_explosives_name" />
+		<property name="subtitle_key" value="flogi_explosives_subtitle"/>
+		<property name="description_key" value="flogi_explosives_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="3" param1="difficulty" />
+		<property name="offer_key" value="flogi_explosives_offer" param1="offer" />
+		<property name="statement_key" value="flogi_explosives_statement"/>
+		<property name="response_key" value="flogi_explosives_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+		<property name="spawn_multiplier" value="2" param1="spawn_multiplier" />
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_explosives_completion"/>
+
+		<objective type="RandomPOIGoto">
+			<property name="phase" value="1"/>
+			<property name="nav_object" value="quest"/>
+			<property name="poi_tier" value="3" param1="poi_tier"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+			<property name="nav_object" value="rally"/>
+		</objective>
+
+		<objective type="FetchFromContainer">
+					<property name="phase" value="3"/>
+					<property name="quest_item_ID" value="1"/>
+					<property name="item_count" value="1"/>
+					<property name="default_container" value="cntFetchQuestSatchel"/>
+					<property name="nav_object" value="fetch_container" />
+		</objective>
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="25"/>
+		</objective>
+
+		
+		<objective type="ReturnToNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="4"/>
+		</action>
+		
+		
+		
+
+		<reward type="Exp" value="6000"/>
+		<reward type="Item" id="casinoCoin" value="800"/>
+		<reward type="Item" id="thrownQuestBomb" value="8"/>
+		<reward type="Item" id="flogi_block_bomb" value="8"/>
+		
+		
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+		
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="750" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="3"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="3"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="3"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	
+	<quest id="tier4_flogi_explosives">
+		<property name="name_key" value="tier4_flogi_explosives_name" />
+		<property name="subtitle_key" value="flogi_explosives_subtitle"/>
+		<property name="description_key" value="flogi_explosives_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="4" param1="difficulty" />
+		<property name="offer_key" value="flogi_explosives_offer" param1="offer" />
+		<property name="statement_key" value="flogi_explosives_statement"/>
+		<property name="response_key" value="flogi_explosives_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+		<property name="spawn_multiplier" value="2" param1="spawn_multiplier" />
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_explosives_completion"/>
+
+		<objective type="RandomPOIGoto">
+			<property name="phase" value="1"/>
+			<property name="nav_object" value="quest"/>
+			<property name="poi_tier" value="4" param1="poi_tier"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+			<property name="nav_object" value="rally"/>
+		</objective>
+
+		<objective type="FetchFromContainer">
+					<property name="phase" value="3"/>
+					<property name="quest_item_ID" value="1"/>
+					<property name="item_count" value="1"/>
+					<property name="default_container" value="cntFetchQuestSatchel"/>
+					<property name="nav_object" value="fetch_container" />
+		</objective>
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="25"/>
+		</objective>
+
+		
+		<objective type="ReturnToNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="4"/>
+		</action>
+		
+		
+		
+
+		<reward type="Exp" value="7500"/>
+		<reward type="Item" id="casinoCoin" value="1000"/>
+		<reward type="Item" id="thrownQuestBomb" value="15"/>
+		<reward type="Item" id="flogi_block_bomb" value="15"/>
+		
+		
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+					
+		
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="1000" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="4"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="4"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="4"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	
+	<quest id="tier5_flogi_explosives">
+		<property name="name_key" value="tier5_flogi_explosives_name" />
+		<property name="subtitle_key" value="flogi_explosives_subtitle"/>
+		<property name="description_key" value="flogi_explosives_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="5" param1="difficulty" />
+		<property name="offer_key" value="flogi_explosives_offer" param1="offer" />
+		<property name="statement_key" value="flogi_explosives_statement"/>
+		<property name="response_key" value="flogi_explosives_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+		<property name="spawn_multiplier" value="2" param1="spawn_multiplier" />
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_explosives_completion"/>
+
+		<objective type="RandomPOIGoto">
+			<property name="phase" value="1"/>
+			<property name="nav_object" value="quest"/>
+			<property name="poi_tier" value="5" param1="poi_tier"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+			<property name="nav_object" value="rally"/>
+		</objective>
+
+		<objective type="FetchFromContainer">
+					<property name="phase" value="3"/>
+					<property name="quest_item_ID" value="1"/>
+					<property name="item_count" value="1"/>
+					<property name="default_container" value="cntFetchQuestSatchel"/>
+					<property name="nav_object" value="fetch_container" />
+		</objective>
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="25"/>
+		</objective>
+
+		
+		<objective type="ReturnToNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="4"/>
+		</action>
+		
+		
+		
+
+		<reward type="Exp" value="15000"/>
+		<reward type="Item" id="casinoCoin" value="2000"/>
+		<reward type="Item" id="thrownQuestBomb" value="25"/>
+		<reward type="Item" id="flogi_block_bomb" value="25"/>
+		
+		
+			
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+			
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="1500" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="5"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="5"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="5"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	<quest id="tier6_flogi_explosives">
+		<property name="name_key" value="tier6_flogi_explosives_name" />
+		<property name="subtitle_key" value="flogi_explosives_subtitle"/>
+		<property name="description_key" value="flogi_explosives_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="5" param1="difficulty" />
+		<property name="offer_key" value="flogi_explosives_offer" param1="offer" />
+		<property name="statement_key" value="flogi_explosives_statement"/>
+		<property name="response_key" value="flogi_explosives_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+		<property name="spawn_multiplier" value="4" param1="spawn_multiplier" />
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_explosives_completion"/>
+
+		<objective type="RandomPOIGoto">
+			<property name="phase" value="1"/>
+			<property name="nav_object" value="quest"/>
+			<property name="poi_tier" value="5" param1="poi_tier"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+			<property name="nav_object" value="rally"/>
+		</objective>
+
+		<objective type="FetchFromContainer">
+					<property name="phase" value="3"/>
+					<property name="quest_item_ID" value="1"/>
+					<property name="item_count" value="1"/>
+					<property name="default_container" value="cntFetchQuestSatchel"/>
+					<property name="nav_object" value="fetch_container" />
+		</objective>
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="25"/>
+		</objective>
+
+		
+		<objective type="ReturnToNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="4"/>
+		</action>
+		
+		
+		
+
+		<reward type="Exp" value="20000"/>
+		<reward type="Item" id="casinoCoin" value="2500"/>
+		<reward type="Item" id="thrownQuestBomb" value="25"/>
+		<reward type="Item" id="flogi_block_bomb" value="25"/>
+		
+		
+			
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				
+		
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="2000" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="6"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="6"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="6"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	
+	<quest id="tier1_flogi_raze">
+		<property name="name_key" value="tier1_flogi_raze_name" />
+		<property name="subtitle_key" value="flogi_raze_subtitle"/>
+		<property name="description_key" value="flogi_raze_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="1" param1="difficulty" />
+		<property name="offer_key" value="flogi_raze_offer" param1="offer" />
+		<property name="statement_key" value="flogi_raze_statement"/>
+		<property name="response_key" value="flogi_raze_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="10" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+		<property name="spawn_multiplier" value="4" param1="spawn_multiplier" />
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_raze_completion"/>
+		
+		<objective type="FetchKeep" id="thrownQuestBomb" value="5" phase="1"/>
+		<objective type="FetchKeep" id="flogi_block_bomb" value="5" phase="1"/>
+		
+		<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="nav_object" value="quest" />
+					<property name="poi_tier" value="1" param1="poi_tier" />
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+			<property name="nav_object" value="rally"/>
+		</objective>
+
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="BlockDestroySDX, SCore" id="" value="20" phase="3"/>
+				<objective type="BlockPlace" id="flogi_block_bomb" value="5" phase="3" />
+			</if>
+				
+			<else>
+				<objective type="ClearSleepers">
+					<property name="phase" value="3"/>
+					<property name="nav_object" value="sleeper_volume"/>
+				</objective>
+				<objective type="BlockPlace" id="flogi_block_bomb" value="5" phase="3" />
+			</else>
+		</conditional>
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="50"/>
+		</objective>
+
+		
+		<objective type="ReturnToNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="4"/>
+		</action>
+		
+		
+		
+
+		<reward type="Exp" value="3000"/>
+		<reward type="Item" id="casinoCoin" value="400"/>
+		
+		
+	
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+			
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="250" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="1"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="1"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="1"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	
+	<quest id="tier2_flogi_raze">
+		<property name="name_key" value="tier2_flogi_raze_name" />
+		<property name="subtitle_key" value="flogi_raze_subtitle"/>
+		<property name="description_key" value="flogi_raze_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="2" param1="difficulty" />
+		<property name="offer_key" value="flogi_raze_offer" param1="offer" />
+		<property name="statement_key" value="flogi_raze_statement"/>
+		<property name="response_key" value="flogi_raze_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="10" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+		<property name="spawn_multiplier" value="4" param1="spawn_multiplier" />
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_raze_completion"/>
+
+		<objective type="FetchKeep" id="thrownQuestBomb" value="5" phase="1"/>
+		<objective type="FetchKeep" id="flogi_block_bomb" value="5" phase="1"/>
+		
+		<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="nav_object" value="quest" />
+					<property name="poi_tier" value="2" param1="poi_tier" />
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+			<property name="nav_object" value="rally"/>
+		</objective>
+
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="BlockDestroySDX, SCore" id="" value="20" phase="3"/>
+				<objective type="BlockPlace" id="flogi_block_bomb" value="5" phase="3" />
+			</if>
+				
+			<else>
+				<objective type="ClearSleepers">
+					<property name="phase" value="3"/>
+					<property name="nav_object" value="sleeper_volume"/>
+				</objective>
+				<objective type="BlockPlace" id="flogi_block_bomb" value="5" phase="3" />
+			</else>
+		</conditional>
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="50"/>
+		</objective>
+
+		
+		<objective type="ReturnToNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="4"/>
+		</action>
+		
+		
+		
+
+		<reward type="Exp" value="4500"/>
+		<reward type="Item" id="casinoCoin" value="500"/>
+
+		
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+		
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="500" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="2"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="2"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="2"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	
+	<quest id="tier3_flogi_raze">
+		<property name="name_key" value="tier3_flogi_raze_name" />
+		<property name="subtitle_key" value="flogi_raze_subtitle"/>
+		<property name="description_key" value="flogi_raze_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="3" param1="difficulty" />
+		<property name="offer_key" value="flogi_raze_offer" param1="offer" />
+		<property name="statement_key" value="flogi_raze_statement"/>
+		<property name="response_key" value="flogi_raze_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="10" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+		<property name="spawn_multiplier" value="4" param1="spawn_multiplier" />
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_raze_completion"/>
+
+		<objective type="FetchKeep" id="thrownQuestBomb" value="5" phase="1"/>
+		<objective type="FetchKeep" id="flogi_block_bomb" value="5" phase="1"/>
+		
+		<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="nav_object" value="quest" />
+					<property name="poi_tier" value="3" param1="poi_tier" />
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+			<property name="nav_object" value="rally"/>
+		</objective>
+
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="BlockDestroySDX, SCore" id="" value="20" phase="3"/>
+				<objective type="BlockPlace" id="flogi_block_bomb" value="8" phase="3" />
+			</if>
+				
+			<else>
+				<objective type="ClearSleepers">
+					<property name="phase" value="3"/>
+					<property name="nav_object" value="sleeper_volume"/>
+				</objective>
+				<objective type="BlockPlace" id="flogi_block_bomb" value="8" phase="3" />
+			</else>
+		</conditional>
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="50"/>
+		</objective>
+
+		
+		<objective type="ReturnToNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="5"/>
+		</action>
+		
+		
+		
+
+		
+		<reward type="Exp" value="6000"/>
+		<reward type="Item" id="casinoCoin" value="800"/>
+
+		
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="750" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="3"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="3"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="3"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	<quest id="tier4_flogi_raze">
+		<property name="name_key" value="tier4_flogi_raze_name" />
+		<property name="subtitle_key" value="flogi_raze_subtitle"/>
+		<property name="description_key" value="flogi_raze_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="4" param1="difficulty" />
+		<property name="offer_key" value="flogi_raze_offer" param1="offer" />
+		<property name="statement_key" value="flogi_raze_statement"/>
+		<property name="response_key" value="flogi_raze_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="10" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+		<property name="spawn_multiplier" value="4" param1="spawn_multiplier" />
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_raze_completion"/>
+
+		<objective type="FetchKeep" id="thrownQuestBomb" value="15" phase="1"/>
+		<objective type="FetchKeep" id="flogi_block_bomb" value="15" phase="1"/>
+		
+		<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="nav_object" value="quest" />
+					<property name="poi_tier" value="4" param1="poi_tier" />
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+			<property name="nav_object" value="rally"/>
+		</objective>
+
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="BlockDestroySDX, SCore" id="" value="20" phase="3"/>
+				<objective type="BlockPlace" id="flogi_block_bomb" value="15" phase="3" />
+			</if>
+				
+			<else>
+				<objective type="ClearSleepers">
+					<property name="phase" value="3"/>
+					<property name="nav_object" value="sleeper_volume"/>
+				</objective>
+				<objective type="BlockPlace" id="flogi_block_bomb" value="15" phase="3" />
+			</else>
+		</conditional>
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="50"/>
+		</objective>
+
+		
+		<objective type="ReturnToNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="4"/>
+		</action>
+		
+		
+		
+		
+		<reward type="Exp" value="7500"/>
+		<reward type="Item" id="casinoCoin" value="1000"/>
+		
+		
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+	
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="1000" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="4"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="4"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="4"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	<quest id="tier5_flogi_raze">
+		<property name="name_key" value="tier5_flogi_raze_name" />
+		<property name="subtitle_key" value="flogi_raze_subtitle"/>
+		<property name="description_key" value="flogi_raze_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="5" param1="difficulty" />
+		<property name="offer_key" value="flogi_raze_offer" param1="offer" />
+		<property name="statement_key" value="flogi_raze_statement"/>
+		<property name="response_key" value="flogi_raze_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="10" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+		<property name="spawn_multiplier" value="4" param1="spawn_multiplier" />
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_raze_completion"/>
+
+		<objective type="FetchKeep" id="thrownQuestBomb" value="25" phase="1"/>
+		<objective type="FetchKeep" id="flogi_block_bomb" value="25" phase="1"/>
+		
+		<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="nav_object" value="quest" />
+					<property name="poi_tier" value="5" param1="poi_tier" />
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+			<property name="nav_object" value="rally"/>
+		</objective>
+
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="BlockDestroySDX, SCore" id="" value="20" phase="3"/>
+				<objective type="BlockPlace" id="flogi_block_bomb" value="25" phase="3" />
+			</if>
+				
+			<else>
+				<objective type="ClearSleepers">
+					<property name="phase" value="3"/>
+					<property name="nav_object" value="sleeper_volume"/>
+				</objective>
+				<objective type="BlockPlace" id="flogi_block_bomb" value="25" phase="3" />
+			</else>
+		</conditional>
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="50"/>
+		</objective>
+
+		
+		<objective type="ReturnToNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="4"/>
+		</action>
+		
+		
+		
+		
+		<reward type="Exp" value="15000"/>
+		<reward type="Item" id="casinoCoin" value="2000"/>
+		
+		
+			
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				
+		
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="1500" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="5"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="5"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="5"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	<quest id="tier6_flogi_raze">
+		<property name="name_key" value="tier6_flogi_raze_name" />
+		<property name="subtitle_key" value="flogi_raze_subtitle"/>
+		<property name="description_key" value="flogi_raze_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="5" param1="difficulty" />
+		<property name="offer_key" value="flogi_raze_offer" param1="offer" />
+		<property name="statement_key" value="flogi_raze_statement"/>
+		<property name="response_key" value="flogi_raze_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="10" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+		<property name="spawn_multiplier" value="6" param1="spawn_multiplier" />
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_raze_completion"/>
+
+		<objective type="FetchKeep" id="thrownQuestBomb" value="25" phase="1"/>
+		<objective type="FetchKeep" id="flogi_block_bomb" value="25" phase="1"/>
+		
+		<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="nav_object" value="quest" />
+					<property name="poi_tier" value="5" param1="poi_tier" />
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+			<property name="nav_object" value="rally"/>
+		</objective>
+
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="BlockDestroySDX, SCore" id="" value="20" phase="3"/>
+				<objective type="BlockPlace" id="flogi_block_bomb" value="25" phase="3" />
+			</if>
+				
+			<else>
+				<objective type="ClearSleepers">
+					<property name="phase" value="3"/>
+					<property name="nav_object" value="sleeper_volume"/>
+				</objective>
+				<objective type="BlockPlace" id="flogi_block_bomb" value="25" phase="3" />
+			</else>
+		</conditional>
+		
+		
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="50"/>
+		</objective>
+
+		
+		<objective type="ReturnToNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4" />
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+		
+		<action type="UnlockPOI" >
+			<property name="phase" value="4"/>
+		</action>
+		
+		
+		
+		
+		<reward type="Exp" value="20000"/>
+		<reward type="Item" id="casinoCoin" value="2500"/>
+		
+	
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="2000" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="6"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="6"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="6"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	
+	<quest id="tier1_flogi_fortify">
+		<property name="name_key" value="tier1_flogi_fortify_name" />
+		<property name="subtitle_key" value="flogi_fortify_subtitle"/>
+		<property name="description_key" value="flogi_fortify_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="offer_key" value="flogi_fortify_offer" param1="offer"/>
+		<property name="difficulty_tier" value="1" param1="difficulty"/>
+		<property name="statement_key" value="flogi_fortify_statement"/>
+		<property name="response_key" value="flogi_fortify_response"/>
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_fortify_completion"/>
+		<property name="shareable" value="true"/>
+		<property name="reward_choices_count" value="5"/>
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="RandomTaggedPOIGotoSDX, SCore">
+					<property name="phase" value="1" />
+					<property name="nav_object" value="quest" />
+					<!-- Include POIs only if they have any of these tags -->
+					<property name="include_tags" value="wilderness,countryresidential,rural" />
+					<!-- Exclude POIs if they have any of these tags -->
+					<property name="exclude_tags" value="residential,industrial" />
+					<property name="distance" value="1000" />
+				</objective>
+			</if>
+				
+			<else>
+				<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+					<property name="biome_filter" value="" param1="biome_filter"/>
+					<property name="nav_object" value="quest"/>
+				</objective>
+			</else>
+		</conditional>
+
+		<objective type="RallyPoint">
+					<property name="phase" value="2"/>
+					<property name="nav_object" value="rally" />
+		</objective>
+		
+		
+		
+		<objective type="StayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="100"/>
+		</objective>
+		
+		<action type="GameEvent" >
+			<property name="event" value="flogi_give_quest_item_1"/>
+			<property name="phase" value="3"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		
+		
+		
+		<objective type="BlockPlace" id="questGeneratorSmall" value="1" phase="3"/>
+
+		<action type="GameEvent" >
+			<property name="event" value="tier1_flogi_fortify_start"/>
+			<property name="phase" value="4"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		<action type="SpawnGSEnemy">
+			<property name="gamestage_list" value="SleeperGSList"/>
+			<property name="count" value="3-5" param1="finish_spawn_count"/>
+			<property name="phase" value="4"/>
+		</action>
+		
+		<objective type="StayWithin">
+			<property name="phase" value="4"/>
+			<property name="radius" value="100"/>
+		</objective>
+		
+		
+	   <objective type="EntityKill" entity_names="Any Zombie" value="15" phase="4" />
+
+	   
+	   
+	   	<objective type="GameEvent">
+			<property name="event" value="tier1_flogi_fortify_stop" />
+			<property name="event_tag" value="Game" />
+			<property name="phase" value="5"/>
+			<property name="hidden" value="true"/>
+			<property name="force_phase_finish" value="true"/>
+		</objective>
+	   		
+		<objective type="ReturnToNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+		
+		
+		
+
+		<reward type="Exp" value="3000"/>
+		<reward type="Item" id="casinoCoin" value="400"/>
+		
+	
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true" value="1"/>
+	
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="250" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="1"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="1"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="1"/>
+			</if>
+		</conditional>
+		
+		
+	</quest>
+	
+	<quest id="tier2_flogi_fortify">
+	
+		<property name="name_key" value="tier2_flogi_fortify_name" />
+		<property name="subtitle_key" value="flogi_fortify_subtitle"/>
+		<property name="description_key" value="flogi_fortify_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="2" param1="difficulty" />
+		<property name="offer_key" value="flogi_fortify_offer" param1="offer" />
+		<property name="statement_key" value="flogi_fortify_statement"/>
+		<property name="response_key" value="flogi_fortify_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_fortify_completion"/>
+		
+		
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="RandomTaggedPOIGotoSDX, SCore">
+					<property name="phase" value="1" />
+					<property name="nav_object" value="quest" />
+					<!-- Include POIs only if they have any of these tags -->
+					<property name="include_tags" value="wilderness,countryresidential,rural" />
+					<!-- Exclude POIs if they have any of these tags -->
+					<property name="exclude_tags" value="residential,industrial" />
+					<property name="distance" value="1000" />
+				</objective>
+			</if>
+				
+			<else>
+				<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+					<property name="biome_filter" value="" param1="biome_filter"/>
+					<property name="nav_object" value="quest"/>
+				</objective>
+			</else>
+		</conditional>
+
+		<objective type="RallyPoint">
+					<property name="phase" value="2"/>
+					<property name="nav_object" value="rally" />
+		</objective>
+		
+		
+		
+		<objective type="StayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="100"/>
+		</objective>
+		
+		<action type="GameEvent" >
+			<property name="event" value="flogi_give_quest_item_1"/>
+			<property name="phase" value="3"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		
+		
+		
+		<objective type="BlockPlace" id="questGeneratorSmall" value="1" phase="3"/>
+
+		<action type="GameEvent" >
+			<property name="event" value="tier2_flogi_fortify_start"/>
+			<property name="phase" value="4"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		<action type="SpawnGSEnemy">
+			<property name="gamestage_list" value="SleeperGSList"/>
+			<property name="count" value="5-7" param1="finish_spawn_count"/>
+			<property name="phase" value="4"/>
+		</action>
+		
+		<objective type="StayWithin">
+			<property name="phase" value="4"/>
+			<property name="radius" value="100"/>
+		</objective>
+		
+		
+		
+		
+	   <objective type="EntityKill" entity_names="Any Zombie" value="20" phase="4" />
+
+	   
+	   
+	   	<objective type="GameEvent">
+			<property name="event" value="tier2_flogi_fortify_stop" />
+			<property name="event_tag" value="Game" />
+			<property name="phase" value="5"/>
+			<property name="hidden" value="true"/>
+			<property name="force_phase_finish" value="true"/>
+		</objective>
+	   		
+		<objective type="ReturnToNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+		
+		
+
+		<reward type="Exp" value="4500"/>
+		<reward type="Item" id="casinoCoin" value="500"/>
+
+		
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+		
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="500" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="2"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="2"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="2"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	<quest id="tier3_flogi_fortify" >
+		<property name="name_key" value="tier3_flogi_fortify_name" />
+		<property name="subtitle_key" value="flogi_fortify_subtitle"/>
+		<property name="description_key" value="flogi_fortify_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="3" param1="difficulty" />
+		<property name="offer_key" value="flogi_fortify_offer" param1="offer" />
+		<property name="statement_key" value="flogi_fortify_statement"/>
+		<property name="response_key" value="flogi_fortify_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_fortify_completion"/>
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="RandomTaggedPOIGotoSDX, SCore">
+					<property name="phase" value="1" />
+					<property name="nav_object" value="quest" />
+					<!-- Include POIs only if they have any of these tags -->
+					<property name="include_tags" value="wilderness,countryresidential,rural" />
+					<!-- Exclude POIs if they have any of these tags -->
+					<property name="exclude_tags" value="residential,industrial" />
+					<property name="distance" value="1000" />
+				</objective>
+			</if>
+				
+			<else>
+				<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+					<property name="biome_filter" value="" param1="biome_filter"/>
+					<property name="nav_object" value="quest"/>
+				</objective>
+			</else>
+		</conditional>
+
+		<objective type="RallyPoint">
+					<property name="phase" value="2"/>
+					<property name="nav_object" value="rally" />
+		</objective>
+		
+		
+		
+		<objective type="StayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="100"/>
+		</objective>
+		
+		<action type="GameEvent" >
+			<property name="event" value="flogi_give_quest_item_1"/>
+			<property name="phase" value="3"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		
+		
+		
+		<objective type="BlockPlace" id="questGeneratorSmall" value="1" phase="3"/>
+
+		<action type="GameEvent" >
+			<property name="event" value="tier3_flogi_fortify_start"/>
+			<property name="phase" value="4"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		<action type="SpawnGSEnemy">
+			<property name="gamestage_list" value="SleeperGSList"/>
+			<property name="count" value="7-9" param1="finish_spawn_count"/>
+			<property name="phase" value="4"/>
+		</action>
+		
+		<objective type="StayWithin">
+			<property name="phase" value="4"/>
+			<property name="radius" value="100"/>
+		</objective>
+		
+		
+		
+		
+	   <objective type="EntityKill" entity_names="Any Zombie" value="30" phase="4" />
+
+	   
+	   
+	   	<objective type="GameEvent">
+			<property name="event" value="tier3_flogi_fortify_stop" />
+			<property name="event_tag" value="Game" />
+			<property name="phase" value="5"/>
+			<property name="hidden" value="true"/>
+			<property name="force_phase_finish" value="true"/>
+		</objective>
+	   		
+		<objective type="ReturnToNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+		
+
+		<reward type="Exp" value="6000"/>
+		<reward type="Item" id="casinoCoin" value="800"/>
+
+		
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="2"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestResourcesT0,seedsNoFlowers,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+			
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="750" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="3"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="3"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="3"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	<quest id="tier4_flogi_fortify" >
+		<property name="name_key" value="tier4_flogi_fortify_name" />
+		<property name="subtitle_key" value="flogi_fortify_subtitle"/>
+		<property name="description_key" value="flogi_fortify_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="4" param1="difficulty" />
+		<property name="offer_key" value="flogi_fortify_offer" param1="offer" />
+		<property name="statement_key" value="flogi_fortify_statement"/>
+		<property name="response_key" value="flogi_fortify_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_fortify_completion"/>
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="RandomTaggedPOIGotoSDX, SCore">
+					<property name="phase" value="1" />
+					<property name="nav_object" value="quest" />
+					<!-- Include POIs only if they have any of these tags -->
+					<property name="include_tags" value="wilderness,countryresidential,rural" />
+					<!-- Exclude POIs if they have any of these tags -->
+					<property name="exclude_tags" value="residential,industrial" />
+					<property name="distance" value="1000" />
+				</objective>
+			</if>
+				
+			<else>
+				<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+					<property name="biome_filter" value="" param1="biome_filter"/>
+					<property name="nav_object" value="quest"/>
+				</objective>
+			</else>
+		</conditional>
+
+		<objective type="RallyPoint">
+					<property name="phase" value="2"/>
+					<property name="nav_object" value="rally" />
+		</objective>
+		
+		
+		
+		<objective type="StayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="150"/>
+		</objective>
+		
+		<action type="GameEvent" >
+			<property name="event" value="flogi_give_quest_item_1"/>
+			<property name="phase" value="3"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		
+		
+		
+		<objective type="BlockPlace" id="questGeneratorSmall" value="1" phase="3"/>
+
+		<action type="GameEvent" >
+			<property name="event" value="tier4_flogi_fortify_start"/>
+			<property name="phase" value="4"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		<action type="SpawnGSEnemy">
+			<property name="gamestage_list" value="SleeperGSList"/>
+			<property name="count" value="11-13" param1="finish_spawn_count"/>
+			<property name="phase" value="4"/>
+		</action>
+		
+		<objective type="StayWithin">
+			<property name="phase" value="4"/>
+			<property name="radius" value="150"/>
+		</objective>
+		
+		
+		
+		
+	   <objective type="EntityKill" entity_names="Any Zombie" value="50" phase="4" />
+
+	   
+	   
+	   	<objective type="GameEvent">
+			<property name="event" value="tier4_flogi_fortify_stop" />
+			<property name="event_tag" value="Game" />
+			<property name="phase" value="5"/>
+			<property name="hidden" value="true"/>
+			<property name="force_phase_finish" value="true"/>
+		</objective>
+	   		
+		<objective type="ReturnToNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+		
+		
+
+		<reward type="Exp" value="7500"/>
+		<reward type="Item" id="casinoCoin" value="1000"/>
+		
+	
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="3"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestSteel01" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+					
+			
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="1000" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="4"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="4"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="4"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	<quest id="tier5_flogi_fortify" >
+		<property name="name_key" value="tier5_flogi_fortify_name" />
+		<property name="subtitle_key" value="flogi_fortify_subtitle"/>
+		<property name="description_key" value="flogi_fortify_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="5" param1="difficulty" />
+		<property name="offer_key" value="flogi_fortify_offer" param1="offer" />
+		<property name="statement_key" value="flogi_fortify_statement"/>
+		<property name="response_key" value="flogi_fortify_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_fortify_completion"/>
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="RandomTaggedPOIGotoSDX, SCore">
+					<property name="phase" value="1" />
+					<property name="nav_object" value="quest" />
+					<!-- Include POIs only if they have any of these tags -->
+					<property name="include_tags" value="wilderness,countryresidential,rural" />
+					<!-- Exclude POIs if they have any of these tags -->
+					<property name="exclude_tags" value="residential,industrial" />
+					<property name="distance" value="1000" />
+				</objective>
+			</if>
+				
+			<else>
+				<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+					<property name="biome_filter" value="" param1="biome_filter"/>
+					<property name="nav_object" value="quest"/>
+				</objective>
+			</else>
+		</conditional>
+
+		<objective type="RallyPoint">
+					<property name="phase" value="2"/>
+					<property name="nav_object" value="rally" />
+		</objective>
+		
+		
+		
+		<objective type="StayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="200"/>
+		</objective>
+		
+		<action type="GameEvent" >
+			<property name="event" value="flogi_give_quest_item_1"/>
+			<property name="phase" value="3"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		
+		
+		
+		<objective type="BlockPlace" id="questGeneratorSmall" value="1" phase="3"/>
+
+		<action type="GameEvent" >
+			<property name="event" value="tier5_flogi_fortify_start"/>
+			<property name="phase" value="4"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		<action type="SpawnGSEnemy">
+			<property name="gamestage_list" value="SleeperGSList"/>
+			<property name="count" value="15-17" param1="finish_spawn_count"/>
+			<property name="phase" value="4"/>
+		</action>
+		
+		<objective type="StayWithin">
+			<property name="phase" value="4"/>
+			<property name="radius" value="200"/>
+		</objective>
+		
+		
+		
+		
+	   <objective type="EntityKill" entity_names="Any Zombie" value="125" phase="4" />
+
+	   
+	   
+	   	<objective type="GameEvent">
+			<property name="event" value="tier5_flogi_fortify_stop" />
+			<property name="event_tag" value="Game" />
+			<property name="phase" value="5"/>
+			<property name="hidden" value="true"/>
+			<property name="force_phase_finish" value="true"/>
+		</objective>
+	   		
+		<objective type="ReturnToNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+		
+		
+
+		<reward type="Exp" value="15000"/>
+		<reward type="Item" id="casinoCoin" value="2000"/>
+		
+	
+			
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+	
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="1500" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="5"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="5"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="5"/>
+			</if>
+		</conditional>
+		
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="5"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="5"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="5"/>
+			</if>
+		</conditional>
+		
+	</quest>
+	
+	<quest id="tier6_flogi_fortify" >
+		<property name="name_key" value="tier6_flogi_fortify_name" />
+		<property name="subtitle_key" value="flogi_fortify_subtitle"/>
+		<property name="description_key" value="flogi_fortify_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="5" param1="difficulty" />
+		<property name="offer_key" value="flogi_fortify_offer" param1="offer" />
+		<property name="statement_key" value="flogi_fortify_statement"/>
+		<property name="response_key" value="flogi_fortify_response"/>
+		<property name="login_rally_reset" value="true"/>
+		<property name="reward_choices_count" value="5" />
+		<property name="extra_tags" value="" param1="extra_tags" />
+		<property name="shareable" value="true"/>
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="flogi_fortify_completion"/>
+
+		<conditional>
+			<if cond="mod_loaded('0-SCore_sphereii')">
+				<objective type="RandomTaggedPOIGotoSDX, SCore">
+					<property name="phase" value="1" />
+					<property name="nav_object" value="quest" />
+					<!-- Include POIs only if they have any of these tags -->
+					<property name="include_tags" value="wilderness,countryresidential,rural" />
+					<!-- Exclude POIs if they have any of these tags -->
+					<property name="exclude_tags" value="residential,industrial" />
+					<property name="distance" value="1000" />
+				</objective>
+			</if>
+				
+			<else>
+				<objective type="RandomPOIGoto">
+					<property name="phase" value="1"/>
+					<property name="biome_filter_type" value="SameBiome" param1="biome_filter_type"/>
+					<property name="biome_filter" value="" param1="biome_filter"/>
+					<property name="nav_object" value="quest"/>
+				</objective>
+			</else>
+		</conditional>
+
+		<objective type="RallyPoint">
+					<property name="phase" value="2"/>
+					<property name="nav_object" value="rally" />
+		</objective>
+		
+		
+		
+		<objective type="StayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="200"/>
+		</objective>
+		
+		<action type="GameEvent" >
+			<property name="event" value="flogi_give_quest_item_1"/>
+			<property name="phase" value="3"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		
+		
+		
+		<objective type="BlockPlace" id="questGeneratorSmall" value="1" phase="3"/>
+
+		<action type="GameEvent" >
+			<property name="event" value="tier6_flogi_fortify_start"/>
+			<property name="phase" value="4"/>
+			<property name="hidden" value="true"/>
+		</action>
+		
+		<action type="SpawnGSEnemy">
+			<property name="gamestage_list" value="SleeperGSList"/>
+			<property name="count" value="18-22" param1="finish_spawn_count"/>
+			<property name="phase" value="4"/>
+		</action>
+		
+		<objective type="StayWithin">
+			<property name="phase" value="4"/>
+			<property name="radius" value="200"/>
+		</objective>
+		
+		
+		
+		
+	   <objective type="EntityKill" entity_names="Any Zombie" value="150" phase="4" />
+
+	   
+	   
+	   	<objective type="GameEvent">
+			<property name="event" value="tier6_flogi_fortify_stop" />
+			<property name="event_tag" value="Game" />
+			<property name="phase" value="5"/>
+			<property name="hidden" value="true"/>
+			<property name="force_phase_finish" value="true"/>
+		</objective>
+	   		
+		<objective type="ReturnToNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="6"/>
+			<property name="nav_object" value="return_to_trader" />
+		</objective>
+		
+		
+
+		<reward type="Exp" value="20000"/>
+		<reward type="Item" id="casinoCoin" value="2500"/>
+		
+	
+			
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestArmorResources" ischosen="true" value="1"/>
+				<reward type="LootItem" id="groupQuestFood,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="4"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestMedical,groupQuestAmmo,groupQuestSchematics,groupQuestMods" ischosen="true" value="5"/>
+				<reward type="LootItem" id="groupQuestGas,groupQuestSteel02" ischosen="true"/>
+				<reward type="LootItem" id="groupQuestResourcesT1,groupQuestT1SkillMagazineBundle" ischosen="true"/>
+				
+		
+		
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod') and mod_loaded('0-SCore_sphereii')">
+				<reward type="GiveCvarDMT, SCore" id="$flogi_perk_20_XP" value="2000" />		</if>
+		</conditional>
+
+		<conditional>
+			<if cond="mod_loaded('Flogis_perk_mod')">
+				<reward type="Item" id="flogis_perks_quest_coin" value="6"/>
+				<reward type="Item" id="flogis_perks_quest_coin_food" value="6"/>
+				<reward type="Item" id="flogis_perks_quest_coin_cans" value="6"/>
+			</if>
+		</conditional>
+		
+	</quest>
+  
+	
+</insertAfter>
+
+
+<append xpath="/quests/quest_list[@id='trader_rekt_quests']">
+	<quest id="tier1_flogi_fortify"/>
+	<quest id="tier2_flogi_fortify"/>
+	<quest id="tier3_flogi_fortify"/>
+	<quest id="tier4_flogi_fortify"/>
+	<quest id="tier5_flogi_fortify"/>
+	<quest id="tier6_flogi_fortify"/>
+	<quest id="tier1_flogi_explosives"/>
+	<quest id="tier2_flogi_explosives"/>
+	<quest id="tier3_flogi_explosives"/>
+	<quest id="tier4_flogi_explosives"/>
+	<quest id="tier5_flogi_explosives"/>
+	<quest id="tier6_flogi_explosives"/>
+	<quest id="tier1_flogi_desperate_defence"/>
+	<quest id="tier2_flogi_desperate_defence"/>
+	<quest id="tier3_flogi_desperate_defence"/>
+	<quest id="tier4_flogi_desperate_defence"/>
+	<quest id="tier5_flogi_desperate_defence"/>
+	<quest id="tier6_flogi_desperate_defence"/>
+	<quest id="tier1_flogi_raze"/>
+	<quest id="tier2_flogi_raze"/>
+	<quest id="tier3_flogi_raze"/>
+	<quest id="tier4_flogi_raze"/>
+	<quest id="tier5_flogi_raze"/>
+	<quest id="tier6_flogi_raze"/>
+	</append>
+	<append xpath="/quests/quest_list[@id='trader_jen_quests']">
+	<quest id="tier1_flogi_fortify"/>
+	<quest id="tier2_flogi_fortify"/>
+	<quest id="tier3_flogi_fortify"/>
+	<quest id="tier4_flogi_fortify"/>
+	<quest id="tier5_flogi_fortify"/>
+	<quest id="tier6_flogi_fortify"/>
+	<quest id="tier1_flogi_explosives"/>
+	<quest id="tier2_flogi_explosives"/>
+	<quest id="tier3_flogi_explosives"/>
+	<quest id="tier4_flogi_explosives"/>
+	<quest id="tier5_flogi_explosives"/>
+	<quest id="tier6_flogi_explosives"/>
+	<quest id="tier1_flogi_desperate_defence"/>
+	<quest id="tier2_flogi_desperate_defence"/>
+	<quest id="tier3_flogi_desperate_defence"/>
+	<quest id="tier4_flogi_desperate_defence"/>
+	<quest id="tier5_flogi_desperate_defence"/>
+	<quest id="tier6_flogi_desperate_defence"/>
+	<quest id="tier1_flogi_raze"/>
+	<quest id="tier2_flogi_raze"/>
+	<quest id="tier3_flogi_raze"/>
+	<quest id="tier4_flogi_raze"/>
+	<quest id="tier5_flogi_raze"/>
+	<quest id="tier6_flogi_raze"/>
+	</append>
+	<append xpath="/quests/quest_list[@id='trader_bob_quests']">
+	<quest id="tier1_flogi_fortify"/>
+	<quest id="tier2_flogi_fortify"/>
+	<quest id="tier3_flogi_fortify"/>
+	<quest id="tier4_flogi_fortify"/>
+	<quest id="tier5_flogi_fortify"/>
+	<quest id="tier6_flogi_fortify"/>
+	<quest id="tier1_flogi_explosives"/>
+	<quest id="tier2_flogi_explosives"/>
+	<quest id="tier3_flogi_explosives"/>
+	<quest id="tier4_flogi_explosives"/>
+	<quest id="tier5_flogi_explosives"/>
+	<quest id="tier6_flogi_explosives"/>
+	<quest id="tier1_flogi_desperate_defence"/>
+	<quest id="tier2_flogi_desperate_defence"/>
+	<quest id="tier3_flogi_desperate_defence"/>
+	<quest id="tier4_flogi_desperate_defence"/>
+	<quest id="tier5_flogi_desperate_defence"/>
+	<quest id="tier6_flogi_desperate_defence"/>
+	<quest id="tier1_flogi_raze"/>
+	<quest id="tier2_flogi_raze"/>
+	<quest id="tier3_flogi_raze"/>
+	<quest id="tier4_flogi_raze"/>
+	<quest id="tier5_flogi_raze"/>
+	<quest id="tier6_flogi_raze"/>
+	</append>
+	<append xpath="/quests/quest_list[@id='trader_hugh_quests']">
+	<quest id="tier1_flogi_fortify"/>
+	<quest id="tier2_flogi_fortify"/>
+	<quest id="tier3_flogi_fortify"/>
+	<quest id="tier4_flogi_fortify"/>
+	<quest id="tier5_flogi_fortify"/>
+	<quest id="tier6_flogi_fortify"/>
+	<quest id="tier1_flogi_explosives"/>
+	<quest id="tier2_flogi_explosives"/>
+	<quest id="tier3_flogi_explosives"/>
+	<quest id="tier4_flogi_explosives"/>
+	<quest id="tier5_flogi_explosives"/>
+	<quest id="tier6_flogi_explosives"/>
+	<quest id="tier1_flogi_desperate_defence"/>
+	<quest id="tier2_flogi_desperate_defence"/>
+	<quest id="tier3_flogi_desperate_defence"/>
+	<quest id="tier4_flogi_desperate_defence"/>
+	<quest id="tier5_flogi_desperate_defence"/>
+	<quest id="tier6_flogi_desperate_defence"/>
+	<quest id="tier1_flogi_raze"/>
+	<quest id="tier2_flogi_raze"/>
+	<quest id="tier3_flogi_raze"/>
+	<quest id="tier4_flogi_raze"/>
+	<quest id="tier5_flogi_raze"/>
+	<quest id="tier6_flogi_raze"/>
+	</append>
+	<append xpath="/quests/quest_list[@id='trader_joel_quests']">
+	<quest id="tier1_flogi_fortify"/>
+	<quest id="tier2_flogi_fortify"/>
+	<quest id="tier3_flogi_fortify"/>
+	<quest id="tier4_flogi_fortify"/>
+	<quest id="tier5_flogi_fortify"/>
+	<quest id="tier6_flogi_fortify"/>
+	<quest id="tier1_flogi_explosives"/>
+	<quest id="tier2_flogi_explosives"/>
+	<quest id="tier3_flogi_explosives"/>
+	<quest id="tier4_flogi_explosives"/>
+	<quest id="tier5_flogi_explosives"/>
+	<quest id="tier6_flogi_explosives"/>
+	<quest id="tier1_flogi_desperate_defence"/>
+	<quest id="tier2_flogi_desperate_defence"/>
+	<quest id="tier3_flogi_desperate_defence"/>
+	<quest id="tier4_flogi_desperate_defence"/>
+	<quest id="tier5_flogi_desperate_defence"/>
+	<quest id="tier6_flogi_desperate_defence"/>
+	<quest id="tier1_flogi_raze"/>
+	<quest id="tier2_flogi_raze"/>
+	<quest id="tier3_flogi_raze"/>
+	<quest id="tier4_flogi_raze"/>
+	<quest id="tier5_flogi_raze"/>
+	<quest id="tier6_flogi_raze"/>
+	</append>
+	
+	
+	<conditional>
+      <if cond="mod_loaded('DarknessFallsCore')">
+	  
+	<append xpath="/quests/quest_list[@id='trader_quests_rekt']">
+	<quest id="tier1_flogi_fortify"/>
+	<quest id="tier2_flogi_fortify"/>
+	<quest id="tier3_flogi_fortify"/>
+	<quest id="tier4_flogi_fortify"/>
+	<quest id="tier5_flogi_fortify"/>
+	<quest id="tier6_flogi_fortify"/>
+	<quest id="tier1_flogi_explosives"/>
+	<quest id="tier2_flogi_explosives"/>
+	<quest id="tier3_flogi_explosives"/>
+	<quest id="tier4_flogi_explosives"/>
+	<quest id="tier5_flogi_explosives"/>
+	<quest id="tier6_flogi_explosives"/>
+	<quest id="tier1_flogi_desperate_defence"/>
+	<quest id="tier2_flogi_desperate_defence"/>
+	<quest id="tier3_flogi_desperate_defence"/>
+	<quest id="tier4_flogi_desperate_defence"/>
+	<quest id="tier5_flogi_desperate_defence"/>
+	<quest id="tier6_flogi_desperate_defence"/>
+	<quest id="tier1_flogi_raze"/>
+	<quest id="tier2_flogi_raze"/>
+	<quest id="tier3_flogi_raze"/>
+	<quest id="tier4_flogi_raze"/>
+	<quest id="tier5_flogi_raze"/>
+	<quest id="tier6_flogi_raze"/>
+	</append>
+	<append xpath="/quests/quest_list[@id='trader_quests_jen']">
+	<quest id="tier1_flogi_fortify"/>
+	<quest id="tier2_flogi_fortify"/>
+	<quest id="tier3_flogi_fortify"/>
+	<quest id="tier4_flogi_fortify"/>
+	<quest id="tier5_flogi_fortify"/>
+	<quest id="tier6_flogi_fortify"/>
+	<quest id="tier1_flogi_explosives"/>
+	<quest id="tier2_flogi_explosives"/>
+	<quest id="tier3_flogi_explosives"/>
+	<quest id="tier4_flogi_explosives"/>
+	<quest id="tier5_flogi_explosives"/>
+	<quest id="tier6_flogi_explosives"/>
+	<quest id="tier1_flogi_desperate_defence"/>
+	<quest id="tier2_flogi_desperate_defence"/>
+	<quest id="tier3_flogi_desperate_defence"/>
+	<quest id="tier4_flogi_desperate_defence"/>
+	<quest id="tier5_flogi_desperate_defence"/>
+	<quest id="tier6_flogi_desperate_defence"/>
+	<quest id="tier1_flogi_raze"/>
+	<quest id="tier2_flogi_raze"/>
+	<quest id="tier3_flogi_raze"/>
+	<quest id="tier4_flogi_raze"/>
+	<quest id="tier5_flogi_raze"/>
+	<quest id="tier6_flogi_raze"/>
+	</append>
+	<append xpath="/quests/quest_list[@id='trader_quests_bob']">
+	<quest id="tier1_flogi_fortify"/>
+	<quest id="tier2_flogi_fortify"/>
+	<quest id="tier3_flogi_fortify"/>
+	<quest id="tier4_flogi_fortify"/>
+	<quest id="tier5_flogi_fortify"/>
+	<quest id="tier6_flogi_fortify"/>
+	<quest id="tier1_flogi_explosives"/>
+	<quest id="tier2_flogi_explosives"/>
+	<quest id="tier3_flogi_explosives"/>
+	<quest id="tier4_flogi_explosives"/>
+	<quest id="tier5_flogi_explosives"/>
+	<quest id="tier6_flogi_explosives"/>
+	<quest id="tier1_flogi_desperate_defence"/>
+	<quest id="tier2_flogi_desperate_defence"/>
+	<quest id="tier3_flogi_desperate_defence"/>
+	<quest id="tier4_flogi_desperate_defence"/>
+	<quest id="tier5_flogi_desperate_defence"/>
+	<quest id="tier6_flogi_desperate_defence"/>
+	<quest id="tier1_flogi_raze"/>
+	<quest id="tier2_flogi_raze"/>
+	<quest id="tier3_flogi_raze"/>
+	<quest id="tier4_flogi_raze"/>
+	<quest id="tier5_flogi_raze"/>
+	<quest id="tier6_flogi_raze"/>
+	</append>
+	<append xpath="/quests/quest_list[@id='trader_quests_hugh']">
+	<quest id="tier1_flogi_fortify"/>
+	<quest id="tier2_flogi_fortify"/>
+	<quest id="tier3_flogi_fortify"/>
+	<quest id="tier4_flogi_fortify"/>
+	<quest id="tier5_flogi_fortify"/>
+	<quest id="tier6_flogi_fortify"/>
+	<quest id="tier1_flogi_explosives"/>
+	<quest id="tier2_flogi_explosives"/>
+	<quest id="tier3_flogi_explosives"/>
+	<quest id="tier4_flogi_explosives"/>
+	<quest id="tier5_flogi_explosives"/>
+	<quest id="tier6_flogi_explosives"/>
+	<quest id="tier1_flogi_desperate_defence"/>
+	<quest id="tier2_flogi_desperate_defence"/>
+	<quest id="tier3_flogi_desperate_defence"/>
+	<quest id="tier4_flogi_desperate_defence"/>
+	<quest id="tier5_flogi_desperate_defence"/>
+	<quest id="tier6_flogi_desperate_defence"/>
+	<quest id="tier1_flogi_raze"/>
+	<quest id="tier2_flogi_raze"/>
+	<quest id="tier3_flogi_raze"/>
+	<quest id="tier4_flogi_raze"/>
+	<quest id="tier5_flogi_raze"/>
+	<quest id="tier6_flogi_raze"/>
+	</append>
+	<append xpath="/quests/quest_list[@id='trader_quests_joel']">
+	<quest id="tier1_flogi_fortify"/>
+	<quest id="tier2_flogi_fortify"/>
+	<quest id="tier3_flogi_fortify"/>
+	<quest id="tier4_flogi_fortify"/>
+	<quest id="tier5_flogi_fortify"/>
+	<quest id="tier6_flogi_fortify"/>
+	<quest id="tier1_flogi_explosives"/>
+	<quest id="tier2_flogi_explosives"/>
+	<quest id="tier3_flogi_explosives"/>
+	<quest id="tier4_flogi_explosives"/>
+	<quest id="tier5_flogi_explosives"/>
+	<quest id="tier6_flogi_explosives"/>
+	<quest id="tier1_flogi_desperate_defence"/>
+	<quest id="tier2_flogi_desperate_defence"/>
+	<quest id="tier3_flogi_desperate_defence"/>
+	<quest id="tier4_flogi_desperate_defence"/>
+	<quest id="tier5_flogi_desperate_defence"/>
+	<quest id="tier6_flogi_desperate_defence"/>
+	<quest id="tier1_flogi_raze"/>
+	<quest id="tier2_flogi_raze"/>
+	<quest id="tier3_flogi_raze"/>
+	<quest id="tier4_flogi_raze"/>
+	<quest id="tier5_flogi_raze"/>
+	<quest id="tier6_flogi_raze"/>
+	</append>
+	<append xpath="/quests/quest_list[@id='trader_quests_caitlin']">
+	<quest id="tier1_flogi_fortify"/>
+	<quest id="tier2_flogi_fortify"/>
+	<quest id="tier3_flogi_fortify"/>
+	<quest id="tier4_flogi_fortify"/>
+	<quest id="tier5_flogi_fortify"/>
+	<quest id="tier6_flogi_fortify"/>
+	<quest id="tier1_flogi_explosives"/>
+	<quest id="tier2_flogi_explosives"/>
+	<quest id="tier3_flogi_explosives"/>
+	<quest id="tier4_flogi_explosives"/>
+	<quest id="tier5_flogi_explosives"/>
+	<quest id="tier6_flogi_explosives"/>
+	<quest id="tier1_flogi_desperate_defence"/>
+	<quest id="tier2_flogi_desperate_defence"/>
+	<quest id="tier3_flogi_desperate_defence"/>
+	<quest id="tier4_flogi_desperate_defence"/>
+	<quest id="tier5_flogi_desperate_defence"/>
+	<quest id="tier6_flogi_desperate_defence"/>
+	<quest id="tier1_flogi_raze"/>
+	<quest id="tier2_flogi_raze"/>
+	<quest id="tier3_flogi_raze"/>
+	<quest id="tier4_flogi_raze"/>
+	<quest id="tier5_flogi_raze"/>
+	<quest id="tier6_flogi_raze"/>
+	</append>
+	
+	 </if>
+	</conditional>
+	
+	
+	
+
+</Config>

@@ -116,6 +116,7 @@
 		<property name="on_complete" value="true" />
     </action>
 </insertBefore>
+
 <insertBefore xpath="//quest[starts-with(@id,'tier3_clear_infested')]/reward[@type='Exp']">
 	<action type="SetCVar">
 		<property name="cvar" value="HOH_Questing_XP_temp" />
@@ -270,9 +271,73 @@
 </insertBefore>
 
 
+<!-- special quest alterations-->
+<insertBefore xpath="//quest[contains(@id,'superinfested')]/reward[@type='Exp']">
+	<action type="SetCVar">
+		<property name="cvar" value="HOH_Questing_XP_temp" />
+		<property name="value" value="120" />
+		<property name="on_complete" value="true" />
+    </action>
+</insertBefore>
+<insertBefore xpath="//quest[contains(@id,'ultrainfested')]/reward[@type='Exp']">
+	<action type="SetCVar">
+		<property name="cvar" value="HOH_Questing_XP_temp" />
+		<property name="value" value="120" />
+		<property name="on_complete" value="true" />
+    </action>
+</insertBefore>
+<insertBefore xpath="//quest[contains(@id,'nightmare')]/reward[@type='Exp']">
+	<action type="SetCVar">
+		<property name="cvar" value="HOH_Questing_XP_temp" />
+		<property name="value" value="180" />
+		<property name="on_complete" value="true" />
+    </action>
+</insertBefore>
 
 
- 
+<insertBefore xpath="//quest[contains(@id,'tier1_flogi')]/reward[@type='Exp']">
+	<action type="SetCVar">
+		<property name="cvar" value="HOH_Questing_XP_temp" />
+		<property name="value" value="50" />
+		<property name="on_complete" value="true" />
+    </action>
+</insertBefore><insertBefore xpath="//quest[contains(@id,'tier2_flogi')]/reward[@type='Exp']">
+	<action type="SetCVar">
+		<property name="cvar" value="HOH_Questing_XP_temp" />
+		<property name="value" value="100" />
+		<property name="on_complete" value="true" />
+    </action>
+</insertBefore><insertBefore xpath="//quest[contains(@id,'tier3_flogi')]/reward[@type='Exp']">
+	<action type="SetCVar">
+		<property name="cvar" value="HOH_Questing_XP_temp" />
+		<property name="value" value="150" />
+		<property name="on_complete" value="true" />
+    </action>
+</insertBefore><insertBefore xpath="//quest[contains(@id,'tier4_flogi')]/reward[@type='Exp']">
+	<action type="SetCVar">
+		<property name="cvar" value="HOH_Questing_XP_temp" />
+		<property name="value" value="200" />
+		<property name="on_complete" value="true" />
+    </action>
+</insertBefore><insertBefore xpath="//quest[contains(@id,'tier5_flogi')]/reward[@type='Exp']">
+	<action type="SetCVar">
+		<property name="cvar" value="HOH_Questing_XP_temp" />
+		<property name="value" value="250" />
+		<property name="on_complete" value="true" />
+    </action>
+</insertBefore>
+<insertBefore xpath="//quest[contains(@id,'tier6_flogi')]/reward[@type='Exp']">
+	<action type="SetCVar">
+		<property name="cvar" value="HOH_Questing_XP_temp" />
+		<property name="value" value="300" />
+		<property name="on_complete" value="true" />
+    </action>
+</insertBefore>
+
+
+
+
+tier6_flogi 
 	<remove xpath="/quests/quest/reward[starts-with(@id,'groupQuestT1SkillMagazineBundle')]"/>
 
 <remove xpath="/quests/quest/reward[starts-with(@id,'groupQuestMotorcycleParts')]"/>
@@ -284,9 +349,15 @@
 
 	<!--<remove xpath="/quests/quest/reward[starts-with(@id,'groupQuestAmmo,groupQuestSchematics,groupQuestMods,groupQuestT1SkillMagazineBundle')]"/>
 	<remove xpath="/quests/quest/reward[starts-with(@id,'groupQuestAmmo,groupQuestResources,groupQuestMods,groupQuestT1SkillMagazineBundle')]"/>-->
-	<set xpath="//quest/reward[(@id='groupQuestResourcesT0,groupQuestT1SkillMagazineBundle')]/@id">groupQuestResourcesT0</set>
-	<set xpath="//quest/reward[(@id='groupQuestResourcesT1,groupQuestT1SkillMagazineBundle')]/@id">groupQuestResourcesT1</set>
-	<set xpath="//quest/reward[(@id='groupQuestSchematics,groupQuestT1SkillMagazineBundle')]/@id">groupQuestSchematics</set>
+	<set xpath="//quest/reward[@id='groupQuestResourcesT0,groupQuestT1SkillMagazineBundle']/@id">groupQuestResourcesT0</set>
+	<set xpath="//quest/reward[@id='groupQuestResourcesT1,groupQuestT1SkillMagazineBundle']/@id">groupQuestResourcesT1</set>
+	<set xpath="//quest/reward[@id='groupQuestSchematics,groupQuestT1SkillMagazineBundle']/@id">groupQuestSchematics</set>
+
+
+<set xpath="//quest/reward[@id='groupQuestAmmo,groupQuestSchematics,groupQuestMods,groupQuestT1SkillMagazineBundle']/@id">groupQuestAmmo,groupQuestSchematics,groupQuestMods</set>
+
+
+	
 	
 
 
@@ -1140,8 +1211,14 @@
 	<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="2" />	
 
 </append>
-
-
+ 
+<insertBefore xpath="//quest[starts-with(@id,'KillQuest')]/reward[@type='Exp']">
+	<action type="SetCVar">
+		<property name="cvar" value="HOH_Questing_XP_temp" />
+		<property name="value" value="50" />
+		<property name="on_complete" value="true" />
+    </action>
+</insertBefore>
 
 
 

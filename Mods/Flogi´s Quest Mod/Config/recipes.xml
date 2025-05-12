@@ -1,0 +1,22 @@
+<configs>
+
+
+	<append xpath="/recipes">
+
+		<recipe name="flogi_block_bomb" craft_time="20" count="1" craft_area="workbench" >
+			<ingredient name="resourceGunPowder" count="1000"/>
+			<ingredient name="ammoGasCan" count="50"/>
+		</recipe>
+		
+		<recipe name="thrownQuestBomb" craft_time="20" count="1" craft_area="workbench" >
+			<ingredient name="resourceGunPowder" count="25"/>
+			<ingredient name="resourceElectricParts" count="10"/>
+			<ingredient name="resourceForgedIron" count="5"/>
+		</recipe>
+		
+		
+		
+	</append>
+
+
+</configs>

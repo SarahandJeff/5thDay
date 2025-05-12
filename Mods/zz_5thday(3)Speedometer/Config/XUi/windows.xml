@@ -51,9 +51,10 @@
 			<sprite name="Scale" depth="5" pos="75,-75" width="150" height="150" sprite="altometer" pivot="center" globalopacitymod="1.9"/>
 				<label depth="6" name="elevLabel" pos="40,-60" width="250" height="28" text="{mapelevation} M[-]" color="[black]" font_size="48"/>
 				
-			</rect>
-					
 			
+        </rect>	
+			
+		
 		</window>
 	</append>
 </configs>

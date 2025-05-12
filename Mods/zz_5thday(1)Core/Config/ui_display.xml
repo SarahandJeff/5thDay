@@ -14,6 +14,22 @@
 			<crafting_category name="CFFood/Cooking" icon="ui_game_symbol_fork" display_name="lblCategoryFood" />
 			<crafting_category name="CFDrink/Cooking" icon="ui_game_symbol_thirst" display_name="lblCategoryDrink" />
 </crafting_category_list>
+
+<crafting_category_list display_type="5thday_Range">
+	<crafting_category name="CFFood/Cooking" icon="ui_game_symbol_fork" display_name="lblCategoryFood" />
+	<crafting_category name="CFDrink/Cooking" icon="ui_game_symbol_thirst" display_name="lblCategoryDrink" />
+</crafting_category_list>
+
+<crafting_category_list display_type="HOH_Collection_workstations_PrepTable">
+	<crafting_category name="CFFood/Cooking" icon="ui_game_symbol_fork" display_name="lblCategoryFood" />
+</crafting_category_list>
+
+
+
+<crafting_category_list display_type="HOH_Collection_workstations_CoffeeMaker">
+	<crafting_category name="CFDrink/Cooking" icon="ui_game_symbol_thirst" display_name="lblCategoryDrink" />
+</crafting_category_list>
+       
 </append>
 
 

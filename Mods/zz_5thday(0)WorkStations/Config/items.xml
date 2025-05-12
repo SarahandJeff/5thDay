@@ -102,6 +102,10 @@
 <append xpath="//item[starts-with(@name, 'resourceScrapBrass')]/property[@name='Group']/@value">,Recycling</append>
 <append xpath="//item[starts-with(@name, 'resourceScrapIron')]/property[@name='Group']/@value">,Recycling</append>
 <append xpath="//item[starts-with(@name, 'resourceScrapLead')]/property[@name='Group']/@value">,Recycling</append>
+<append xpath="//item[starts-with(@name, 'resourceScrapPolymers')]/property[@name='Group']/@value">,Recycling</append>
+
+<append xpath="//item[starts-with(@name, 'resourceElectricParts')]/property[@name='Group']/@value">,Recycling</append>
+<append xpath="//item[starts-with(@name, 'resourceMechanicalParts')]/property[@name='Group']/@value">,Recycling</append>
 
 
 </snj>

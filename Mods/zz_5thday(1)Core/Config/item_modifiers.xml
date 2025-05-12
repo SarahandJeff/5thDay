@@ -36,7 +36,7 @@
 		<property name="TraderStageTemplate" value="modsTier3"/>
 		<property name="Material" value="Msteel"/>
 		<property name="EconomicValue" value="1000"/>
-        <property name="CustomIconTint" value="149,52,54"/>
+        <property name="CustomIconTint" value="#e6c300"/>
 		<property name="UnlockedBy" value="perkLuckyLooterComplete"/>
 	<effect_group tiered="false">
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
@@ -49,4 +49,90 @@
 	</item_modifier>
 </append>
 
+
+
+<!-- Dyes -->
+<append xpath="/item_modifiers">
+	<item_modifier name="modDyeArcherGreen" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".1">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="DescriptionKey" value="modDyeGroupDesc"/>
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="CustomIconTint" value="15, 255, 80"/>
+		<property name="Material" value="Mpaint"/>
+		<property name="Weight" value="20"/>
+		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
+		
+		<item_property_overrides name="*">
+			<property name="TintColor" value="15, 255, 80"/>
+			<property name="CustomIconTint" value="15, 255, 80"/>
+		</item_property_overrides>
+	</item_modifier>
+	<item_modifier name="modDyeArcherRed" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".1">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="DescriptionKey" value="modDyeGroupDesc"/>
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="CustomIconTint" value="255, 49, 49"/>
+		<property name="Material" value="Mpaint"/>
+		<property name="Weight" value="20"/>
+		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
+		
+		<item_property_overrides name="*">
+			<property name="TintColor" value="255, 49, 49"/>
+			<property name="CustomIconTint" value="255, 49, 49"/>
+		</item_property_overrides>
+	</item_modifier>
+	<item_modifier name="modDyeArcherBlue" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".1">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="DescriptionKey" value="modDyeGroupDesc"/>
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="CustomIconTint" value="31,81,255"/>
+		<property name="Material" value="Mpaint"/>
+		<property name="Weight" value="20"/>
+		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
+		
+		<item_property_overrides name="*">
+			<property name="TintColor" value="31,81,255"/>
+			<property name="CustomIconTint" value="31,81,255"/>
+		</item_property_overrides>
+	</item_modifier>
+    <item_modifier name="modDyeArcherPink" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".1">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="DescriptionKey" value="modDyeGroupDesc"/>
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="CustomIconTint" value="255,70,162"/>
+		<property name="Material" value="Mpaint"/>
+		<property name="Weight" value="20"/>
+		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
+		
+		<item_property_overrides name="*">
+			<property name="TintColor" value="255,70,162"/>
+			<property name="CustomIconTint" value="255,70,162"/>
+		</item_property_overrides>
+	</item_modifier>
+	<item_modifier name="modDyeArcherOrange" installable_tags="clothing,armor,weapon,tool,vehicle,drone" modifier_tags="dye" type="attachment" cosmetic_install_chance=".1">
+		<property name="Extends" value="modGeneralMaster"/>
+		<property name="DescriptionKey" value="modDyeGroupDesc"/>
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="CustomIconTint" value="255,95,31"/>
+		<property name="Material" value="Mpaint"/>
+		<property name="Weight" value="20"/>
+		<property name="EconomicValue" value="50"/>
+		<property name="SoundPickup" value="dye_grab"/>
+		<property name="SoundPlace" value="dye_place"/>
+		
+		<item_property_overrides name="*">
+			<property name="TintColor" value="255,95,31"/>
+			<property name="CustomIconTint" value="255,95,31"/>
+		</item_property_overrides>
+	</item_modifier>
+	
+	</append>
 </snj>

@@ -148,10 +148,10 @@
         <item name="PistolBundleDeagle"/>
 	</lootgroup>
 	<lootgroup name="groupSubSoldier_T0" count="all" loot_quality_template="QLTemplateT2">
-		<item name="TAUMP"/>
+		<item name="5thday_Vector"/>
 	</lootgroup>
 	<lootgroup name="groupSubSoldier_T1" count="all" loot_quality_template="QLTemplateT3">
-		<item name="TAMP5N"/>
+		<item name="5thday_Ump"/>
 	</lootgroup>
 
 
@@ -327,6 +327,16 @@
         <item group="twitch_bicycleComplete"/>
         
 </append>
+ <append xpath="/lootcontainers/lootgroup[@name='groupFarmTruck03']">
+        
+        <item name="sickle" min="3" max="5" weight="0.05"/> <!-- 5% chance -->
+    </append>
 
-
+    <append xpath="/lootcontainers/lootgroup[@name='groupFarmTruck04']">
+        
+        <item name="sickle" min="3" max="5" weight="0.05"/> <!-- 5% chance -->
+    </append>
+<set xpath="//lootgroup/item[@name='meleeToolRepairT0StoneAxe']/@name">HOHMilitaryaxe</set>
+<set xpath="//lootgroup/item[@name='meleeToolShovelT0StoneShovel']/@name">HOHMilitaryShovel</set>
+<set xpath="//lootgroup[@name='groupPassNGas01']/item[@name='meleeToolSalvageT3ImpactDriver5d']/@loot_prob_template">lowDelayed</set>
 </snj>

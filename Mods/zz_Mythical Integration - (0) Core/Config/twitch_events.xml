@@ -18,10 +18,10 @@
 
 	<bit_event event_title="Party Girl 69 Bits" event_name="myth_bit_partygirl" start_amount="69" end_amount="69" 
 		safe_allowed="false" cooldown_allowed="false" vote_allowed="false" pimp_pot_add="5" />
-	<bit_event event_title="Demo Bits 1" event_name="spawn_demo" start_amount="200" end_amount="419" 
+	<bit_event event_title="Demo Bits 1" event_name="spawn_demo" start_amount="200" end_amount="420" 
 		safe_allowed="false" cooldown_allowed="false" vote_allowed="false" pimp_pot_add="10" />
-	<bit_event event_title="Wake and Bake Bits" event_name="myth_horde_wake_and_bake" start_amount="420" end_amount="420" 
-		safe_allowed="false" cooldown_allowed="false" vote_allowed="false" pimp_pot_add="10" />
+	<!--<bit_event event_title="Wake and Bake Bits" event_name="myth_horde_wake_and_bake" start_amount="420" end_amount="420" 
+		safe_allowed="false" cooldown_allowed="false" vote_allowed="false" pimp_pot_add="10" />-->
 	<bit_event event_title="Demo Bits 2" event_name="spawn_demo" start_amount="421" end_amount="999" 
 		safe_allowed="false" cooldown_allowed="false" vote_allowed="false" pimp_pot_add="10" />
 	<bit_event event_title="Grace Bits" event_name="spawn_grace" start_amount="1000" 
@@ -91,9 +91,9 @@
 			event_title="Spawn Murder Chicken" event_title_key="TwitchEventChannelPointChicken" event_name="spawn_chicken" 
 			safe_allowed="false" vote_allowed="false" cooldown_add="60" global_cooldown="60" pimp_pot_add="10" cost="500" presets="casual,standard"/>
 	
-		<channel_point_event channel_point_title="7DTD: Bunny From Hell" channel_point_title_key="TwitchEventChannelPointBunnyTitle" 
-			event_title="Spawn Bunny from hell" event_title_key="TwitchEventChannelPointChicken" event_name="spawn_bunny" 
-			safe_allowed="false" vote_allowed="false" cooldown_add="60" global_cooldown="60" pimp_pot_add="10" cost="500" presets="casual,standard"/>
+		<channel_point_event channel_point_title="7DTD: Bunnys From Hell" channel_point_title_key="TwitchEventChannelPointBunnyTitle" 
+			event_title="Spawn Bunnys from hell" event_title_key="TwitchEventChannelPointBunny" event_name="spawn_bunny" 
+			safe_allowed="false" vote_allowed="false" cooldown_allowed="false" cooldown_add="120" global_cooldown="120" pimp_pot_add="10" cost="500" presets="casual,standard"/>
 	
 		<!--<channel_point_event channel_point_title="7DTD: Mystery Supplies" channel_point_title_key="TwitchEventChannelPointMysteryTitle" 
 			event_title="Mystery Supplies" event_title_key="TwitchEventChannelPointMystery" event_name="mystery_channelpoint" 

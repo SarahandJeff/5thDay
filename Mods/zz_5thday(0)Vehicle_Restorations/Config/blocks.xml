@@ -3,29 +3,15 @@
 
 
 
-<remove xpath="/blocks/block/drop[@name='vehicleVMWheels']" />
-<remove xpath="/blocks/block/drop[@name='carWheelrims']" />
-
-<remove xpath="/blocks/block/drop[@name='carEngine']" />
-<remove xpath="/blocks/block/drop[@name='damagedcarEngine']" />
-<remove xpath="/blocks/block/drop[@name='damagedcarAlternator']" />
-<remove xpath="/blocks/block/drop[@name='carAlternator']" />
-<remove xpath="/blocks/block/drop[@name='damagedcarCarburetor']" />
-<remove xpath="/blocks/block/drop[@name='ElectricalWire']" />
-<remove xpath="/blocks/block/drop[@name='carCarburetor']" />
-<remove xpath="/blocks/block/drop[@name='damagedcarTransmission']" />
-<remove xpath="/blocks/block/drop[@name='carTransmission']" />
-<remove xpath="/blocks/block/drop[@name='damagedcarChassis']" />
-<remove xpath="/blocks/block/drop[@name='damagedcarSeats']" />
-<remove xpath="/blocks/block/drop[@name='damagedcarBattery']" />
-<remove xpath="/blocks/block/drop[@name='damagedWheel']" />
 
 
 <remove xpath="/blocks/block[contains(@name,'decoCarMotor')]/drop[@name='resourceMechanicalParts']" />
 <remove xpath="/blocks/block[contains(@name,'decoCarMotor')]/drop[@name='resourceMetalPipe']" />
 <remove xpath="/blocks/block[contains(@name,'decoCarMotor')]/drop[@name='smallEngine']" />
 <remove xpath="/blocks/block[contains(@name,'decoCarMotor')]/drop[@name='resourceScrapIron']" />
-<insertafter xpath="//block[contains(@name,'decoCarMotor') and not(contains(@name,'Motorcycle'))  and not(contains(@name,'MiniBike')) and not(contains(@name,'HOHVanillaMiniBike')) and not(contains(@name,'HOHVanillaMotor'))]/drop[@name='terrStone']">
+
+<insertafter xpath="//block[contains(@name,'Sedan')  and contains(@name,'Minivan') and contains(@name,'SUV') and contains(@name,'PickupTruck') and contains(@name,'FireTruck') and contains(@name,'BusSchool') and contains(@name,'PoliceCar') and contains(@name,'SemiTruck')]/drop[@name='terrStone']">
+
       <drop event="Harvest" name="" count="0" tool_category="Disassemble" />
 		<drop event="Destroy" name="HOHEngineComplete" count="0,1" prob="0.25" tool_category="Disassemble" />
     <drop event="Destroy" name="HOHTransmissionComplete" count="0,1" prob="0.25" tool_category="Disassemble" />
@@ -33,11 +19,6 @@
     <drop event="Destroy" name="HOHTransmissionBroken" count="0,1" prob="0.25" tool_category="Disassemble" />
 </insertafter>
 
-
-<insertafter xpath="//block[contains(@name,'DamagedHotRod')]/drop[@name='resourceScrapIron']">
-     
-<drop event="Destroy" count="0"/>
-</insertafter>
 
 
 
@@ -53,7 +34,7 @@
 
 <remove xpath="/blocks/block[contains(@name,'decoCarSeat')]/drop[@name='resourceScrapPolymers']" />
 <append xpath="//block[contains(@name,'decoCarSeat')]">
-  <drop event="Destroy" name="carSeats" count="1" tool_category="Disassemble" />
+  <drop event="Destroy" name="decoCarSeatUpright" count="1" tool_category="Disassemble" />
 </append>
 
 <remove xpath="/blocks/block[contains(@name,'decoCarWheel')]/drop[@name='resourceScrapPolymers']" />
@@ -76,26 +57,26 @@
 
 
 <append xpath="//block[contains(@name,'decoCarFrontDoor')]">
-  <drop event="Destroy" name="carDoors" count="1" tool_category="Disassemble" />
+  <drop event="Destroy" name="decoCarFrontDoorFlat" count="1" tool_category="Disassemble" />
 </append>
 <append xpath="//block[contains(@name,'decoCarBackDoor')]">
-  <drop event="Destroy" name="carDoors" count="1" tool_category="Disassemble" />
+  <drop event="Destroy" name="decoCarBackDoorFlat" count="1" tool_category="Disassemble" />
 </append>
 <remove xpath="/blocks/block[contains(@name,'Bumper')]/drop[@name='resourceScrapPolymers']" />
 <append xpath="//block[contains(@name,'Bumper')]">
-  <drop event="Destroy" name="carBumperFront" count="1" tool_category="Disassemble" />
+  <drop event="Destroy" name="decoCarFrontBumperFlat" count="1" tool_category="Disassemble" />
 </append>
 <remove xpath="/blocks/block[contains(@name,'decoCarHood')]/drop[@name='resourceScrapPolymers']" />
 <append xpath="//block[contains(@name,'decoCarHood')]">
-  <drop event="Destroy" name="carHood" count="1" tool_category="Disassemble" />
+  <drop event="Destroy" name="decoCarHoodFlat" count="1" tool_category="Disassemble" />
 </append>
 <remove xpath="/blocks/block[contains(@name,'decoCarTrunk')]/drop[@name='resourceScrapPolymers']" />
 <append xpath="//block[contains(@name,'decoCarTrunk')]">
-  <drop event="Destroy" name="carTrunk" count="1" tool_category="Disassemble" />
+  <drop event="Destroy" name="decoCarTrunkLidFlat" count="1" tool_category="Disassemble" />
 </append>
 <remove xpath="/blocks/block[contains(@name,'decoCarFender')]/drop[@name='resourceScrapPolymers']" />
 <append xpath="//block[contains(@name,'decoCarFender')]">
-  <drop event="Destroy" name="carFender" count="1" tool_category="Disassemble" />
+  <drop event="Destroy" name="decoCarFenderFlat" count="1" tool_category="Disassemble" />
 </append>
 
 
@@ -1360,7 +1341,7 @@
  
 
 
-<insertafter xpath="//block[contains(@name,'_b') and not(contains(@name,'Motorcycle'))  and not(contains(@name,'MiniBike')) and not(contains(@name,'Rat')) and not(contains(@name,'Cruiser')) and not(contains(@name,'Junker'))  and not(contains(@name,'Golf')) and not(contains(@name,'DirtBike'))]/property[@name='MaxDamage']">
+<insertafter xpath="//block[contains(@name,'_b') and not(contains(@name,'Motorcycle'))  and not(contains(@name,'MiniBike'))]/property[@name='MaxDamage']">
   <property name="Extends" value="cntPickupTruck01White"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="HOHVehicleBolts4" count="4" prob="1" tag="salvageHarvest"/>
@@ -1527,9 +1508,6 @@
 </insertafter>
 
 
-<set xpath="//block[@name='DirtBike_b']/property[@name='MaxDamage']/@value">800</set>
-<set xpath="//block[@name='Cruiser_b']/property[@name='MaxDamage']/@value">800</set>
-<set xpath="//block[@name='Cruiser2_b']/property[@name='MaxDamage']/@value">800</set>
 
 <insertAfter xpath="//block[contains(@name,'Minibike') or contains(@name,'Junker') or contains(@name,'Rat') or contains(@name,'HOHVanillaMotorcycle') or @name='GolfCart_b' or @name='DirtBike_b' or @name='Cruiser_b' or @name='Cruiser2_b' or @name='Junker2_b' or @name='DamagedMotoGuppy' or @name='RepairableMotorcycle' or @name='MotorcycleDamaged' or @name='MotorcycleHalfWreck' or @name='MotorcycleShell' or @name='DamagedVespa' or @name='DamagedBrownQuad' or @name='DamagedVespaKart']/property[@name='MaxDamage']">
  <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
@@ -1549,485 +1527,7 @@
       <drop event="Destroy" count="0"/>
       </insertAfter>
 
-<!-- Stages Upgradeble Vehicles-->
-<append xpath="/blocks">
-      <block name="RepairableBrownJeep1">
-          <property name="Extends" value="cntCar03SedanRepairMaster0"/>
-          <property name="CreativeMode" value="Player"/>
-          <property name="LootList" value="cars"/>
-          <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMCars.unity3d?VMJeep.prefab"/>
-          <property name="MultiBlockDim" value="2,2,5"/>
-          <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableBrownJeep2"/>
-                  <property name="Item" value="vehicleTruck4x4Chassis"/>
-                  <property name="ItemCount" value="1"/>
-                  <property name="UpgradeHitCount" value="4"/>
-                </property>
-          <!-- Salvage -->
-          <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-          <drop event="Harvest" name="resourceScrapIron" count="1" tag="allHarvest"/>
-          <drop event="Destroy" count="0"/>
-          <property name="DowngradeBlock" value="JeepDamaged"/>
-        </block>
-      <block name="RepairableBrownJeep2">
-          <property name="Extends" value="cntCar03SedanRepairMaster0"/>
-          <property name="CreativeMode" value="Player"/>
-          <property name="LootList" value="cars"/>
-          <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMCars.unity3d?VMJeep.prefab"/>
-          <property name="MultiBlockDim" value="2,2,5"/>
-          <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableBrownJeep3"/>
-                  <property name="Item" value="HOHCarWheel"/>
-                  <property name="ItemCount" value="2"/>
-                  <property name="UpgradeHitCount" value="4"/>
-                </property>
-          <!-- Salvage -->
-          <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-          <drop event="Harvest" name="resourceScrapIron" count="1" tag="allHarvest"/>
-          <drop event="Destroy" count="0"/>
-          
-       </block>
-      <block name="RepairableBrownJeep3">
-          <property name="Extends" value="cntCar03SedanRepairMaster0"/>
-          <property name="CreativeMode" value="Player"/>
-          <property name="LootList" value="cars"/>
-          <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMCars.unity3d?VMJeep.prefab"/>
-          <property name="MultiBlockDim" value="2,2,5"/>
-          <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableBrownJeep4"/>
-                  <property name="Item" value="HOHCarWheel"/>
-                  <property name="ItemCount" value="2"/>
-                  <property name="UpgradeHitCount" value="4"/>
-                </property>
-          <!-- Salvage -->
-          <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-          <drop event="Harvest" name="resourceScrapIron" count="1" tag="allHarvest"/>
-          <drop event="Destroy" count="0"/>
-          
-        </block>
-      <block name="RepairableBrownJeep4">
-          <property name="Extends" value="cntCar03SedanRepairMaster0"/>
-          <property name="CreativeMode" value="Player"/>
-          <property name="LootList" value="cars"/>
-          <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMCars.unity3d?VMJeep.prefab"/>
-          <property name="MultiBlockDim" value="2,2,5"/>
-          <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableBrownJeep5"/>
-                  <property name="Item" value="HOHTransmissionComplete"/>
-                  <property name="ItemCount" value="1"/>
-                  <property name="UpgradeHitCount" value="3"/>
-                </property>
-          <!-- Salvage -->
-          <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-          <drop event="Harvest" name="resourceScrapIron" count="1" tag="allHarvest"/>
-          <drop event="Destroy" count="0"/>
-          
-       </block>
-      <block name="RepairableBrownJeep5">
-          <property name="Extends" value="cntCar03SedanRepairMaster0"/>
-          <property name="CreativeMode" value="Player"/>
-          <property name="LootList" value="cars"/>
-          <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMCars.unity3d?VMJeep.prefab"/>
-          <property name="MultiBlockDim" value="2,2,5"/>
-          <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableBrownJeep6"/>
-                  <property name="Item" value="HOHEngineComplete"/>
-                  <property name="ItemCount" value="1"/>
-                  <property name="UpgradeHitCount" value="4"/>
-                </property>
-          <!-- Salvage -->
-          <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-          <drop event="Harvest" name="resourceScrapIron" count="1" tag="allHarvest"/>
-          <drop event="Destroy" count="0"/>
-          
-       </block>
-        <block name="RepairableBrownJeep6">
-          <property name="Extends" value="cntCar03SedanRepairMaster0"/>
-          <property name="CreativeMode" value="Player"/>
-          <property name="LootList" value="cars"/>
-          <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMCars.unity3d?VMJeep.prefab"/>
-          <property name="MultiBlockDim" value="2,2,5"/>
-          <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableBrownJeep7"/>
-                  <property name="Item" value="HOHCarBattery"/>
-                  <property name="ItemCount" value="1"/>
-                  <property name="UpgradeHitCount" value="4"/>
-                </property>
-          <!-- Salvage -->
-          <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-          <drop event="Harvest" name="resourceScrapIron" count="1" tag="allHarvest"/>
-          <drop event="Destroy" count="0"/>
-          
-       </block>
-         <block name="RepairableBrownJeep7">
-          <property name="Extends" value="cntCar03SedanRepairMaster0"/>
-          <property name="CreativeMode" value="Player"/>
-          <property name="LootList" value="cars"/>
-          <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMCars.unity3d?VMJeep.prefab"/>
-          <property name="MultiBlockDim" value="2,2,5"/>
-          <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableBrownJeepSpawner"/>
-                  <property name="Item" value="HOHJeepfluidKit"/>
-                  <property name="ItemCount" value="1"/>
-                  <property name="UpgradeHitCount" value="4"/>
-                </property>
-          <!-- Salvage -->
-          <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-          <drop event="Harvest" name="resourceScrapIron" count="1" tag="allHarvest"/>
-          <drop event="Destroy" count="0"/>
-          
-       </block>
-      <block name="RepairableBrownJeepSpawner">
-            <property name="Material" value="Mmetal"/>
-            <property name="CreativeMode" value="None"/>
-            <property name="Class" value="SpawnCube2SDX, SCore" />
-            <property name="Config" value="ec=vehicleVMJeepC" />
-            <property name="Shape" value="ModelEntity"/>
-            <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMCars.unity3d?VMJeep.prefab"/>
-            <property name="ModelOffset" value="0,0,0"/>
-            <property name="Place" value="TowardsPlacer"/>
-            <property name="Path" value="solid"/>
-            <property name="MultiBlockDim" value="1,1,2"/>
-          </block>
-      <block name="RepairableExplorer1">
-          <property name="Extends" value="cntCar03SedanRepairMaster0"/>
-          <property name="CreativeMode" value="Player"/>
-          <property name="LootList" value="cars"/>
-          <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMTrucksandCustom.unity3d?VMJeepTA.prefab"/>
-          <property name="MultiBlockDim" value="2,2,5"/>
-          <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableExplorer2"/>
-                  <property name="Item" value="vehicleTruck4x4Chassis"/>
-                  <property name="ItemCount" value="1"/>
-                  <property name="UpgradeHitCount" value="4"/>
-                </property>
-          <!-- Salvage -->
-          <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-          <drop event="Harvest" name="resourceScrapIron" count="1" tag="allHarvest"/>
-          <drop event="Destroy" count="0"/>
-          <property name="DowngradeBlock" value="DamagedExplorer"/>
-        </block>
-      <block name="RepairableExplorer2">
-          <property name="Extends" value="cntCar03SedanRepairMaster0"/>
-          <property name="CreativeMode" value="Player"/>
-          <property name="LootList" value="cars"/>
-          <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMTrucksandCustom.unity3d?VMJeepTA.prefab"/>
-          <property name="MultiBlockDim" value="2,2,5"/>
-          <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableExplorer3"/>
-                  <property name="Item" value="HOHCarWheel"/>
-                  <property name="ItemCount" value="2"/>
-                  <property name="UpgradeHitCount" value="4"/>
-                </property>
-          <!-- Salvage -->
-          <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-          <drop event="Harvest" name="resourceScrapIron" count="1" tag="allHarvest"/>
-          <drop event="Destroy" count="0"/>
-          
-        </block>
-      <block name="RepairableExplorer3">
-          <property name="Extends" value="cntCar03SedanRepairMaster0"/>
-          <property name="CreativeMode" value="Player"/>
-          <property name="LootList" value="cars"/>
-          <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMTrucksandCustom.unity3d?VMJeepTA.prefab"/>
-          <property name="MultiBlockDim" value="2,2,5"/>
-          <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableExplorer4"/>
-                  <property name="Item" value="HOHCarWheel"/>
-                  <property name="ItemCount" value="2"/>
-                  <property name="UpgradeHitCount" value="3"/>
-                </property>
-          <!-- Salvage -->
-          <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-          <drop event="Harvest" name="resourceScrapIron" count="1" tag="allHarvest"/>
-          <drop event="Destroy" count="0"/>
-          
-        </block>
-      <block name="RepairableExplorer4">
-          <property name="Extends" value="cntCar03SedanRepairMaster0"/>
-          <property name="CreativeMode" value="Player"/>
-          <property name="LootList" value="cars"/>
-          <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMTrucksandCustom.unity3d?VMJeepTA.prefab"/>
-          <property name="MultiBlockDim" value="2,2,5"/>
-          <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableExplorer5"/>
-                  <property name="Item" value="HOHCarBattery"/>
-                  <property name="ItemCount" value="2"/>
-                  <property name="UpgradeHitCount" value="3"/>
-                </property>
-          <!-- Salvage -->
-          <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-          <drop event="Harvest" name="resourceScrapIron" count="1" tag="allHarvest"/>
-          <drop event="Destroy" count="0"/>
-          
-        </block>
-      <block name="RepairableExplorer5">
-          <property name="Extends" value="cntCar03SedanRepairMaster0"/>
-          <property name="CreativeMode" value="Player"/>
-          <property name="LootList" value="cars"/>
-          <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMTrucksandCustom.unity3d?VMJeepTA.prefab"/>
-          <property name="MultiBlockDim" value="2,2,5"/>
-            <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableExplorer6"/>
-                  <property name="Item" value="HOHTransmissionComplete"/>
-                  <property name="ItemCount" value="1"/>
-                  <property name="UpgradeHitCount" value="4"/>
-                </property>
-          <!-- Salvage -->
-          <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-          <drop event="Harvest" name="resourceScrapIron" count="1" tag="allHarvest"/>
-          <drop event="Destroy" count="0"/>
-          
-        </block>
-        <block name="RepairableExplorer6">
-          <property name="Extends" value="cntCar03SedanRepairMaster0"/>
-          <property name="CreativeMode" value="Player"/>
-          <property name="LootList" value="cars"/>
-          <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMTrucksandCustom.unity3d?VMJeepTA.prefab"/>
-          <property name="MultiBlockDim" value="2,2,5"/>
-            <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableExplorer7"/>
-                  <property name="Item" value="HOHEngineComplete"/>
-                  <property name="ItemCount" value="1"/>
-                  <property name="UpgradeHitCount" value="4"/>
-                </property>
-          <!-- Salvage -->
-          <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-          <drop event="Harvest" name="resourceScrapIron" count="1" tag="allHarvest"/>
-          <drop event="Destroy" count="0"/>
-          
-        </block>
-          <block name="RepairableExplorer7">
-          <property name="Extends" value="cntCar03SedanRepairMaster0"/>
-          <property name="CreativeMode" value="Player"/>
-          <property name="LootList" value="cars"/>
-          <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMTrucksandCustom.unity3d?VMJeepTA.prefab"/>
-          <property name="MultiBlockDim" value="2,2,5"/>
-            <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableExplorerSpawner"/>
-                  <property name="Item" value="HOHJeepfluidKit"/>
-                  <property name="ItemCount" value="1"/>
-                  <property name="UpgradeHitCount" value="4"/>
-                </property>
-          <!-- Salvage -->
-          <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-          <drop event="Harvest" name="resourceScrapIron" count="1" tag="allHarvest"/>
-          <drop event="Destroy" count="0"/>
-          
-        </block>
-      <block name="RepairableExplorerSpawner">
-            <property name="Material" value="Mmetal"/>
-            <property name="CreativeMode" value="None"/>
-            <property name="Class" value="SpawnCube2SDX, SCore" />
-            <property name="Config" value="ec=vehicleVMTacticalJeep" />
-            <property name="Shape" value="ModelEntity"/>
-            <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMTrucksandCustom.unity3d?VMJeepTA.prefab"/>
-            <property name="ModelOffset" value="0,0,0"/>
-            <property name="Place" value="TowardsPlacer"/>
-            <property name="Path" value="solid"/>
-            <property name="MultiBlockDim" value="1,1,2"/>
-          </block>
 
-
-
-
-
-  <block name="RepairableBrownQuad1">
-		<property name="Extends" value="cntCar03SedanRepairMaster0"/>
-		<property name="CreativeMode" value="Player"/>
-		<property name="LootList" value="garbage"/>
-		<property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMCustoms1.unity3d?guppyVehicleQuad.prefab"/>
-		<property name="MultiBlockDim" value="2,1,2"/>
-		<property name="ModelOffset" value="0,0,0"/>
-    <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableBrownQuad2"/>
-                  <property name="Item" value="HOHBikeWheel"/>
-                  <property name="ItemCount" value="4"/>
-                  <property name="UpgradeHitCount" value="4"/>
-                </property>
-		<!-- Salvage -->
-		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
-     <drop event="Harvest" name="HOHVehicleBolts4" count="3" prob="1" tag="salvageHarvest"/>
-    <drop event="Harvest" name="resourceElectricParts" count="2,4" prob="0.18" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHSparkPlugs2" count="1" prob="0.18" tag="salvageHarvest"/>
-    <drop event="Harvest" name="resourceOil" count="2,6" prob="0.17" tag="salvageHarvest"/>
-    <drop event="Harvest" name="resourceMechanicalParts" count="4,8" prob="0.16" tag="salvageHarvest"/>
-    <drop event="Harvest" name="ammoGasCan" count="100,200" prob="0.3" tag="salvageHarvest"/>
-   <!-- <drop event="Harvest" name="HOHBikeBatteryDead" count="1" prob="0.16" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeEngineBroken" count="1" prob="0.12" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeBattery" count="1" prob="0.1" tag="salvageHarvest"/>-->
-    <drop event="Harvest" name="HOHVehicleBolts4" count="1" prob="1" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeInnerTube" count="2" prob="0.30" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeTireBlown" count="2" prob="0.20" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeRim" count="2" prob="0.15" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeTire" count="1,2" prob="0.1" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeWheel" count="1,2" prob="0.05" tag="salvageHarvest"/>
-		<drop event="Destroy" count="0"/>
-		
-</block>
-<block name="RepairableBrownQuad2">
-		<property name="Extends" value="cntCar03SedanRepairMaster0"/>
-		<property name="CreativeMode" value="Player"/>
-		<property name="LootList" value="garbage"/>
-		<property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMCustoms1.unity3d?guppyVehicleQuad.prefab"/>
-		<property name="MultiBlockDim" value="2,1,2"/>
-		<property name="ModelOffset" value="0,0,0"/>
-    <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableBrownQuad3"/>
-                  <property name="Item" value="HOHBikeEngineComplete"/>
-                  <property name="ItemCount" value="1"/>
-                  <property name="UpgradeHitCount" value="2"/>
-                </property>
-		<!-- Salvage -->
-		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
-    	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
-     <drop event="Harvest" name="HOHVehicleBolts4" count="3" prob="1" tag="salvageHarvest"/>
-    <drop event="Harvest" name="resourceElectricParts" count="2,4" prob="0.18" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHSparkPlugs2" count="1" prob="0.18" tag="salvageHarvest"/>
-    <drop event="Harvest" name="resourceOil" count="2,6" prob="0.17" tag="salvageHarvest"/>
-    <drop event="Harvest" name="resourceMechanicalParts" count="4,8" prob="0.16" tag="salvageHarvest"/>
-    <drop event="Harvest" name="ammoGasCan" count="100,200" prob="0.3" tag="salvageHarvest"/>
-   <drop event="Harvest" name="HOHBikeBatteryDead" count="1" prob="0.16" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeEngineBroken" count="1" prob="0.12" tag="salvageHarvest"/>
-   <!--  <drop event="Harvest" name="HOHBikeBattery" count="1" prob="0.1" tag="salvageHarvest"/>-->
-    <drop event="Harvest" name="HOHVehicleBolts4" count="1" prob="1" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeInnerTube" count="2" prob="0.30" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeTireBlown" count="2" prob="0.20" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeRim" count="2" prob="0.15" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeTire" count="1,2" prob="0.1" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeWheel" count="1,2" prob="0.05" tag="salvageHarvest"/>
-		<drop event="Destroy" count="0"/>
-		
-</block>
-<block name="RepairableBrownQuad3">
-		<property name="Extends" value="cntCar03SedanRepairMaster0"/>
-		<property name="CreativeMode" value="Player"/>
-		<property name="LootList" value="garbage"/>
-		<property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMCustoms1.unity3d?guppyVehicleQuad.prefab"/>
-		<property name="MultiBlockDim" value="2,1,2"/>
-		<property name="ModelOffset" value="0,0,0"/>
-    <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableBrownQuad4"/>
-                  <property name="Item" value="HOHBikeBattery"/>
-                  <property name="ItemCount" value="1"/>
-                  <property name="UpgradeHitCount" value="2"/>
-                </property>
-		<!-- Salvage -->
-		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
-    <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
-     <drop event="Harvest" name="HOHVehicleBolts4" count="3" prob="1" tag="salvageHarvest"/>
-    <drop event="Harvest" name="resourceElectricParts" count="2,4" prob="0.18" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHSparkPlugs2" count="1" prob="0.18" tag="salvageHarvest"/>
-    <drop event="Harvest" name="resourceOil" count="2,6" prob="0.17" tag="salvageHarvest"/>
-    <drop event="Harvest" name="resourceMechanicalParts" count="4,8" prob="0.16" tag="salvageHarvest"/>
-    <drop event="Harvest" name="ammoGasCan" count="100,200" prob="0.3" tag="salvageHarvest"/>
-   <drop event="Harvest" name="HOHBikeBatteryDead" count="1" prob="0.16" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeEngineBroken" count="1" prob="0.12" tag="salvageHarvest"/>
-   <drop event="Harvest" name="HOHBikeBattery" count="1" prob="0.1" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHVehicleBolts4" count="1" prob="1" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeInnerTube" count="2" prob="0.30" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeTireBlown" count="2" prob="0.20" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeRim" count="2" prob="0.15" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeTire" count="1,2" prob="0.1" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeWheel" count="1,2" prob="0.05" tag="salvageHarvest"/>
-		<drop event="Destroy" count="0"/>
-		
-</block>
-<block name="RepairableBrownQuad4">
-		<property name="Extends" value="cntCar03SedanRepairMaster0"/>
-		<property name="CreativeMode" value="Player"/>
-		<property name="LootList" value="garbage"/>
-		<property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMCustoms1.unity3d?guppyVehicleQuad.prefab"/>
-		<property name="MultiBlockDim" value="2,1,2"/>
-		<property name="ModelOffset" value="0,0,0"/>
-    <property class="UpgradeBlock">
-                  <property name="ToBlock" value="RepairableBrownQuadSpawner"/>
-                  <property name="Item" value="HOHMiniBikefluidKit"/>
-                  <property name="ItemCount" value="1"/>
-                  <property name="UpgradeHitCount" value="2"/>
-                </property>
-		<!-- Salvage -->
-		<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
-    <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-		<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
-     <drop event="Harvest" name="HOHVehicleBolts4" count="3" prob="1" tag="salvageHarvest"/>
-    <drop event="Harvest" name="resourceElectricParts" count="2,4" prob="0.18" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHSparkPlugs2" count="1" prob="0.18" tag="salvageHarvest"/>
-    <drop event="Harvest" name="resourceOil" count="2,6" prob="0.17" tag="salvageHarvest"/>
-    <drop event="Harvest" name="resourceMechanicalParts" count="4,8" prob="0.16" tag="salvageHarvest"/>
-    <drop event="Harvest" name="ammoGasCan" count="100,200" prob="0.3" tag="salvageHarvest"/>
-   <drop event="Harvest" name="HOHBikeBatteryDead" count="1" prob="0.16" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeEngineBroken" count="1" prob="0.12" tag="salvageHarvest"/>
-   <drop event="Harvest" name="HOHBikeBattery" count="1" prob="0.1" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHVehicleBolts4" count="1" prob="1" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeInnerTube" count="2" prob="0.30" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeTireBlown" count="2" prob="0.20" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeRim" count="2" prob="0.15" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeTire" count="1,2" prob="0.1" tag="salvageHarvest"/>
-    <drop event="Harvest" name="HOHBikeWheel" count="1,2" prob="0.05" tag="salvageHarvest"/>
-		<drop event="Destroy" count="0"/>
-		
-</block>
-
-  <block name="RepairableBrownQuadSpawner">
-            <property name="Material" value="Mmetal"/>
-            <property name="CreativeMode" value="None"/>
-            <property name="Class" value="SpawnCube2SDX, SCore" />
-            <property name="Config" value="ec=vehicleVMQuad" />
-            <property name="Shape" value="ModelEntity"/>
-            <property name="Model" value="#@modfolder(VehicleMadnessModlet_v5_Beta_4):Resources/VMCustoms1.unity3d?guppyVehicleQuad.prefab"/>
-            <property name="ModelOffset" value="0,0,0"/>
-            <property name="Place" value="TowardsPlacer"/>
-            <property name="Path" value="solid"/>
-            <property name="MultiBlockDim" value="1,1,2"/>
-          </block>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</append>
-
-<insertafter xpath="//block[contains(@name,'RepairableBrownJeep') or contains(@name,'RepairableExplorer')]/drop[@name='terrStone']">
-      <drop event="Harvest" name="HOHVehicleBolts4" count="4" prob="1" tag="salvageHarvest"/>
-      <drop event="Harvest" name="HOHCarInnerTube" count="2,4" prob="0.30" tag="salvageHarvest"/>
-      <drop event="Harvest" name="HOHCarTireBlown" count="2,4" prob="0.20" tag="salvageHarvest"/>
-      <drop event="Harvest" name="HOHCarRim" count="2,4" prob="0.15" tag="salvageHarvest"/>
-      <drop event="Harvest" name="HOHCarTire" count="2,4" prob="0.1" tag="salvageHarvest"/>
-      <drop event="Harvest" name="HOHCarWheel" count="2,4" prob="0.05" tag="salvageHarvest"/>
-      <drop event="Harvest" name="resourceElectricParts" count="4,8" prob="0.18" tag="salvageHarvest"/>
-      <drop event="Harvest" name="HOHSparkPlugs2" count="2,4" prob="0.18" tag="salvageHarvest"/>
-      <drop event="Harvest" name="resourceOil" count="4,8" prob="0.17" tag="salvageHarvest"/>
-      <drop event="Harvest" name="ammoGasCan" count="150,400" prob="0.3" tag="salvageHarvest"/>
-      <drop event="Harvest" name="resourceMechanicalParts" count="6,12" prob="0.16" tag="salvageHarvest"/>
-      <drop event="Harvest" name="HOHCarBatteryDead" count="1" prob="0.2" tag="salvageHarvest"/>
-      <drop event="Harvest" name="HOHEngineRadiator" count="1" prob="0.25" tag="salvageHarvest"/>
-      <drop event="Harvest" name="HOHAlternatorBroken" count="1" prob="0.20" tag="salvageHarvest"/>
-      <drop event="Harvest" name="HOHCarburetor" count="1" prob="0.19" tag="salvageHarvest"/>
-      <drop event="Harvest" name="vehicleTruck4x4Chassis" count="1" prob="0.15" tag="salvageHarvest"/>
-      <drop event="Harvest" name="HOHEngineBroken" count="1" prob="0.1" tag="salvageHarvest"/>
-      <drop event="Harvest" name="HOHTransmissionBroken" count="1" prob="0.1" tag="salvageHarvest"/>
-      <drop event="Harvest" name="HOHCarBattery" count="1" prob="0.1" tag="salvageHarvest"/>
-      <drop event="Harvest" name="carBattery" count="1" prob="0.15" tag="salvageHarvest"/>
-      
-</insertafter>
 
 
 

@@ -1,0 +1,36 @@
+<configs>
+
+<insertAfter xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/triggered_effect[@trigger='onSelfEnteredGame']">
+	<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier1_flogi_fortify_stop"/>
+	<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier2_flogi_fortify_stop"/>
+	<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier3_flogi_fortify_stop"/>
+	<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier4_flogi_fortify_stop"/>
+	<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier5_flogi_fortify_stop"/>
+	<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier6_flogi_fortify_stop"/>
+	<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier1_flogi_desperate_defence_stop"/>
+	<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier2_flogi_desperate_defence_stop"/>
+	<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier3_flogi_desperate_defence_stop"/>
+	<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier4_flogi_desperate_defence_stop"/>
+	<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier5_flogi_desperate_defence_stop"/>
+	<triggered_effect trigger="onSelfEnteredGame" action="CallGameEvent" event="tier6_flogi_desperate_defence_stop"/>
+</insertAfter>
+
+
+<append xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/effect_group" >
+	<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t1_flogi_fortify_kill_counter" operation="add" value="1"/>
+	<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t2_flogi_fortify_kill_counter" operation="add" value="1"/>
+	<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t3_flogi_fortify_kill_counter" operation="add" value="1"/>
+	<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t4_flogi_fortify_kill_counter" operation="add" value="1"/>
+	<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t5_flogi_fortify_kill_counter" operation="add" value="1"/>
+	<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t6_flogi_fortify_kill_counter" operation="add" value="1"/>
+	<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t1_flogi_desperate_defence_kill_counter" operation="add" value="1"/>
+	<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t2_flogi_desperate_defence_kill_counter" operation="add" value="1"/>
+	<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t3_flogi_desperate_defence_kill_counter" operation="add" value="1"/>
+	<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t4_flogi_desperate_defence_kill_counter" operation="add" value="1"/>
+	<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t5_flogi_desperate_defence_kill_counter" operation="add" value="1"/>
+	<triggered_effect trigger="onSelfDied" target="other" action="ModifyCVar" cvar="cvar_t6_flogi_desperate_defence_kill_counter" operation="add" value="1"/>
+
+	
+</append>
+
+</configs>

@@ -14,6 +14,8 @@
 		<recipe name="resourceCompost" count="3" craft_area="composter">
 			<ingredient name="resourceTurd" count="1"/>
 			<ingredient name="resourceClayLump" count="5"/>
+			<ingredient name="foodScraps" count="5"/>
+			
 		</recipe>
 		
 	</append>

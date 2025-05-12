@@ -1,0 +1,1663 @@
+<Config>
+	<insertAfter xpath="/gameevents/action_sequence[@name='action_block_DowngradedTo']">
+	
+	
+	<!-- TIER 1 start -->
+		<action_sequence name="tier1_flogi_fortify_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffflogifortifySpawner1a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t1_flogi_fortify_kill_counter"/>
+				<property name="value" value="0"/>
+				<property name="operation" value="Set"/>
+			</action>
+			
+
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="flogi_fortify_group"/>
+			</action>
+			
+			
+		</action_sequence>
+		
+		<action_sequence name="flogi_give_quest_item_1">	
+			<action class="AddItems">
+				<property name="phase" value="3"/>
+				
+				<property name="added_items" value="questGeneratorSmall"/>
+				<property name="added_item_counts" value="1"/>
+			</action>
+			
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier1_flogi_fortify_mainLoop">
+		
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false" />
+			
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffflogifortifySpawner1a" param1="removebuff"/>
+			</action>
+			
+
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffflogifortifySpawner1b"/>
+			</action>
+			
+			
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="7"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_fortify_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+			
+			
+			<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="2" />
+			</action>
+			
+			
+			<loop class="While">
+				<property name="phase" value="5"/>
+			
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffflogifortifySpawner1b"/>
+				</requirement>
+				
+
+				<!-- remove buff if player has killed 15 -->
+				<decision class="If">
+				<requirement class="CVar">
+					<property name="operation" value="GTE"/>
+					<property name="cvar" value="cvar_t1_flogi_fortify_kill_counter"/>
+					<property name="value" value="15"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="phase" value="1" />
+					<property name="removes_buff" value="buffflogifortifySpawner1b" param1="removebuff"/>
+				</action>
+
+
+			</decision>
+			
+				<!-- spawn more if less than 10 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="flogi_fortify_group"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="10"/>
+					</requirement>
+
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="5"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_fortify_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+				
+					<action class="Delay">
+					<property name="phase" value="2" />
+					<property name="time" value="1" />
+			</action>
+					
+
+
+				</decision>
+			</loop>
+		</action_sequence>
+	
+		<action_sequence name="tier1_flogi_fortify_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogifortifySpawner1a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogifortifySpawner1b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier1_flogi_fortify_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier1_flogi_fortify"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffflogifortifySpawner1b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+		
+		
+		
+			<!-- TIER 2 start -->
+		<action_sequence name="tier2_flogi_fortify_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffflogifortifySpawner2a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t2_flogi_fortify_kill_counter"/>
+				<property name="value" value="0"/>
+			</action>
+			
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="flogi_fortify_group"/>
+			</action>
+			
+			
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier2_flogi_fortify_mainLoop">
+
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false" />
+
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffflogifortifySpawner2a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffflogifortifySpawner2b"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="10"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_fortify_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+			
+			
+						<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="2" />
+			</action>
+			
+			
+			<loop class="While">
+				<property name="phase" value="5"/>
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffflogifortifySpawner2b"/>
+				</requirement>
+				
+				<!-- remove buff if player has killed 20 -->
+				<decision class="If">
+				<requirement class="CVar">
+					<property name="operation" value="GTE"/>
+					<property name="cvar" value="cvar_t2_flogi_fortify_kill_counter"/>
+					<property name="value" value="20"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="phase" value="1"/>
+					<property name="removes_buff" value="buffflogifortifySpawner2b" param1="removebuff"/>
+				</action>
+			</decision>
+			
+				<!-- spawn more if less than 20 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="flogi_fortify_group"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="20"/>
+					</requirement>
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="8"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_fortify_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+					
+			<action class="Delay">
+					<property name="phase" value="2" />
+					<property name="time" value="1" />
+			</action>
+					
+					
+				</decision>
+			</loop>
+		</action_sequence>
+	
+		<action_sequence name="tier2_flogi_fortify_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogifortifySpawner2a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogifortifySpawner2b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier2_flogi_fortify_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier2_flogi_fortify"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffflogifortifySpawner2b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+	<!-- TIER 3 start -->
+		<action_sequence name="tier3_flogi_fortify_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffflogifortifySpawner3a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t3_flogi_fortify_kill_counter"/>
+				<property name="value" value="0"/>
+			</action>
+			
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="flogi_fortify_group"/>
+			</action>
+			
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier3_flogi_fortify_mainLoop">
+
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false" />
+
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffflogifortifySpawner3a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffflogifortifySpawner3b"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="15"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_fortify_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+			
+
+			
+			<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="2" />
+			</action>
+			
+			<loop class="While">
+				<property name="phase" value="5"/>
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffflogifortifySpawner3b"/>
+				</requirement>
+				
+				<!-- remove buff if player has killed 30 -->
+				<decision class="If">
+				<requirement class="CVar">
+					<property name="operation" value="GTE"/>
+					<property name="cvar" value="cvar_t3_flogi_fortify_kill_counter"/>
+					<property name="value" value="30"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="phase" value="1"/>
+					<property name="removes_buff" value="buffflogifortifySpawner3b" param1="removebuff"/>
+				</action>
+			</decision>
+			
+				<!-- spawn more if less than 25 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="flogi_fortify_group"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="25"/>
+					</requirement>
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="15"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_fortify_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+					
+										<action class="Delay">
+					<property name="phase" value="2" />
+					<property name="time" value="1" />
+			</action>
+					
+					
+				</decision>
+			</loop>
+		</action_sequence>
+	
+		<action_sequence name="tier3_flogi_fortify_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogifortifySpawner3a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogifortifySpawner3b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier3_flogi_fortify_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier3_flogi_fortify"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffflogifortifySpawner3b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>	
+
+		<!-- TIER 4 start -->
+		<action_sequence name="tier4_flogi_fortify_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffflogifortifySpawner4a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t4_flogi_fortify_kill_counter"/>
+				<property name="value" value="0"/>
+			</action>
+			
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="flogi_fortify_group"/>
+			</action>
+			
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier4_flogi_fortify_mainLoop">
+
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false" />
+
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffflogifortifySpawner4a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffflogifortifySpawner4b"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="20"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_fortify_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+			
+
+			
+			<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="2" />
+			</action>
+			
+			<loop class="While">
+				<property name="phase" value="5"/>
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffflogifortifySpawner4b"/>
+				</requirement>
+				
+				<!-- remove buff if player has killed 40 -->
+				<decision class="If">
+				<requirement class="CVar">
+					<property name="operation" value="GTE"/>
+					<property name="cvar" value="cvar_t4_flogi_fortify_kill_counter"/>
+					<property name="value" value="50"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="phase" value="1"/>
+					<property name="removes_buff" value="buffflogifortifySpawner4b" param1="removebuff"/>
+				</action>
+			</decision>
+			
+				<!-- spawn more if less than 30 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="flogi_fortify_group"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="30"/>
+					</requirement>
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="20"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_fortify_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+
+					
+			<action class="Delay">
+					<property name="phase" value="2" />
+					<property name="time" value="1" />
+			</action>
+					
+					
+				</decision>
+			</loop>
+		</action_sequence>
+	
+		<action_sequence name="tier4_flogi_fortify_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogifortifySpawner4a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogifortifySpawner4b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier4_flogi_fortify_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier4_flogi_fortify"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffflogifortifySpawner4b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+			<!-- TIER 5 start -->
+		<action_sequence name="tier5_flogi_fortify_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffflogifortifySpawner5a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t5_flogi_fortify_kill_counter"/>
+				<property name="value" value="0"/>
+			</action>
+			
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="flogi_fortify_group"/>
+			</action>
+			
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier5_flogi_fortify_mainLoop">
+
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false" />
+
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffflogifortifySpawner5a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffflogifortifySpawner5b"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="25"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_fortify_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+			
+
+			
+						<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="2" />
+			</action>
+			
+			
+			<loop class="While">
+				<property name="phase" value="5"/>
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffflogifortifySpawner5b"/>
+				</requirement>
+				
+				<!-- remove buff if player has killed 125 -->
+				<decision class="If">
+				<requirement class="CVar">
+					<property name="operation" value="GTE"/>
+					<property name="cvar" value="cvar_t5_flogi_fortify_kill_counter"/>
+					<property name="value" value="125"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="phase" value="1"/>
+					<property name="removes_buff" value="buffflogifortifySpawner5b" param1="removebuff"/>
+				</action>
+			</decision>
+			
+				<!-- spawn more if less than 35 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="flogi_fortify_group"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="35"/>
+					</requirement>
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="20"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_fortify_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+
+					
+						<action class="Delay">
+					<property name="phase" value="2" />
+					<property name="time" value="1" />
+			</action>
+					
+				</decision>
+			</loop>
+		</action_sequence>
+	
+		<action_sequence name="tier5_flogi_fortify_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogifortifySpawner5a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogifortifySpawner5b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier5_flogi_fortify_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier5_flogi_fortify"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffflogifortifySpawner5b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+		<!-- TIER 6 start -->
+		<action_sequence name="tier6_flogi_fortify_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffflogifortifySpawner6a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t6_flogi_fortify_kill_counter"/>
+				<property name="value" value="0"/>
+			</action>
+			
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="flogi_fortify_group"/>
+			</action>
+			
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier6_flogi_fortify_mainLoop">
+
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false" />
+
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffflogifortifySpawner6a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffflogifortifySpawner6b"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="30"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_fortify_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+			
+
+			
+			<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="2" />
+			</action>
+			
+			
+			<loop class="While">
+				<property name="phase" value="5"/>
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffflogifortifySpawner6b"/>
+				</requirement>
+				
+				<!-- remove buff if player has killed 175 -->
+				<decision class="If">
+				<requirement class="CVar">
+					<property name="operation" value="GTE"/>
+					<property name="cvar" value="cvar_t6_flogi_fortify_kill_counter"/>
+					<property name="value" value="150"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="phase" value="1"/>
+					<property name="removes_buff" value="buffflogifortifySpawner6b" param1="removebuff"/>
+				</action>
+			</decision>
+			
+				<!-- spawn more if less than 40 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="flogi_fortify_group"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="40"/>
+					</requirement>
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="20"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_fortify_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+
+					
+						<action class="Delay">
+					<property name="phase" value="2" />
+					<property name="time" value="1" />
+			</action>
+					
+				</decision>
+			</loop>
+		</action_sequence>
+	
+		<action_sequence name="tier6_flogi_fortify_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogifortifySpawner6a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogifortifySpawner6b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier6_flogi_fortify_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier6_flogi_fortify"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffflogifortifySpawner6b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+		
+		<action_sequence name="flogi_give_quest_item_2">	
+			<action class="AddItems">
+				<property name="phase" value="3"/>
+				<property name="added_items" value="thrownQuestBomb"/>
+				<property name="added_item_counts" value="5"/>
+			</action>
+			
+			<action class="AddItems">
+				<property name="phase" value="3"/>
+				<property name="added_items" value="flogi_block_bomb"/>
+				<property name="added_item_counts" value="5"/>
+			</action>
+			
+		</action_sequence>
+		
+		
+		<action_sequence name="flogi_give_quest_item_3">	
+			<action class="AddItems">
+				<property name="phase" value="3"/>
+				<property name="added_items" value="thrownQuestBomb"/>
+				<property name="added_item_counts" value="5"/>
+			</action>
+			
+			<action class="AddItems">
+				<property name="phase" value="3"/>
+				<property name="added_items" value="flogi_block_bomb"/>
+				<property name="added_item_counts" value="5"/>
+			</action>
+			
+		</action_sequence>
+		
+		<action_sequence name="flogi_give_quest_item_4">	
+			<action class="AddItems">
+				<property name="phase" value="3"/>
+				<property name="added_items" value="thrownQuestBomb"/>
+				<property name="added_item_counts" value="8"/>
+			</action>
+			
+			<action class="AddItems">
+				<property name="phase" value="3"/>
+				<property name="added_items" value="flogi_block_bomb"/>
+				<property name="added_item_counts" value="8"/>
+			</action>
+			
+		</action_sequence>
+		
+		<action_sequence name="flogi_give_quest_item_5">	
+			<action class="AddItems">
+				<property name="phase" value="3"/>
+				<property name="added_items" value="thrownQuestBomb"/>
+				<property name="added_item_counts" value="15"/>
+			</action>
+			
+			<action class="AddItems">
+				<property name="phase" value="3"/>
+				<property name="added_items" value="flogi_block_bomb"/>
+				<property name="added_item_counts" value="15"/>
+			</action>
+			
+		</action_sequence>
+		
+		<action_sequence name="flogi_give_quest_item_6">	
+			<action class="AddItems">
+				<property name="phase" value="3"/>
+				<property name="added_items" value="thrownQuestBomb"/>
+				<property name="added_item_counts" value="25"/>
+			</action>
+			
+			<action class="AddItems">
+				<property name="phase" value="3"/>
+				<property name="added_items" value="flogi_block_bomb"/>
+				<property name="added_item_counts" value="25"/>
+			</action>
+			
+		</action_sequence>
+		
+		<action_sequence name="flogi_give_quest_item_7">	
+			<action class="AddItems">
+				<property name="phase" value="3"/>
+				<property name="added_items" value="thrownQuestBomb"/>
+				<property name="added_item_counts" value="25"/>
+			</action>
+			
+			<action class="AddItems">
+				<property name="phase" value="3"/>
+				<property name="added_items" value="flogi_block_bomb"/>
+				<property name="added_item_counts" value="25"/>
+			</action>
+			
+		</action_sequence>
+		
+		
+		
+		<action_sequence name="tier1_flogi_desperate_defence_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffflogidesperatedefenceSpawner1a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t1_flogi_desperate_defence_kill_counter"/>
+				<property name="value" value="0"/>
+				<property name="operation" value="Set"/>
+			</action>
+			
+
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="flogi_desperate_defence_group"/>
+			</action>
+			
+			
+		</action_sequence>
+		
+
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier1_flogi_desperate_defence_mainLoop">
+		
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false" />
+			
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner1a" param1="removebuff"/>
+			</action>
+			
+
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffflogidesperatedefenceSpawner1b"/>
+			</action>
+			
+			
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="10"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_desperate_defence_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+			
+			
+			<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="2" />
+			</action>
+			
+			
+			<loop class="While">
+				<property name="phase" value="5"/>
+			
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffflogidesperatedefenceSpawner1b"/>
+				</requirement>
+				
+
+				<!-- remove buff if player has killed 30 -->
+				<decision class="If">
+				<requirement class="CVar">
+					<property name="operation" value="GTE"/>
+					<property name="cvar" value="cvar_t1_flogi_desperate_defence_kill_counter"/>
+					<property name="value" value="30"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="phase" value="1" />
+					<property name="removes_buff" value="buffflogidesperatedefenceSpawner1b" param1="removebuff"/>
+				</action>
+
+
+			</decision>
+			
+				<!-- spawn more if less than 15 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="flogi_desperate_defence_group"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="15"/>
+					</requirement>
+
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="5"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_desperate_defence_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+				
+					<action class="Delay">
+					<property name="phase" value="2" />
+					<property name="time" value="1" />
+			</action>
+					
+
+
+				</decision>
+			</loop>
+		</action_sequence>
+	
+		<action_sequence name="tier1_flogi_desperate_defence_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner1a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner1b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier1_flogi_desperate_defence_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier1_flogi_desperate_defence"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffflogidesperatedefenceSpawner1b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+		
+		
+		
+			<!-- TIER 2 start -->
+		<action_sequence name="tier2_flogi_desperate_defence_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffflogidesperatedefenceSpawner2a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t2_flogi_desperate_defence_kill_counter"/>
+				<property name="value" value="0"/>
+			</action>
+			
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="flogi_desperate_defence_group"/>
+			</action>
+			
+			
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier2_flogi_desperate_defence_mainLoop">
+
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false" />
+
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner2a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffflogidesperatedefenceSpawner2b"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="15"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_desperate_defence_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+			
+			
+						<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="2" />
+			</action>
+			
+			
+			<loop class="While">
+				<property name="phase" value="5"/>
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffflogidesperatedefenceSpawner2b"/>
+				</requirement>
+				
+				<!-- remove buff if player has killed 20 -->
+				<decision class="If">
+				<requirement class="CVar">
+					<property name="operation" value="GTE"/>
+					<property name="cvar" value="cvar_t2_flogi_desperate_defence_kill_counter"/>
+					<property name="value" value="50"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="phase" value="1"/>
+					<property name="removes_buff" value="buffflogidesperatedefenceSpawner2b" param1="removebuff"/>
+				</action>
+			</decision>
+			
+				<!-- spawn more if less than 20 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="flogi_desperate_defence_group"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="20"/>
+					</requirement>
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="15"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_desperate_defence_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+					
+										<action class="Delay">
+					<property name="phase" value="2" />
+					<property name="time" value="1" />
+			</action>
+					
+					
+				</decision>
+			</loop>
+		</action_sequence>
+	
+		<action_sequence name="tier2_flogi_desperate_defence_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner2a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner2b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier2_flogi_desperate_defence_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier2_flogi_desperate_defence"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffflogidesperatedefenceSpawner2b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+	<!-- TIER 3 start -->
+		<action_sequence name="tier3_flogi_desperate_defence_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffflogidesperatedefenceSpawner3a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t3_flogi_desperate_defence_kill_counter"/>
+				<property name="value" value="0"/>
+			</action>
+			
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="flogi_desperate_defence_group"/>
+			</action>
+			
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier3_flogi_desperate_defence_mainLoop">
+
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false" />
+
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner3a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffflogidesperatedefenceSpawner3b"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="20"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_desperate_defence_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+			
+
+			
+						<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="2" />
+			</action>
+			
+			<loop class="While">
+				<property name="phase" value="5"/>
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffflogidesperatedefenceSpawner3b"/>
+				</requirement>
+				
+				<!-- remove buff if player has killed 30 -->
+				<decision class="If">
+				<requirement class="CVar">
+					<property name="operation" value="GTE"/>
+					<property name="cvar" value="cvar_t3_flogi_desperate_defence_kill_counter"/>
+					<property name="value" value="70"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="phase" value="1"/>
+					<property name="removes_buff" value="buffflogidesperatedefenceSpawner3b" param1="removebuff"/>
+				</action>
+			</decision>
+			
+				<!-- spawn more if less than 30 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="flogi_desperate_defence_group"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="30"/>
+					</requirement>
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="25"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_desperate_defence_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+					
+										<action class="Delay">
+					<property name="phase" value="2" />
+					<property name="time" value="1" />
+			</action>
+					
+					
+				</decision>
+			</loop>
+		</action_sequence>
+	
+		<action_sequence name="tier3_flogi_desperate_defence_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner3a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner3b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier3_flogi_desperate_defence_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier3_flogi_desperate_defence"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffflogidesperatedefenceSpawner3b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>	
+
+		<!-- TIER 4 start -->
+		<action_sequence name="tier4_flogi_desperate_defence_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffflogidesperatedefenceSpawner4a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t4_flogi_desperate_defence_kill_counter"/>
+				<property name="value" value="0"/>
+			</action>
+			
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="flogi_desperate_defence_group"/>
+			</action>
+			
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier4_flogi_desperate_defence_mainLoop">
+
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false" />
+
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner4a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffflogidesperatedefenceSpawner4b"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="25"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_desperate_defence_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+			
+
+			
+						<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="2" />
+			</action>
+			
+			<loop class="While">
+				<property name="phase" value="5"/>
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffflogidesperatedefenceSpawner4b"/>
+				</requirement>
+				
+				<!-- remove buff if player has killed 100 -->
+				<decision class="If">
+				<requirement class="CVar">
+					<property name="operation" value="GTE"/>
+					<property name="cvar" value="cvar_t4_flogi_desperate_defence_kill_counter"/>
+					<property name="value" value="100"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="phase" value="1"/>
+					<property name="removes_buff" value="buffflogidesperatedefenceSpawner4b" param1="removebuff"/>
+				</action>
+			</decision>
+			
+				<!-- spawn more if less than 40 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="flogi_desperate_defence_group"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="40"/>
+					</requirement>
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="25"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_desperate_defence_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+
+					
+					<action class="Delay">
+					<property name="phase" value="2" />
+					<property name="time" value="1" />
+			</action>
+					
+					
+				</decision>
+			</loop>
+		</action_sequence>
+	
+		<action_sequence name="tier4_flogi_desperate_defence_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner4a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner4b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier4_flogi_desperate_defence_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier4_flogi_desperate_defence"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffflogidesperatedefenceSpawner4b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+			<!-- TIER 5 start -->
+		<action_sequence name="tier5_flogi_desperate_defence_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffflogidesperatedefenceSpawner5a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t5_flogi_desperate_defence_kill_counter"/>
+				<property name="value" value="0"/>
+			</action>
+			
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="flogi_desperate_defence_group"/>
+			</action>
+			
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier5_flogi_desperate_defence_mainLoop">
+
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false" />
+
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner5a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffflogidesperatedefenceSpawner5b"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="30"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_desperate_defence_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+			
+
+			
+						<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="2" />
+			</action>
+			
+			
+			<loop class="While">
+				<property name="phase" value="5"/>
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffflogidesperatedefenceSpawner5b"/>
+				</requirement>
+				
+				<!-- remove buff if player has killed 125 -->
+				<decision class="If">
+				<requirement class="CVar">
+					<property name="operation" value="GTE"/>
+					<property name="cvar" value="cvar_t5_flogi_desperate_defence_kill_counter"/>
+					<property name="value" value="125"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="phase" value="1"/>
+					<property name="removes_buff" value="buffflogidesperatedefenceSpawner5b" param1="removebuff"/>
+				</action>
+			</decision>
+			
+				<!-- spawn more if less than 50 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="flogi_desperate_defence_group"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="50"/>
+					</requirement>
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="30"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_desperate_defence_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+
+					
+						<action class="Delay">
+					<property name="phase" value="2" />
+					<property name="time" value="1" />
+			</action>
+					
+				</decision>
+			</loop>
+		</action_sequence>
+	
+		<action_sequence name="tier5_flogi_desperate_defence_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner5a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner5b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier5_flogi_desperate_defence_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier5_flogi_desperate_defence"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffflogidesperatedefenceSpawner5b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+		<!-- TIER 6 start -->
+		<action_sequence name="tier6_flogi_desperate_defence_start">
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="buff_name" value="buffflogidesperatedefenceSpawner6a"/>
+			</action>
+			<action class="ModifyCVar">
+				<property name="phase" value="2"/>
+				<property name="cvar" value="cvar_t6_flogi_desperate_defence_kill_counter"/>
+				<property name="value" value="0"/>
+			</action>
+			
+			<action class="ClearGroup">
+				<property name="phase" value="3"/>
+				<property name="group_name" value="flogi_desperate_defence_group"/>
+			</action>
+			
+		</action_sequence>
+		<!-- first group of zombies.  This sequence is called by buff self update every 5 seconds until the buff is removed -->
+		<action_sequence name="tier6_flogi_desperate_defence_mainLoop">
+
+			<!-- refund_inactivity is the magic property that will stop gameevent after 40-50 seconds - set to false to make it run forever -->
+			<property name="refund_inactivity" value="false" />
+
+			
+			<action class="AddBuff">
+				<property name="phase" value="1"/>
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner6a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="phase" value="2"/>
+				<property name="buff_name" value="buffflogidesperatedefenceSpawner6b"/>
+			</action>
+			<action class="SpawnEntity">
+				<property name="phase" value="3"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="35"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_desperate_defence_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+			
+
+			
+						<action class="Delay">
+				<property name="phase" value="4"/>
+				<property name="time" value="2" />
+			</action>
+			
+			
+			<loop class="While">
+				<property name="phase" value="5"/>
+				<requirement class="HasBuff">
+					<property name="buff_name" value="buffflogidesperatedefenceSpawner6b"/>
+				</requirement>
+				
+				<!-- remove buff if player has killed 175 -->
+				<decision class="If">
+				<requirement class="CVar">
+					<property name="operation" value="GTE"/>
+					<property name="cvar" value="cvar_t6_flogi_desperate_defence_kill_counter"/>
+					<property name="value" value="175"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="phase" value="1"/>
+					<property name="removes_buff" value="buffflogidesperatedefenceSpawner6b" param1="removebuff"/>
+				</action>
+			</decision>
+			
+				<!-- spawn more if less than 60 alive -->
+				<decision class="If">
+					<requirement class="GroupLiveCount">
+						<property name="target_group" value="flogi_desperate_defence_group"/>
+						<property name="operation" value="LessThan"/>
+						<property name="count" value="60"/>
+					</requirement>
+			<action class="SpawnEntity">
+				<property name="phase" value="1"/>
+				<property name="entity_group" value="BloodMoonHorde" />
+				<property name="spawn_count" value="40"/>
+				<property name="air_spawn" value="true"/>
+				<property name="add_to_group" value="flogi_desperate_defence_group"/>
+				<property name="safe_spawn" value="true"/>
+				<property name="attack_target" value="true"/>
+				<property name="is_aggressive" value="true"/>
+				<property name="min_distance" value="40"/>
+				<property name="max_distance" value="50"/>
+				<property name="spawn_type" value="WanderingHorde"/>
+				<property name="clear_position_on_complete" value="true"/>
+			</action>
+
+					
+						<action class="Delay">
+					<property name="phase" value="2" />
+					<property name="time" value="1" />
+			</action>
+					
+				</decision>
+			</loop>
+		</action_sequence>
+	
+		<action_sequence name="tier6_flogi_desperate_defence_stop">
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner6a" param1="removebuff"/>
+			</action>
+			<action class="AddBuff">
+				<property name="removes_buff" value="buffflogidesperatedefenceSpawner6b" param1="removebuff"/>
+			</action>
+		</action_sequence>
+		<action_sequence name="tier6_flogi_desperate_defence_failedQuestCheck">
+			<decision class="If">
+				<requirement class="OnQuest">
+					<property name="quest" value="tier6_flogi_desperate_defence"/>
+					<property name="invert" value="true"/>
+				</requirement>
+				<action class="AddBuff">
+					<property name="removes_buff" value="buffflogidesperatedefenceSpawner6b" param1="removebuff"/>
+				</action>
+			</decision>
+		</action_sequence>
+		
+	</insertAfter>
+</Config>

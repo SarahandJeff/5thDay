@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xml>
+  <Name value="Flogis_Quest_Mod" />
+  <Author value="flogi" />
+  <Description value="Adds a new quest type to the game. Maybe more to follow." />
+  <DisplayName value="Flogi's Quest Mod" />
+  <Website value="" />
+  <Version value="1.2.1" />
+</xml>

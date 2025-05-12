@@ -34,9 +34,9 @@
 	<set xpath="//window_group[@name='workstation_cementMixer']">
 			<window name="windowCraftingListMixer"/>
 			<window name="craftingInfoPanel"/>
-			<window name="windowOutputForge" />
-			<window name="windowToolsMixer" />
+			<window name="windowOutputWorkbench" />
 			<window name="windowCraftingQueueCamp"/>
+			<window name="windowToolsMixer" />
 			<window name="windowFuelElectric" />
 			<window name="windowNonPagingHeader" />
 			
@@ -53,13 +53,31 @@
 
 <append xpath="/xui/ruleset">
 	
-
+			
+		<window_group name="workstation_HOH_Collection_workstations_Range" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
+				<window name="windowCraftingListCampfire"/>
+			<window name="craftingInfoPanel"/>
+			<window name="windowCraftingQueueCamp"/>
+			<window name="windowToolsCoffeeMaker" />
+			<window name="windowFuelElectric" />
+			<window name="windowCampOutput" />
+			<window name="windowNonPagingHeader" />
+		</window_group>
+        <window_group name="workstation_HOH_Collection_workstations_CoffeeMaker" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
+			<window name="windowCraftingListCampfire"/>
+			<window name="craftingInfoPanel"/>
+			<window name="windowCraftingQueueCamp"/>
+			<window name="windowToolsCoffeeMaker" />
+			<window name="windowFuelElectric" />
+			<window name="windowCampOutput" />
+			<window name="windowNonPagingHeader" />
+		</window_group>
 		
 		<window_group name="workstation_WorkingStove" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true" defaultSelected="bp.content">
 			<window name="windowCraftingListCampfire"/>
 			<window name="craftingInfoPanel"/>
-			<window name="windowToolsCampfire" />
-			<window name="windowCampFuel" />
+			<window name="windowToolsStove" />
+			<window name="windowFuelElectric" />
 			<window name="windowCampOutput" />
 			<window name="windowCraftingQueueCamp"/>
 			<window name="windowNonPagingHeader" />

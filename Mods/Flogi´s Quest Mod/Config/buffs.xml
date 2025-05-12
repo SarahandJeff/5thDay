@@ -1,0 +1,196 @@
+<Configs>
+	<append xpath="/buffs">
+		<!-- initial buff, that is then swapped out for second buff, to seperate the spawn loop from the quest events -->
+		<buff name="buffflogifortifySpawner1a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier1_flogi_fortify_mainLoop"/>
+			</effect_group>
+		</buff>
+		<buff name="buffflogifortifySpawner1b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="3"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier1_flogi_fortify_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		<!-- tier2 -->
+				<buff name="buffflogifortifySpawner2a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier2_flogi_fortify_mainLoop"/>
+			</effect_group>
+		</buff>
+		<buff name="buffflogifortifySpawner2b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="3"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier2_flogi_fortify_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		<!-- tier 3 -->
+				<buff name="buffflogifortifySpawner3a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier3_flogi_fortify_mainLoop"/>
+			</effect_group>
+		</buff>
+		<buff name="buffflogifortifySpawner3b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="3"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier3_flogi_fortify_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		<!-- tier 4 -->
+		<buff name="buffflogifortifySpawner4a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier4_flogi_fortify_mainLoop"/>
+			</effect_group>
+		</buff>
+		<buff name="buffflogifortifySpawner4b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="3"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier4_flogi_fortify_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		<!-- tier 5 -->
+				<buff name="buffflogifortifySpawner5a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier5_flogi_fortify_mainLoop"/>
+			</effect_group>
+		</buff>
+		<buff name="buffflogifortifySpawner5b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="3"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier5_flogi_fortify_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		<!-- tier 6 -->
+				<buff name="buffflogifortifySpawner6a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier6_flogi_fortify_mainLoop"/>
+			</effect_group>
+		</buff>
+		<buff name="buffflogifortifySpawner6b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="3"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier6_flogi_fortify_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		
+		<buff name="buffflogidesperatedefenceSpawner1a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier1_flogi_desperate_defence_mainLoop"/>
+			</effect_group>
+		</buff>
+		<buff name="buffflogidesperatedefenceSpawner1b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="3"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier1_flogi_desperate_defence_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		<!-- tier2 -->
+				<buff name="buffflogidesperatedefenceSpawner2a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier2_flogi_desperate_defence_mainLoop"/>
+			</effect_group>
+		</buff>
+		<buff name="buffflogidesperatedefenceSpawner2b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="3"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier2_flogi_desperate_defence_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		<!-- tier 3 -->
+				<buff name="buffflogidesperatedefenceSpawner3a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier3_flogi_desperate_defence_mainLoop"/>
+			</effect_group>
+		</buff>
+		<buff name="buffflogidesperatedefenceSpawner3b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="3"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier3_flogi_desperate_defence_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		<!-- tier 4 -->
+		<buff name="buffflogidesperatedefenceSpawner4a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier4_flogi_desperate_defence_mainLoop"/>
+			</effect_group>
+		</buff>
+		<buff name="buffflogidesperatedefenceSpawner4b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="3"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier4_flogi_desperate_defence_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		<!-- tier 5 -->
+		<buff name="buffflogidesperatedefenceSpawner5a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier5_flogi_desperate_defence_mainLoop"/>
+			</effect_group>
+		</buff>
+		<buff name="buffflogidesperatedefenceSpawner5b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="3"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier5_flogi_desperate_defence_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+		<!-- tier 6 -->
+		<buff name="buffflogidesperatedefenceSpawner6a" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="tier6_flogi_desperate_defence_mainLoop"/>
+			</effect_group>
+		</buff>
+		<buff name="buffflogidesperatedefenceSpawner6b" hidden="false" remove_on_death="true">
+			<stack_type value="ignore"/>
+			<update_rate value="3"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="tier6_flogi_desperate_defence_failedQuestCheck"/>
+			</effect_group>
+		</buff>
+		
+	</append>
+</Configs>

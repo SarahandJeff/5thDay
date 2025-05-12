@@ -1,9 +1,9 @@
 <snj>
 <append xpath="/entity_classes/entity_class[@name='vehicleBicycle']/property[@name='Tags']/@value">,takeable</append>
 <append xpath="/entity_classes/entity_class[@name='vehicleMinibike']/property[@name='Tags']/@value">,takeable</append>
-<append xpath="/entity_classes/entity_class[@name='vehicleDirtBike']/property[@name='Tags']/@value">,takeable</append>
-<append xpath="/entity_classes/entity_class[@name='vehicleGolfCart']/property[@name='Tags']/@value">,takeable</append>
-<append xpath="/entity_classes/entity_class[contains(@name,'vehicleVMQuad')]/property[@name='Tags']/@value">,takeable</append>
+
+
+
 
 
 

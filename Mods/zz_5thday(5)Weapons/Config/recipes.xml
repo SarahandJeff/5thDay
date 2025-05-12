@@ -992,5 +992,5 @@
 
 <set xpath="//recipe[@name='meleeWpnBladeT1HuntingKnife']/@tags">learnable,perkKnifes</set>
 <set xpath="//recipe[@name='meleeWpnBladeT3Machete']/@tags">learnable,perkKnifes,workbenchCrafting</set>
-
+<set xpath="//recipe[@name='ammoShotgunSlug']/ingredient[@name='ammo44MagTip']/@name">ammo50aeTip</set>
 </snj>

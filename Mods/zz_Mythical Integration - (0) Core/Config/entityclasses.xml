@@ -840,7 +840,7 @@
 	
 	
 	<property name="UserSpawnType" value="Menu"/>
-	<property name="Tags" value="entity,animal,rabbit,perkAT01,perkAT02,perkAT03"/>
+	<property name="Tags" value="entity,animal,rabbit,hostile,perkAT01,perkAT02,perkAT03"/>
 	<property name="MapIcon" value="ui_game_symbol_tracking_rabbit"/>
 	<property name="TrackerIcon" value="ui_game_symbol_tracking_rabbit"/>
 	<property name="AvatarController" value="AvatarAnimalController"/>

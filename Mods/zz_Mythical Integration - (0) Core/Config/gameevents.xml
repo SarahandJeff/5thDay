@@ -4072,12 +4072,53 @@
 	chickening (M)
 	baconing (M)
 	dodge this -->
-	<action_sequence name="spawn_bunny" template="spawn_triple">
-		<variable name="zombiename" value="animalChickenHostile" />
-		<variable name="alertsound" value="Animals/Chicken/chickenpain" />
-		<variable name="gamestage1" value="55" />
-		<variable name="gamestage2" value="125" />
-	</action_sequence>
+	
+	<action_sequence name="spawn_bunny">			
+			<action class="SpawnEntity">
+				<property name="entity_names" value="animalBunnyHostile" />
+				<property name="spawn_count" value="3" />
+				<property name="phase" value="1"/>
+				<property name="add_to_group" value="bunnies"/>
+			</action>
+			
+			<action class="PlaySound">
+				<property name="sound" value="twitch_good_spawn" />
+				<property name="phase" value="1" />
+			</action>
+			<action class="PlaySound">
+				<property name="sound" value="chickenpain" />
+				<property name="phase" value="1" />
+			</action>
+			<action class="Delay">
+				<property name="time" value="1"/>
+				<property name="phase" value="2"/>
+			</action>
+			
+			<action class="PlaySound">
+				<property name="sound" value="spidersense" />
+				<property name="phase" value="3" />
+			</action> 
+			<action class="BeltTooltip">
+				<property name="text" value="They might look harmless but they'll kick your non-bunny ass" />
+				<property name="phase" value="3" />
+			</action>
+			
+			<action class="Delay">
+				<property name="time" value="4"/>
+				<property name="phase" value="4"/>
+			</action>
+			
+			<action class="ExplodeTarget">
+				<property name="target_group" value="bunnies"/>
+				<property name="blast_power" value="2"/>
+				<property name="block_damage" value="50"/>
+				<property name="block_radius" value="6"/>
+				<property name="block_tags" value="fconstruction"/>
+				<property name="entity_damage" value="150"/>
+				<property name="entity_radius" value="6"/>
+				<property name="phase" value="5"/>
+			</action>
+		</action_sequence>
 		<action_sequence name="myth_buffNeverEverGiveUp">
 			
 		

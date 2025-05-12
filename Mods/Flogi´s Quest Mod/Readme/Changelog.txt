@@ -1,0 +1,60 @@
+######################################################################
+######################################################################
+### Flogis Quest Mod Changelog
+######################################################################
+######################################################################
+
+############################################
+############################################
+### Version 1.2.1
+############################################
+############################################
+
+- Major Fix: Fixed Fortify Quest in Multiplayer; It turned out the mechanics I used are buggy in MP and thus caused problems. Now binding the quest to a POI also which does not need to be cleared (but you can ofc).
+- Fixed: Explosive Barrels being sellable for way too much
+- Fixed: Wrong completion texts for new quests, now added unique ones.
+Known Issue: 
+- The POI names showing up for Fortify Quests might require a new game
+- Improved the spawn mechanics for Fortify and Desperate Defence a bit
+
+############################################
+############################################
+### Version 1.2.0
+############################################
+############################################
+
+- Increased stack number of POI Bombs to 50
+- Adjusted Coin Quest Rewards (compatibility with my Perk Mod)
+
+############################################
+############################################
+### Version 1.1.0
+############################################
+############################################
+
+- Changed Loot Explosives and Raze Quest Chain in order for better multiplayer compatibility. Now do them one after the other.
+- Changed the mission requirements for the Loot Explosives Quest line so that it works better in multiplayer
+- Added crafting recipes for Dynamite Barrel and the POI Breaker Bomb
+- Fixed an issue with the loot explosive quest not working properly in multiplayer sometimes
+- Added quest locations and POI names to quests
+- Added more Zombies to Tier 2 and onwards for the Desperate Defence Quest
+- Decreased the quest radius from fortify quests a bit, hope this solves the issue of the quest not working on some occasions
+
+############################################
+############################################
+### Version 1.0.0 (Initial Release)
+############################################
+############################################
+
+- Added 4 new Quests Types
+- Fortify Area Quest requires you to fortify an area in the wilderness and defend from a small horde
+- Loot Explosves will lead you to a POI where you need to find explosives and that unlocks:
+- The Raze Building Quest where you need to blow up a super infested POI
+- The Desperate Defence Mission will you require to clear an infested POI and defend from an extra big attacking horde after the timer runs out
+- All Quests have 6 tiers
+- SCore will give additional features but is not required
+- Compatible with Darkness Falls
+- Compatible with my Perk Mod
+- I recommend using this with a mod that allows for more Mission Options 
+- Should work in MP and be shareable, but could not test everything
+- Big Thanks to CautiousPancake of the Trader Quest Addendum Mod for the inspiration

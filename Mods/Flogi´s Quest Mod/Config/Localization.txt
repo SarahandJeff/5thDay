@@ -1,0 +1,54 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,german
+
+tier1_flogi_fortify_name,Quest,Quest Info,,,Tier 1 Fortify Area,Tier 1 Befestigt die Gegend
+tier2_flogi_fortify_name,Quest,Quest Info,,,Tier 2 Fortify Area,Tier 2 Befestigt die Gegend
+tier3_flogi_fortify_name,Quest,Quest Info,,,Tier 3 Fortify Area,Tier 3 Befestigt die Gegend
+tier4_flogi_fortify_name,Quest,Quest Info,,,Tier 4 Fortify Area,Tier 4 Befestigt die Gegend
+tier5_flogi_fortify_name,Quest,Quest Info,,,Tier 5 Fortify Area,Tier 5 Befestigt die Gegend
+tier6_flogi_fortify_name,Quest,Quest Info,,,Tier 6 Fortify Area,Tier 6 Befestigt die Gegend
+flogi_fortify_subtitle,Quest,Quest Info,,,Fortify the Area,Befestigt die Gegend
+flogi_fortify_description,Quest,Quest Info,,,It is time to reclaim some land from the zombies. Go to the area. Set up defences and fend off counter attacking zombies after you set up the generator.,Wir müssen unsere Verteidigungsanlagen in der Gegend aufbauen. Es wird Zeit das Land Stück für Stück von den Zombies zurück zu erobern.
+flogi_fortify_offer,Quest,Quest Info,,,It is time to reclaim some land from the zombies. Go to the area. Set up defences and fend off counter attacking zombies after you set up the generator.,Wir müssen unsere Verteidigungsanlagen in der Gegend aufbauen. Es wird Zeit das Land Stück für Stück von den Zombies zurück zu erobern.
+flogi_fortify_statement,Quest,Quest Info,,,Fortify the Area!,Befestigt die Gegend
+flogi_fortify_response,Quest,Quest Info,,,Fortify Area ([DECEA3]{poi.name}[-]) ([DECEA3]{poi.distance} {poi.direction}[-]),Befestigt die Gegend ([DECEA3]{poi.name}[-]) ([DECEA3]{poi.distance} {poi.direction}[-])
+flogi_fortify_completion,Quest,Quest Info,,,Thanks for fortifying the position and defending the counterattack. Have some rest now!,Vielen Dank für das Ausbauen der Verteidigungsstellungen und die Abwehr des Gegenangriffs.
+tier1_flogi_explosives_name,Quest,Quest Info,,,Tier 1 Loot Explosives,Tier 1 Beschafft Sprengstoff
+tier2_flogi_explosives_name,Quest,Quest Info,,,Tier 2 Loot Explosives,Tier 2 Beschafft Sprengstoff
+tier3_flogi_explosives_name,Quest,Quest Info,,,Tier 3 Loot Explosives,Tier 3 Beschafft Sprengstoff
+tier4_flogi_explosives_name,Quest,Quest Info,,,Tier 4 Loot Explosives,Tier 4 Beschafft Sprengstoff
+tier5_flogi_explosives_name,Quest,Quest Info,,,Tier 5 Loot Explosives,Tier 5 Beschafft Sprengstoff
+tier6_flogi_explosives_name,Quest,Quest Info,,,Tier 6 Loot Explosives,Tier 6 Beschafft Sprengstoff
+flogi_explosives_subtitle,Quest,Quest Info,,,Loot the explosives!,Beschafft den Sprengstoff!
+flogi_explosives_description,Quest,Quest Info,,,I have detected a heavily infested POI. We have made several attempts clearing it but the zombies always come back. First find the explosives on the given coordinates. Then report back to me and grab the Raze POI Quest.,Wir haben einen besonders stark von Zombies versuchten Punkt entdeckt. Nach mehreren Versuchen diesen zu beseitigen müssen wir jetzt andere Seiten aufziehen. Beschafft den Sprengstoff bei diesen Koordinaten. Dann meldet euch bei mir für weitere Anweisungen.
+flogi_explosives_offer,Quest,Quest Info,,,I have detected a heavily infested POI. We have made several attempts clearing it but the zombies always come back. First find the explosives on the given coordinates. Then report back to me and grab the Raze POI Quest.,Wir haben einen besonders stark von Zombies versuchten Punkt entdeckt. Nach mehreren Versuchen diesen zu beseitigen müssen wir jetzt andere Seiten aufziehen. Beschafft den Sprengstoff bei diesen Koordinaten. Dann meldet euch bei mir für weitere Anweisungen.
+flogi_explosives_statement,Quest,Quest Info,,,Loot the explosives!,Beschafft den Sprengstoff!
+flogi_explosives_response,Quest,Quest Info,,,Loot Explosives ([DECEA3]{poi.name}[-]) ([DECEA3]{poi.distance} {poi.direction}[-]),Beschafft den Sprengstoff! ([DECEA3]{poi.name}[-]) ([DECEA3]{poi.distance} {poi.direction}[-])
+flogi_explosives_completion,Quest,Quest Info,,,Uh Baby! Now we can blow something up.,Oh Baby! Jetzt können wir etwas in die Luft jagen!
+tier1_flogi_raze_name,Quest,Quest Info,,,Tier 1 Raze Infested Building,Tier 1 Zerstört infiziertes Gebäude
+tier2_flogi_raze_name,Quest,Quest Info,,,Tier 2 Raze Infested Building,Tier 2 Zerstört infiziertes Gebäude
+tier3_flogi_raze_name,Quest,Quest Info,,,Tier 3 Raze Infested Building,Tier 3 Zerstört infiziertes Gebäude
+tier4_flogi_raze_name,Quest,Quest Info,,,Tier 4 Raze Infested Building,Tier 4 Zerstört infiziertes Gebäude
+tier5_flogi_raze_name,Quest,Quest Info,,,Tier 5 Raze Infested Building,Tier 5 Zerstört infiziertes Gebäude
+tier6_flogi_raze_name,Quest,Quest Info,,,Tier 6 Raze Infested Building,Tier 6 Zerstört infiziertes Gebäude
+flogi_raze_subtitle,Quest,Quest Info,,,Raze Infested Building!,Zerstört das infizierte Gebäude
+flogi_raze_description,Quest,Quest Info,,,The super infested POI is located. Raze it to the ground!,Der Sprengstoff ist beschafft. Geht zu dem super infizierten Gebäude und lasst keinen Stein auf dem anderen!
+flogi_raze_offer,Quest,Quest Info,,,The super infested POI is located. Raze it to the ground!,Der Sprengstoff ist beschafft. Geht zu dem super infizierten Gebäude und lasst keinen Stein auf dem anderen!
+flogi_raze_statement,Quest,Quest Info,,,Raze Infested Building!,Zerstört das infizierte Gebäude
+flogi_raze_response,Quest,Quest Info,,,Raze Infested Building ([DECEA3]{poi.name}[-]) ([DECEA3]{poi.distance} {poi.direction}[-]),Zerstört das infizierte Gebäude ([DECEA3]{poi.name}[-]) ([DECEA3]{poi.distance} {poi.direction}[-])
+flogi_raze_completion,Quest,Quest Info,,,Thanks for razing that POI to the ground. We are a lot safer now!,Uff. Danke das du dieses Haus zerstört hast. Wir sind nun erheblich sicherer.
+tier1_flogi_desperate_defence_name,Quest,Quest Info,,,Tier 1 Desperate Defence,Tier 1 Verzweifelte Verteidigung
+tier2_flogi_desperate_defence_name,Quest,Quest Info,,,Tier 2 Desperate Defence,Tier 2 Verzweifelte Verteidigung
+tier3_flogi_desperate_defence_name,Quest,Quest Info,,,Tier 3 Desperate Defence,Tier 3 Verzweifelte Verteidigung
+tier4_flogi_desperate_defence_name,Quest,Quest Info,,,Tier 4 Desperate Defence,Tier 4 Verzweifelte Verteidigung
+tier5_flogi_desperate_defence_name,Quest,Quest Info,,,Tier 5 Desperate Defence,Tier 5 Verzweifelte Verteidigung
+tier6_flogi_desperate_defence_name,Quest,Quest Info,,,Tier 6 Desperate Defence,Tier 6 Verzweifelte Verteidigung
+flogi_desperate_defence_subtitle,Quest,Quest Info,,,Desperate Defence!,Verzweifelte Verteidigung
+flogi_desperate_defence_description,Quest,Quest Info,,,We have identified a horde approaching our position. Get to that POI clear it and then hold the line. We need to stop them there or they might overrun us all.,Wir haben eine riesige Horde identifiziert, die auf uns zumarschiert. Befestigt dieses Haus und haltet sie auf! Bis zum letzten Mann!
+flogi_desperate_defence_offer,Quest,Quest Info,,,We have identified a horde approaching our position. Get to that POI clear it and then hold the line. We need to stop them there or they might overrun us all.,Wir haben eine riesige Horde identifiziert die auf uns zumarschiert. Befestigt dieses Haus und haltet sie auf! Bis zum letzten Mann!
+flogi_desperate_defence_statement,Quest,Quest Info,,,Desperate Defence!,Verzweifelte Verteidigung
+flogi_desperate_defence_response,Quest,Quest Info,,,Desperate Defence ([DECEA3]{poi.name}[-]) ([DECEA3]{poi.distance} {poi.direction}[-]),Verzweifelte Verteidigung ([DECEA3]{poi.name}[-]) ([DECEA3]{poi.distance} {poi.direction}[-])
+flogi_desperate_defence_completion,Quest,Quest Info,,,Wow that was a close call! Thanks for holding out. I really would've missed you.,Wow das war ein knappes Ding. Gut das du ausgehalten hast. Ich hätte dich wirklich vermisst wenn du es nicht geschafft hättest.
+thrownQuestBomb,items,Gun,New,,POI Breaker Bomb,Hauszerstörer 3000
+thrownQuestBombDesc,items,Gun,New,,The POI Breaker Bomb will explode 30 seconds after being placed. Get your ass out of here.,Der Hauszerstörer 3000 wird 30 nachdem er platziert wurde explodieren. Bringt euren Hintern in Sicherheit!
+flogi_block_bomb,blocks,Gun,New,,Barrel of Dynamite,Fass voll Dynamit
+flogi_bomb_block_desc,items,Gun,,New,This will even enhance the POI Breaker Bombs power,Dieser Sprengstoff wird die Zerstörungskraft des Hauszerstörers 3000 noch potenzieren.

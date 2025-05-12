@@ -1,0 +1,33 @@
+<configs>
+	<append xpath="/items">
+	<item name="thrownQuestBomb">
+		<property name="Extends" value="thrownTimedCharge"/>
+		<property name="Stacknumber" value="50"/>
+		<property name="EconomicValue" value="775"/>
+		<property name="Explosion.BlockTags" value=""/>
+		<property name="Explosion.RadiusBlocks" value="10"/>
+		<property name="Explosion.RadiusEntities" value="10"/>
+		<property name="Explosion.DamageBonus.stone" value="4"/>
+		<property name="Explosion.DamageBonus.metal" value="2"/>
+		<property name="Explosion.DamageBonus.wood" value="4"/>
+		<property name="Explosion.BlastPower" value="250"/>
+		<property name="Explosion.BlockDamage" value="12000"/>
+		<property name="Explosion.EntityDamage" value="4000"/>
+		<property name="FuseStartOnDrop" value="true"/>
+		<property name="FuseTime" value="30"/>
+		<property name="StickPercent" value="1"/>
+		<property name="CustomIcon" value="thrownTimedCharge"/>
+		<property name="CustomIconTint" value="205,16,118"/>
+		<property name="DescriptionKey" value="thrownQuestBombDesc"/>
+		<property name="ThrowableDecoy" value="true"/>
+		<effect_group tiered="false">
+		<display_value name="dExBlockDamage" value="12000"/>
+		<display_value name="dExEntityDamage" value="4000"/>
+		<display_value name="dExRadius" value="10"/>
+		<display_value name="dFuseTime" value="30"/>
+		</effect_group>
+	</item>
+
+	</append> 
+
+</configs>

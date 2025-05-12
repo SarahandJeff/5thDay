@@ -285,6 +285,13 @@
 		</lootcontainer>
 	</append>
 
+<append xpath="lootcontainers/lootgroup[@name='dyes']">
+	<item name="modDyeArcherGreen"/>
+	<item name="modDyeArcherRed"/>
+	<item name="modDyeArcherBlue"/>
+	<item name="modDyeArcherPink"/>
+	<item name="modDyeArcherOrange"/>
+</append>
 
 
 </xml>

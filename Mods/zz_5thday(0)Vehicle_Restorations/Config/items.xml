@@ -7,18 +7,7 @@
 
 
 
-<append xpath="//item[@name='vehicleVMVespaPlaceable']"><property name="TraderStageTemplate" value="vehicleTier2"/></append>
-<append xpath="//item[@name='vehicleVMQuadPlaceable']"><property name="TraderStageTemplate" value="vehicleTier2"/></append>
-<append xpath="//item[@name='vehicleVMStationWagonPlaceable']"><property name="TraderStageTemplate" value="vehicleTier3"/></append>
-<append xpath="//item[@name='vehicleVMCombi2Placeable']"><property name="TraderStageTemplate" value="vehicleTier3"/></append>
-<append xpath="//item[@name='vehicleVMRVPlaceable']"><property name="TraderStageTemplate" value="vehicleTier3"/></append>
-<append xpath="//item[@name='vehicleVMNPCVanPlaceable']"><property name="TraderStageTemplate" value="vehicleTier3"/></append>
-<append xpath="//item[@name='vehicleVMBoxTruckPlaceable']"><property name="TraderStageTemplate" value="vehicleTier3"/></append>
-<append xpath="//item[@name='vehicleVMAmbulanceDamagedPlaceable']"><property name="TraderStageTemplate" value="vehicleTier3"/></append>
-<append xpath="//item[@name='vehicleVMJeepCPlaceable']"><property name="TraderStageTemplate" value="vehicleTier3"/></append>
 <append xpath="//item[@name='vehicleSnowMobilePlaceable']"><property name="TraderStageTemplate" value="vehicleTier4"/></append>
-<append xpath="//item[@name='vehicleVMBuggyPlaceable']"><property name="TraderStageTemplate" value="vehicleTier4"/></append>
-<append xpath="//item[@name='vehicleVMBuggy2Placeable']"><property name="TraderStageTemplate" value="vehicleTier4"/></append>
 <append xpath="//item[@name='vehicleWitosFAVPlaceable']"><property name="TraderStageTemplate" value="vehicleTier4"/></append>
 
 <set xpath="//item[contains(@name,'carBodyKit')]/property[@name='Group']/@value">HOHVehicleParts</set>
@@ -34,9 +23,6 @@
 
 
 
-
- <set xpath="//item[contains(@name,'RestorationTool')]/property[@name='Group']/@value">HOHVehicleRestorers</set>
- <remove xpath="//item[contains(@name,'RestorationTool')]/property[@name='UnlockedBy']"/>
 
 
 <append xpath="//item[@name='meleeToolSalvageT1Wrench']/property[@name='Tags']/@value">,meleeToolSalvageT1Wrench</append>
@@ -359,6 +345,17 @@
 		<property name="EconomicValue" value="15000"/>
 		<property name="Group" value="Science,TCScience,HOHVehiclePartEngines"/>
 		<property name="CustomIcon" value="HOHEngineComplete"/>
+	</item>	
+	<item name="HOHTransferCase">
+		<property name="DescriptionKey" value="HOHTransferCaseDesc"/>
+		<property name="HoldType" value="45"/>
+		<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+		<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+		<property name="Material" value="Miron_scrap"/>
+		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="15000"/>
+		<property name="Group" value="Science,TCScience,HOHVehiclePartEngines"/>
+		<property name="CustomIcon" value="HOHTransferCaseComplete"/>
 	</item>	
 	
 	<item name="HOHBikeEngineBroken">
@@ -806,892 +803,6 @@
 <!-- BDUB Vehicle Restoration Tools-->	
 
 	<append xpath="/items">
-
-<!-- meleeToolSalvageT1Wrench -->
-
-
-	<item name="RepairableHDirtBikeRestorationTool">
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="29"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/wrenchPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleDirtBikeplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableHDirtBike"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableGolfCartRestorationTool">
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="29"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/wrenchPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleGolfCartplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableGolfCart"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-<!-- meleeToolSalvageT2Ratchet -->
-
-
-	<item name="RepairableJunkerRestorationTool">
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="29"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/wrenchPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleJunkerplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableJunker"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableCruiserRestorationTool">
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="29"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/wrenchPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleCruiserplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableCruiser"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableChargerRestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="72"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/ratchetPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleChargerblackplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableCharger"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableWorkTruckRestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="72"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/ratchetPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleWorkTruckplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableWorkTruck"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableUAZRestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="72"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/ratchetPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleUAZ452placeable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableUAZ"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableWillyJeepRestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="72"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/ratchetPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleWillyJeepplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableWillyJeep"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableWillyJeepToplessRestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="72"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/ratchetPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleWillyJeepToplessplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableWillyJeepTopless"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableHumveeRestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="72"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/ratchetPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleHumveeplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableHumvee"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableBuggyRestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="72"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/ratchetPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleBuggyplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableBuggy"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableBoxTruckRestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="72"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/ratchetPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleBoxTruckPlainplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableBoxTruck"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-<!-- meleeToolSalvageT3ImpactDriver -->
-
-	<item name="RepairableStallionBlueRestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="74"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/impactDriverPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleStallionblueplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableStallionBlue"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableGNXRestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="74"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/impactDriverPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleGNXBlackplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableGNX"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairablePickupRestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="74"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/impactDriverPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehiclePickupplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairablePickup"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableOldSemiRestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="74"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/impactDriverPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleOldSemiplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableOldSemi"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableMarauderRestorationTool">
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="74"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/impactDriverPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleMarauderplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableMarauder"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableMRAPRestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="74"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/impactDriverPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleMRAPplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableMRAP"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableLMTVRestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="74"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/impactDriverPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleLMTVplaceable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableLMTV"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableBRDMRestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="74"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/impactDriverPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleBRDM2placeable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableBRDM"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-
-	<item name="RepairableMD500RestorationTool">
-
-		<property name="DescriptionKey" value="RestoringToolsDesc"/>
-		<!-- <property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,salvageTool,salvagingSkill"/> -->
-		<property name="DisplayType" value="melee"/>
-		<property name="HoldType" value="74"/>
-		<property name="Meshfile" value="@:Other/Items/Tools/impactDriverPrefab.prefab"/>
-		<property name="TintColor" value="179, 54, 0"/>
-		<property name="RepairTools" value="resourceRepairKit"/>
-		<property name="DegradationBreaksAfter" value="false"/>
-		<property name="SoundJammed" value="ItemNeedsRepair"/>
-		<property name="SoundDestroy" value="metaldestroy"/>
-		<property name="EconomicValue" value="1500"/>
-		<property name="TraderStageTemplate" value="baseTier2"/>
-		<property name="Material" value="MMotorToolParts"/>
-		<property name="Weight" value="1"/>
-		<property name="ShowQuality" value="false"/>
-		<property name="Stacknumber" value="1"/>
-		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
-		<property name="RepairExpMultiplier" value="5.5"/>
-		<property name="SoundUnholster" value="weapon_unholster"/>
-		<property name="SoundHolster" value="weapon_holster"/>
-			<property class="Action0">
-			<property name="Class" value="ExchangeItem"/>
-			<property name="Delay" value="1.0"/>
-			<property name="Change_item_to" value="vehicleMD500placeable"/>
-			<property name="Change_block_to" value="air"/>
-			<property name="Focused_blockname_1" value="RepairableMD500"/>
-			<property name="Sound_start" value="impact_driver_swinglight"/>
-			<property name="UseGrazingHits" value="true"/>
-			<property name="GrazeStart" value=".25"/>
-			<property name="GrazeEnd" value=".3"/>
-			<property name="SwingDegrees" value="50"/>
-			<property name="SwingAngle" value="180"/>
-			<property name="HarvestHitEffectOn" value="false"/>
-	</property>
-	</item>
-<item name="meleeToolSalvageT3ImpactDriver5d">
-	<property name="Tags" value="tool,nailgun,sideAttachments,repairTool,attStrength,perkMiner69r,canHaveCosmetic,noMods,repairingSkill"/>
-	<property name="DisplayType" value="rangedRepairTool"/>
-	<property name="HoldType" value="74"/>
-	<property name="TintColor" value="CC9966"/>
-	<property name="Meshfile" value="@:Other/Items/Tools/impactDriverPrefab.prefab"/>
-	<property name="Material" value="MMotorToolParts"/>
-	<property name="CustomIconTint" value="CC9966"/>
-	<property name="CustomIcon" value="meleeToolSalvageT3ImpactDriver"/>>
-	<property name="Weight" value="1"/>
-	<property name="ScrapTimeOverride" value="10.0"/>
-	<property name="RepairTools" value="repairKitTools"/>
-	<property name="DegradationBreaksAfter" value="false"/>
-	<property name="SoundJammed" value="weapon_jam"/>
-	<property name="CrosshairUpAfterShot" value="true"/>
-	<property name="Stacknumber" value="1"/>
-	
-	<property name="ShowQuality" value="false"/>
-	<property name="Group" value="Tools/Traps"/>
-	<property name="RepairExpMultiplier" value="10.8"/>
-	<property name="EconomicValue" value="1100"/>
-	<property name="TraderStageTemplate" value="baseTier2"/><!-- meleeToolRepairT3Nailgun -->
-	<property name="SoundUnholster" value="weapon_unholster"/>
-	<property name="SoundHolster" value="weapon_holster"/>
-	<property name="SoundPickup" value="nailgun_grab"/>
-	<property name="SoundPlace" value="nailgun_place"/>
-	
-	<!--<property class="Action0">
-		<property name="Class" value="Launcher"/>
-		<property name="Hitmask_override" value="Arrow"/>
-		<property name="Delay" value=".3"/> 
-		<property name="Magazine_items" value="resourceNail"/>
-		<property name="Instantiate_on_load" value="false"/>
-		<property name="Reload_time" value="2"/>
-		<property name="Sound_start" value="nailgun_fire"/>
-		<property name="Particles_muzzle_fire" value="nailgunfire"/>
-	
-		<property name="Sound_repeat" value=""/>
-		<property name="Sound_end" value=""/>
-		<property name="Sound_empty" value="dryfire"/>
-		<property name="Sound_reload" value="nailgun_reload"/>
-		<property name="AutoReload" value="false"/>
-	</property>-->
-	<property class="Action1"> <!-- UseAction -->
-		<property name="Class" value="Repair"/>
-		<property name="Delay" value=".5"/> <!-- Repair actions still need the delay amount -->
-		<property name="Repair_amount" value="1000"/>
-		<property name="Upgrade_hit_offset" value="-5"/>
-		<property name="Repair_action_sound" value="nailgun_fire"/>
-		<property name="Upgrade_action_sound" value="nailgun_fire"/>
-		
-		<property name="Allowed_upgrade_items" value="HOHIgnitionBarrel,HOHBikeBattery,HOHBikeWheel,HOHBikeEngineComplete,vehicleMotorcycleHandlebars,HOHCarBattery,HOHCarWheel,HOHEngineComplete,HOHTransmissionComplete,vehicleMinibikeHandlebars,HOHMiniBikefluidKit,HOHBikefluidKit,HOHJeepfluidKit,HOHTruckfluidKit,HOHCommercialTruckfluidKit,vehicleMinibikeChassis,vehicleMotorcycleChassis,vehicleTruck4x4Chassis,vehicleBoxTruckchassis,resourceMetalPipe,carSeats,resourceHeadlight"/>
-		<!--<property name="Restricted_upgrade_items" value="concrete"/>-->
-	</property>
-	<effect_group name="meleeToolRepairT3Nailgun5d"> <!-- meleeToolRepairT3Nailgun -->
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="3" tags="perkMiner69r"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkMiner69r"/> <!-- random effective rng -->
-		<passive_effect name="MaxRange" operation="base_set" value="10" tags="perkMiner69r"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="1000,2000" tier="1,6" tags="perkMiner69r"/>
-		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tier="1,6" tags="perkMiner69r"/> --> <!-- random DegMax -->
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1.3"/>
-		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1.3"/>
-		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".4"/>
-		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8"/>
-		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5"/>
-		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2"/>
-		<display_value name="dBlockRepairAmount" value="1000"/>
-		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2" tags="perkMiner69r"/>
-		<passive_effect name="WeaponHandling" operation="base_set" value=".7" tags="perkMiner69r"/> <!-- crosshair reset speed -->
-		<passive_effect name="RoundsPerMinute" operation="base_set" value="257" tags="perkMiner69r"/>
-		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkMiner69r"/> <!-- for the Launcher class this instantly fires BurstRoundCount projectiles on pulling the trigger -->
-		<passive_effect name="MagazineSize" operation="base_set" value="10"/>
-		<!-- <passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkMiner69r"/> does not work at all on the nailgun -->
-
-		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.7" tags="perkMiner69r"/>
-		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".7" tags="perkMiner69r"/>
-		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.6" tags="perkMiner69r"/>
-		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".6" tags="perkMiner69r"/>
-
-		<passive_effect name="ModSlots" operation="base_set" value="0"/>
-	</effect_group>
-</item>
-
-
 	<item name="HOHMiniBikefluidKit">
 		<property name="DescriptionKey" value="HOHMiniBikefluidKit"/>
 		<property name="HoldType" value="45"/>
@@ -1749,23 +860,67 @@
 		<property name="CustomIcon" value="HOHCommercialTruckfluidKit"/>
 	  </item>	
 
+	<item name="toolTirePlugKit">
+		<property name="DescriptionKey" value="toolTirePlugKit"/>
+		<property name="HoldType" value="45"/>
+		<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+		<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+		<property name="Material" value="MmechanicalParts"/>
+		<property name="Stacknumber" value="50"/>
+		<property name="EconomicValue" value="50"/>
+		<property name="Group" value="Tools/Traps,HOHVehicleRestorers"/>
+		
+	</item>	
+	<item name="resourceTirePlug">
+		<property name="DescriptionKey" value="resourceTirePlug"/>
+		<property name="HoldType" value="45"/>
+		<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+		<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+		<property name="Material" value="MmechanicalParts"/>
+		<property name="Stacknumber" value="50"/>
+		<property name="EconomicValue" value="50"/>
+		<property name="Group" value="Tools/Traps,HOHVehiclePartEssentials"/>
+		
+	</item>	
+	<item name="toolNeedleNosePliers">
+		<property name="DescriptionKey" value="toolNeedleNosePliers"/>
+		<property name="HoldType" value="45"/>
+		<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+		<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+		<property name="Material" value="MmechanicalParts"/>
+		<property name="Stacknumber" value="50"/>
+		<property name="EconomicValue" value="50"/>
+		<property name="Group" value="Tools/Traps,HOHVehiclePartEssentials"/>
+		
+	</item>	
+	<item name="toolTirePlug">
+		<property name="DescriptionKey" value="toolTirePlug"/>
+		<property name="HoldType" value="45"/>
+		<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+		<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+		<property name="Material" value="MmechanicalParts"/>
+		<property name="Stacknumber" value="5"/>
+		<property name="EconomicValue" value="50"/>
+		<property name="Group" value="Tools/Traps,HOHVehiclePartEssentials"/>
+		
+	</item>	
 	</append>
 
 
 
 
-<set xpath="//item[contains(@name,'vehicle') and (contains(@name,'Placeable'))]/property[@name='EconomicValue' and @value='5000']/@value">13999</set>
+
 <set xpath="//item[contains(@name,'vehicle') and (contains(@name,'Placeable'))]/property[@name='EconomicValue' and @value='6000']/@value">12999</set>
-<set xpath="//item[contains(@name,'vehicle') and (contains(@name,'Placeable'))]/property[@name='EconomicValue' and @value='6100']/@value">13999</set>
-<set xpath="//item[contains(@name,'vehicle') and (contains(@name,'Placeable'))]/property[@name='EconomicValue' and @value='3000']/@value">9999</set>
-<set xpath="//item[contains(@name,'vehicle') and (contains(@name,'Placeable'))]/property[@name='EconomicValue' and @value='8200']/@value">17999</set>
-<set xpath="//item[contains(@name,'vehicle') and (contains(@name,'Placeable'))]/property[@name='EconomicValue' and @value='9000']/@value">17999</set>
+
+
+
+
 <set xpath="//item[contains(@name,'vehicle') and (contains(@name,'Placeable'))]/property[@name='EconomicValue' and @value='10000']/@value">19999</set>
-<set xpath="//item[contains(@name,'vehicle') and (contains(@name,'Placeable'))]/property[@name='EconomicValue' and @value='12500']/@value">22999</set>
-<set xpath="//item[contains(@name,'vehicle') and (contains(@name,'Placeable'))]/property[@name='EconomicValue' and @value='15000']/@value">24999</set>
+
+
 <set xpath="//item[contains(@name,'vehicle') and (contains(@name,'Placeable'))]/property[@name='EconomicValue' and @value='30000']/@value">49999</set>
 <set xpath="//item[contains(@name,'vehicle') and (contains(@name,'Placeable'))]/property[@name='EconomicValue' and @value='50000']/@value">69999</set>
-<set xpath="//item[contains(@name,'vehicle') and (contains(@name,'Placeable'))]/property[@name='EconomicValue' and @value='54000']/@value">49999</set>
+
 
 
 

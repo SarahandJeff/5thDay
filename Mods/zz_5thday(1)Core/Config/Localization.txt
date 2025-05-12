@@ -439,3 +439,24 @@ zombieFreshMale1,Fresh Male Z
 zombieFreshMale1Feral,Feral Fresh Male Z
 zombieFreshMale2,Fresh Male Z
 zombieFreshMale2Feral,Feral Fresh Male Z
+
+
+
+modArmorTreasureHunterV2,Treasure Hunter's Mod V2
+modArmorTreasureHunterV2Desc,This AI-enhanced headgear mod boosts learning speed and improves the user's ability to discover valuable loot and buried treasures.\n\n+10% XP Gain\n+10 Loot Stage\nTreasure Radius -2
+modArmorTreasureHunterV3,Treasure Hunter's Mod V3
+modArmorTreasureHunterV3Desc,This AI-enhanced headgear mod boosts learning speed and improves the user's ability to discover valuable loot and buried treasures.\n\n+10% XP Gain\n+20 Loot Stage\nTreasure Radius -3
+
+
+modDyeArcherGreen,Archer Neon Green
+modDyeArcherRed,Archer Neon Red
+modDyeArcherBlue,Archer Neon Blue
+modDyeArcherPink,Archer Neon Pink
+modDyeArcherOrange,Archer Neon Orange
+HOH_Collection_workstations_Range,"Working Range (Requires Power)"
+foodBread,Bread
+foodPorkChop,Pork Chop
+foodSundayChickenDinner,Chicken Dinner
+foodGrilledChicken,Cooked Chicken
+foodFriedEggs,Fried Eggs
+foodBacon,Bacon

@@ -22,18 +22,18 @@
 <append xpath="/recipes">
 <recipe name="foodBacon" count="8" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
     <ingredient name="foodRawPorkMeat" count="1"/>
+	<secondary_output name="foodScraps" count="1"/>
 </recipe>
 <recipe name="foodFriedEggs" count="1" craft_time="5" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
     <ingredient name="foodEgg" count="1"/>
+	<secondary_output name="foodScraps" count="1"/>
+	
 </recipe>
 
-<recipe name="foodSundayChickenDinner" craft_time="40" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
-    <ingredient name="foodRawChicken" count="1"/>
-    <ingredient name="foodCropPotato" count="4" />
-    </recipe>
 
 <recipe name="foodGrilledChicken" craft_time="10" count="2" craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
     <ingredient name="foodRawChicken" count="1"/>
+	<secondary_output name="resourceAnimalFat" count="1"/>
 </recipe>
 <recipe name="foodSteakAndEggs" count="1"  craft_area="campfire" craft_tool="toolCookingPot" tags="perkMasterChef,learnable">
     <ingredient name="foodGrilledMeat" count="1"/>
@@ -53,15 +53,18 @@
   </recipe>
   <recipe name="foodGrilledMeat" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="perkMasterChef,learnable">
     <ingredient name="foodRawMeat" count="1"/>
+	<secondary_output name="resourceAnimalFat" count="1"/>
   </recipe>
   <recipe name="foodPorkChop" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="perkMasterChef,learnable">
     <ingredient name="foodRawPorkMeat" count="1"/>
+	<secondary_output name="resourceAnimalFat" count="1"/>
 </recipe>
   <recipe name="foodSteakAndPotato" count="1" craft_area="campfire" craft_tool="toolCookingGrill" tags="perkMasterChef,learnable">
     <ingredient name="foodGrilledMeat" count="1"/>
     <ingredient name="foodBakedPotato" count="2" />
     <ingredient name="foodCropMushrooms" count="5" />
     <ingredient name="resourceAnimalFat" count="1" />
+	<secondary_output name="foodScraps" count="1"/>
   </recipe>
   
 

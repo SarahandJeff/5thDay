@@ -10,8 +10,8 @@ MREPastaMarinara,items,Food,,,MRE MEAL Pasta Marinara not like mama makes but it
 MREBreakfast,items,Food,,,MRE MEAL Breakfast tastes like crap but hey there is coffee.
 MREChiliMac,items,Food,,,"MRE MEAL Chili Mac tastes so good, wars have been fought over this one."
 FruitbytheFoot,items,Food,,,Fruit by the foot. just a snack.
-foodBaconAndEggs,items,Food,,,Steak and Eggs
-
+foodBaconAndEggs,items,Food,,,Bacon and Eggs
+foodSteakAndEggs,items,Food,,,Steak and Eggs
 Crateoveg,items,Food,,,Crate of veggies(250) 
 
 

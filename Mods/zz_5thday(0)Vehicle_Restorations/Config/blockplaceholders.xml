@@ -1,6 +1,6 @@
 <snj>
 
-
+<!--
 
 <append xpath="/blockplaceholders/placeholder[@name='cntPickupTruck01RandomHelper']">
 		
@@ -163,12 +163,12 @@
 	</set>
 
 
-
+-->
 
 
 
 <!--workbenches-->
-<append xpath="//placeholder[@name='cntRollingToolBoxRandomLootHelperRed']">
+<!--<append xpath="//placeholder[@name='cntRollingToolBoxRandomLootHelperRed']">
 				<block name="HOHRollingToolBox" prob=".33" />
 				<block name="HOHEngineHoist" prob=".33"/>
 	</append>
@@ -179,8 +179,8 @@
 <append xpath="//placeholder[@name='cntChemistryStationBustedRandomLootHelper']">
 				<block name="BrokenWorkshop" prob=".33" />
 		</append>
-
-
+-->
+<!--
 
 	<append xpath="/blockplaceholders/placeholder[@name='carsRandomHelper']">
 		<block name="cntAmbulanceTruck01" prob=".4"/>
@@ -471,6 +471,6 @@
 	
 	</append>
 
-
+-->
 
 </snj>
