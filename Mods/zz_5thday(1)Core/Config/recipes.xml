@@ -46,7 +46,7 @@
             <ingredient name="resourceElectricParts" count="5"/>
             <ingredient name="resourceMetalPipe" count="4"/>
         </recipe>
-        <recipe name="cntFridgeStainlessSteelPlayer" count="1" craft_time="30" craft_area="workbench" >
+        <recipe name="5thday_Fridge" count="1" craft_time="30" craft_area="workbench" >
             <ingredient name="cntFridgeStainlessSteelVer2Open" count="1"/>
             <ingredient name="resourceMechanicalParts" count="5"/>
             <ingredient name="resourceElectricParts" count="5"/>
@@ -243,11 +243,11 @@
 			<ingredient name="resourceGlue" count="6"/>
 			<ingredient name="bucketRiverWater" count="1"/>
 		</recipe>
-<!--		<recipe name="WorkingStove" count="1" craft_time="45" craft_area="workbench" tags="workbenchCrafting,learnable">
+		<recipe name="5thday_Range" count="1" craft_time="45" craft_area="workbench" tags="workbenchCrafting,learnable">
 			<ingredient name="cntStoveModernVer2Open" count="1"/>
 			<ingredient name="resourceMetalPipe" count="2"/>
 			<ingredient name="resourceMechanicalParts" count="5"/>
-		</recipe>-->
+		</recipe>
 		<recipe name="WorkingGasGrill" count="1" craft_time="30" craft_area="workbench" tags="workbenchCrafting,learnable">
 			<ingredient name="cntGasGrillOpen" count="1"/>
 		    <ingredient name="resourceMechanicalParts" count="5"/>
@@ -516,6 +516,42 @@
 	<ingredient name="foodCropYuccaFruit" count="1"/>
 	<ingredient name="drinkJarBoiledWater" count="1"/>
 </recipe>
+<recipe name="HOH_Collection_workstations_CoffeeMaker" count="1" craft_time="50" craft_area="workbench"  tags="learnable">
+	<ingredient name="cntCoffeeMaker" count="1"/>
+	<ingredient name="resourceElectricParts" count="5"/>
+</recipe>
+
+<recipe name="kettlebase" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
+	<ingredient name="unit_iron" count="25"/>
+	<ingredient name="unit_clay" count="5"/>
+	
+</recipe>
+
+<recipe name="toolBakingPan" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="learnable">
+	<ingredient name="unit_iron" count="25"/>
+	<ingredient name="unit_clay" count="5"/>
+	
+</recipe>
+<recipe name="fryingpanbase" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="perkAdvancedEngineering">
+	<ingredient name="unit_iron" count="25"/>
+	<ingredient name="unit_clay" count="5"/>
+	
+</recipe>
+<recipe name="stockpot" count="1" material_based="true" craft_area="forge" is_trackable="false" tags="learnable">
+	<ingredient name="unit_iron" count="25"/>
+	<ingredient name="unit_clay" count="5"/>
+	
+</recipe>
+<recipe name="fryingpan" count="1" material_based="true" craft_area="workbench" tags="learnable">
+	<ingredient name="fryingpanbase" count="1"/>
+	<ingredient name="resourceScrapPolymers" count="50"/>
+</recipe>
+<recipe name="kettle" count="1" material_based="true" craft_area="workbench" tags="learnable">
+	<ingredient name="kettlebase" count="1"/>
+	<ingredient name="resourceScrapPolymers" count="25"/>>
+</recipe>
+
+
 </append>
 
 

@@ -1735,6 +1735,7 @@
 
 <item name="toolBakingPan">
 	<property name="CreativeMode" value="Player"/>
+	<property name="UnlockedBy" value="perkCooking"/>
 	<property name="HoldType" value="45"/>
 	<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
 	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>

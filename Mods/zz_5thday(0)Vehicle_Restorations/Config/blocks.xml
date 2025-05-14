@@ -10,9 +10,9 @@
 <remove xpath="/blocks/block[contains(@name,'decoCarMotor')]/drop[@name='smallEngine']" />
 <remove xpath="/blocks/block[contains(@name,'decoCarMotor')]/drop[@name='resourceScrapIron']" />
 
-<insertafter xpath="//block[contains(@name,'Sedan')  and contains(@name,'Minivan') and contains(@name,'SUV') and contains(@name,'PickupTruck') and contains(@name,'FireTruck') and contains(@name,'BusSchool') and contains(@name,'PoliceCar') and contains(@name,'SemiTruck')]/drop[@name='terrStone']">
+<insertafter xpath="//block[contains(@name,'Sedan')  or contains(@name,'Minivan') or contains(@name,'SUV') or contains(@name,'PickupTruck') or contains(@name,'FireTruck') or contains(@name,'BusSchool') or contains(@name,'PoliceCar') or contains(@name,'SemiTruck')]/drop[@name='terrStone']">
 
-      <drop event="Harvest" name="" count="0" tool_category="Disassemble" />
+    <drop event="Harvest" name="" count="0" tool_category="Disassemble" />
 		<drop event="Destroy" name="HOHEngineComplete" count="0,1" prob="0.25" tool_category="Disassemble" />
     <drop event="Destroy" name="HOHTransmissionComplete" count="0,1" prob="0.25" tool_category="Disassemble" />
     <drop event="Destroy" name="HOHEngineBroken" count="0,1" prob="0.25" tool_category="Disassemble" />

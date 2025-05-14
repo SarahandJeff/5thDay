@@ -453,7 +453,7 @@ modDyeArcherRed,Archer Neon Red
 modDyeArcherBlue,Archer Neon Blue
 modDyeArcherPink,Archer Neon Pink
 modDyeArcherOrange,Archer Neon Orange
-HOH_Collection_workstations_Range,"Working Range (Requires Power)"
+5thday_Range,"Working Range (Requires Power)"
 foodBread,Bread
 foodPorkChop,Pork Chop
 foodSundayChickenDinner,Chicken Dinner

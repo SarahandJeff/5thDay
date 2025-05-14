@@ -2757,8 +2757,46 @@
 			<property name="Stacknumber" value="1"/>
 			
 			</item>
+			<item name="fryingpanbase">
+			<property name="CreativeMode" value="Player"/>
+			<property name="HoldType" value="45"/>
+			<property name="CustomIcon" value="fryingpan"/>
+			<property name="CustomIconTint" value="59,62,55"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Miron"/>
+			<property name="Stacknumber" value="3"/>
+			<!-- STK loot -->
+			<property name="EconomicValue" value="200"/>
+			<property name="EconomicSellScale" value=".1"/>
+			<property name="Group" value="Tools/Traps,Food/Cooking"/>
+			<property name="ItemTypeIcon" value="campfire"/>
+			<effect_group tiered="false">
+				<passive_effect name="CraftingTime" operation="base_set" value="10" tags="boiledWater"/>
+			</effect_group>
+		</item>
+		<item name="kettlebase">
+			<property name="CreativeMode" value="Player"/>
+			<property name="HoldType" value="45"/>
+			<property name="CustomIcon" value="kettle"/>
+			<property name="CustomIconTint" value="59,62,55"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Miron"/>
+			<property name="Stacknumber" value="3"/>
+			<!-- STK loot -->
+			<property name="EconomicValue" value="200"/>
+			<property name="EconomicSellScale" value=".1"/>
+			<property name="Group" value="Tools/Traps,Food/Cooking"/>
+			<property name="ItemTypeIcon" value="campfire"/>
+			<effect_group tiered="false">
+				<passive_effect name="CraftingTime" operation="perc_add" value="-.1"/>
+				<display_value name="dCraftingTime" value="-.1"/>
+			</effect_group>
+		</item>
 	<item name="fryingpan">
 			<property name="CreativeMode" value="Player"/>
+			<property name="UnlockedBy" value="perkCooking"/>
 			<property name="HoldType" value="45"/>
 			<property name="CustomIcon" value="fryingpan"/>
 			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
@@ -2776,6 +2814,7 @@
 		</item>
 		<item name="kettle">
 			<property name="CreativeMode" value="Player"/>
+			<property name="UnlockedBy" value="perkCooking"/>
 			<property name="HoldType" value="45"/>
 			<property name="CustomIcon" value="kettle"/>
 			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
@@ -2794,6 +2833,7 @@
 		</item>
 		<item name="stockpot">
 			<property name="CreativeMode" value="Player"/>
+			<property name="UnlockedBy" value="perkCooking"/>
 			<property name="HoldType" value="45"/>
 			<property name="CustomIcon" value="stockpot"/>
 			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>

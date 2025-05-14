@@ -2515,10 +2515,10 @@
 				 <unlock_entry item="foodBakedPotato,foodBoiledMeat,foodCornBread,foodGrilledChicken" unlock_tier="1" />
 				 </display_entry>
 				<display_entry icon="foodGrilledMeat" name_key="Cooking-Tier 3" has_quality="false" unlock_level="20" >
-				 <unlock_entry item="foodGrilledMeat,foodPorkChop,foodPumpkinBread,foodVegetableStewfoodBread" unlock_tier="1" />
+				 <unlock_entry item="foodGrilledMeat,foodPorkChop,foodPumpkinBread,foodVegetableStew,foodBread" unlock_tier="1" />
 				 </display_entry>
 				<display_entry icon="drinkJarCoffee" name_key="Cooking-Tier 4" has_quality="false" unlock_level="25,28" >
-				 <unlock_entry item="drinkJarCoffee,WorkingGasGrill,WorkingCharcoalGrill,HOH_Collection_workstations_Range,foodGrilledChickenSandwich" unlock_tier="1" />
+				 <unlock_entry item="drinkJarCoffee,WorkingGasGrill,WorkingCharcoalGrill,HOH_Collection_workstations_Range,foodGrilledChickenSandwich,HOH_Collection_workstations_CoffeeMaker,fryingpan,kettle,stockpot,toolBakingPan" unlock_tier="1" />
 				 <unlock_entry item="foodBacon,foodBaconAndEggs,foodSteakAndEggs" unlock_tier="2" />
 				 </display_entry>
 				<display_entry icon="drinkJarGoldenRodTea" name_key="Cooking-Tier 5" has_quality="false" unlock_level="30,35" >
@@ -2534,7 +2534,7 @@
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="foodCornOnTheCob,foodFriedEggs"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="foodBakedPotato,foodBoiledMeat,foodCornBread,foodGrilledChicken"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="foodGrilledMeat,foodPumpkinBread,foodVegetableStew,foodPorkChop,foodBread"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="drinkJarCoffee,WorkingCharcoalGrill,WorkingGasGrill,HOH_Collection_workstations_Range,foodGrilledChickenSandwich"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="drinkJarCoffee,WorkingCharcoalGrill,WorkingGasGrill,5thday_Range,foodGrilledChickenSandwich,HOH_Collection_workstations_CoffeeMaker,,fryingpan,kettle,stockpot,toolBakingPan"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="28,100" value="1" tags="foodBaconAndEggs,foodSteakAndEggs,foodBacon"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,100" value="1" tags="drinkJarGoldenRodTea,drinkJarRedTea,foodShamChowder"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="35,100" value="1" tags="drinkJarYuccaJuice,foodSteakAndPotato"/>
