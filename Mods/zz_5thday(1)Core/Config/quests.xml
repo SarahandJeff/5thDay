@@ -419,10 +419,7 @@ tier6_flogi
 <set xpath="//quest[contains(@id,'nexttrader')]/property[(@name='reward_choices_count')]/@value">4</set>
 <set xpath="//quest/reward[(@id='groupChallengeRewardSkillMagazinesAll')]/@id">groupQuestSchematics</set>
 
-<remove xpath="/quests/quest[@id='quest_tier1complete']/reward[starts-with(@id,'groupQuestBicycle')]"/>
-<insertAfter xpath="//quest[@id='quest_tier1complete']/reward[@id='casinoCoin']">
-	<reward type="Item" id="vehicleGolfCartplaceable" ischosen="true" isfixed="true" value="1" />
-</insertAfter>
+
 
 
 
