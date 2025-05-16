@@ -298,6 +298,9 @@
                 <property name="ModelOffset" value="0,0,0"/>
                 <property name="VerticalOffset" value="0"/>
                 <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
                   <property class="UpgradeBlock">
                       <property name="ToBlock" value="HOHVanillaMiniBikeSpawner"/>
                       <property name="Item" value="HOHMiniBikefluidKit"/>
@@ -324,6 +327,9 @@
                 <property name="ModelOffset" value="0,0,0"/>
                 <property name="VerticalOffset" value="0"/>
                 <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
                   <property class="UpgradeBlock">
                       <property name="ToBlock" value="HOHVanillaMiniBikeBreakable6"/>
                       <property name="Item" value="HOHBikeEngineComplete"/>
@@ -350,6 +356,9 @@
                 <property name="ModelOffset" value="0,0,0"/>
                 <property name="VerticalOffset" value="0"/>
                 <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
                 <property class="UpgradeBlock">
                       <property name="ToBlock" value="HOHVanillaMiniBikeBreakable5"/>
                       <property name="Item" value="HOHBikeBattery"/>
@@ -381,6 +390,9 @@
                 <property name="ModelOffset" value="0,0,0"/>
                 <property name="VerticalOffset" value="0"/>
                 <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
           <property class="UpgradeBlock">
                       <property name="ToBlock" value="HOHVanillaMiniBikeBreakable4"/>
                       <property name="Item" value="HOHBikeWheel"/>
@@ -426,6 +438,9 @@
                 <property name="ModelOffset" value="0,0,0"/>
                 <property name="VerticalOffset" value="0"/>
                 <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
                 <property class="UpgradeBlock">
                       <property name="ToBlock" value="HOHVanillaMiniBikeBreakable3"/>
                       <property name="Item" value="vehicleMinibikeHandlebars"/>
@@ -463,6 +478,9 @@
                 <property name="ModelOffset" value="0,0,0"/>
                 <property name="VerticalOffset" value="0"/>
                 <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
                     <property class="UpgradeBlock">
                       <property name="ToBlock" value="HOHVanillaMiniBikeBreakable2"/>
                       <property name="Item" value="vehicleMinibikeChassis"/>
@@ -570,6 +588,9 @@
             <property name="ModelOffset" value="0,0,0"/>
             <property name="VerticalOffset" value="0"/>
             <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
                   <property class="UpgradeBlock">
           <property name="ToBlock" value="HOHVanillaMotorcycleSpawner"/>
           <property name="Item" value="HOHBikefluidKit"/>
@@ -596,6 +617,9 @@
             <property name="ModelOffset" value="0,0,0"/>
             <property name="VerticalOffset" value="0"/>
             <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
                   <property class="UpgradeBlock">
           <property name="ToBlock" value="HOHVanillaMotorcycleBreakable6"/>
           <property name="Item" value="HOHBikeEngineComplete"/>
@@ -625,6 +649,9 @@
             <property name="ModelOffset" value="0,0,0"/>
             <property name="VerticalOffset" value="0"/>
             <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
               <property class="UpgradeBlock">
           <property name="ToBlock" value="HOHVanillaMotorcycleBreakable5"/>
           <property name="Item" value="HOHBikeBattery"/>
@@ -656,6 +683,9 @@
             <property name="ModelOffset" value="0,0,0"/>
             <property name="VerticalOffset" value="0"/>
             <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
             <property class="UpgradeBlock">
           <property name="ToBlock" value="HOHVanillaMotorcycleBreakable4"/>
           <property name="Item" value="HOHBikeWheel"/>
@@ -700,6 +730,9 @@
             <property name="ModelOffset" value="0,0,0"/>
             <property name="VerticalOffset" value="0"/>
             <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
             <property class="UpgradeBlock">
           <property name="ToBlock" value="HOHVanillaMotorcycleBreakable3"/>
           <property name="Item" value="vehicleMotorcycleHandlebars"/>
@@ -737,6 +770,9 @@
             <property name="ModelOffset" value="0,0,0"/>
             <property name="VerticalOffset" value="0"/>
             <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
             <property class="UpgradeBlock">
           <property name="ToBlock" value="HOHVanillaMotorcycleBreakable2"/>
           <property name="Item" value="vehicleMotorcycleChassis"/>
@@ -799,6 +835,9 @@
           <property name="ModelOffset" value="0,0,0"/>
           <property name="VerticalOffset" value="0"/>
           <property name="Place" value="TowardsPlacer"/>
+          <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
             <property class="UpgradeBlock">
             <property name="ToBlock" value="HOHVanilla4x4Spawner"/>
             <property name="Item" value="HOHTruckfluidKit"/>
@@ -826,6 +865,9 @@
           <property name="ModelOffset" value="0,0,0"/>
           <property name="VerticalOffset" value="0"/>
           <property name="Place" value="TowardsPlacer"/>
+          <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
             <property class="UpgradeBlock">
             <property name="ToBlock" value="HOHVanilla4x4Breakable6"/>
             <property name="Item" value="HOHEngineComplete"/>
@@ -855,6 +897,9 @@
           <property name="ModelOffset" value="0,0,0"/>
           <property name="VerticalOffset" value="0"/>
           <property name="Place" value="TowardsPlacer"/>
+          <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
             <property class="UpgradeBlock">
             <property name="ToBlock" value="HOHVanilla4x4Breakable5"/>
             <property name="Item" value="HOHTansmissionComplete"/>
@@ -887,6 +932,9 @@
           <property name="ModelOffset" value="0,0,0"/>
           <property name="VerticalOffset" value="0"/>
           <property name="Place" value="TowardsPlacer"/>
+          <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
           <property class="UpgradeBlock">
             <property name="ToBlock" value="HOHVanilla4x4Breakable4"/>
             <property name="Item" value="HOHCarWheel"/>
@@ -931,6 +979,9 @@
           <property name="ModelOffset" value="0,0,0"/>
           <property name="VerticalOffset" value="0"/>
           <property name="Place" value="TowardsPlacer"/>
+          <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
           <property class="UpgradeBlock">
             <property name="ToBlock" value="HOHVanilla4x4Breakable3"/>
             <property name="Item" value="HOHCarWheel"/>
@@ -975,6 +1026,9 @@
           <property name="ModelOffset" value="0,0,0"/>
           <property name="VerticalOffset" value="0"/>
           <property name="Place" value="TowardsPlacer"/>
+          <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
           <property class="UpgradeBlock">
             <property name="ToBlock" value="HOHVanilla4x4Breakable2"/>
             <property name="Item" value="vehicleTruck4x4Chassis"/>
@@ -1079,6 +1133,9 @@
           <property name="ModelOffset" value="0,0.5,0"/>
           <property name="VerticalOffset" value="0"/>
           <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
             <property class="UpgradeBlock">
             <property name="ToBlock" value="HOHAmbulanceSpawner"/>
             <property name="Item" value="HOHCommercialTruckfluidKit"/>
@@ -1107,6 +1164,9 @@
           <property name="ModelOffset" value="0,0.5,0"/>
           <property name="VerticalOffset" value="0"/>
           <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
             <property class="UpgradeBlock">
             <property name="ToBlock" value="HOHAmbulance6"/>
             <property name="Item" value="HOHCarBattery"/>
@@ -1135,6 +1195,9 @@
           <property name="ModelOffset" value="0,0.5,0"/>
           <property name="VerticalOffset" value="0"/>
           <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
             <property class="UpgradeBlock">
             <property name="ToBlock" value="HOHAmbulance5"/>
             <property name="Item" value="HOHEngineComplete"/>
@@ -1167,6 +1230,9 @@
           <property name="ModelOffset" value="0,0.5,0"/>
           <property name="VerticalOffset" value="0"/>
           <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
           <property class="UpgradeBlock">
             <property name="ToBlock" value="HOHAmbulance4"/>
             <property name="Item" value="HOHTransmissionComplete"/>
@@ -1211,6 +1277,9 @@
           <property name="ModelOffset" value="0,0.5,0"/>
           <property name="VerticalOffset" value="0"/>
           <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
           <property class="UpgradeBlock">
             <property name="ToBlock" value="HOHAmbulance3"/>
             <property name="Item" value="HOHCarWheel"/>
@@ -1259,6 +1328,9 @@
           <property name="ModelOffset" value="0,0.5,0"/>
           <property name="VerticalOffset" value="0"/>
           <property name="Place" value="TowardsPlacer"/>
+                <property class="RepairItems">
+			<property name="resourceRepairKit" value="1"/>
+		</property> 
           <property class="UpgradeBlock">
             <property name="ToBlock" value="HOHAmbulance2"/>
             <property name="Item" value="vehicleBoxTruckchassis"/>
