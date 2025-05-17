@@ -243,7 +243,7 @@ HOHVanillaMotorcycleBreakable3,blocks,block,,,[FFB400][-][00FF00]Motorcycle (Sta
 HOHVanillaMotorcycleBreakable2,blocks,block,,,[FFB400][-][00FF00]Motorcycle (Stage: 2/6)[-]\n[FFB400]Mechanic Impact Gun Required (Motorcycle Handle Bars)[-],,,,,
 HOHVanillaMotorcycleBreakable1,blocks,block,,,[FFB400][-][00FF00]Motorcycle (Stage: 1/6)[-]\n[FFB400]Mechanic Impact Gun Required (Motorcycle Chassis)[-],,,,,
 
-HOHVanilla4x4Breakable6,blocks,block,,,[FFB400][-][00FF00]4x4 Truck (Stage: 6/6)[-]\n[FFB400]Mechanic Impact Gun Required (4x4 Fluid HOHJeepfluidKit)[-],,,,,
+HOHVanilla4x4Breakable6,blocks,block,,,[FFB400][-][00FF00]4x4 Truck (Stage: 6/6)[-]\n[FFB400]Mechanic Impact Gun Required (4x4 Fluid HOHTruckfluidKit)[-],,,,,
 HOHVanilla4x4Breakable5,blocks,block,,,[FFB400][-][00FF00]4x4 Truck (Stage: 5/6)[-]\n[FFB400]Mechanic Impact Gun Required (Restored Engine)[-],,,,,
 HOHVanilla4x4Breakable4,blocks,block,,,[FFB400][-][00FF00]4x4 Truck (Stage: 4/6)[-]\n[FFB400]Mechanic Impact Gun Required (2 Restored Transmission )[-],,,,,
 HOHVanilla4x4Breakable3,blocks,block,,,[FFB400][-][00FF00]4x4 Truck (Stage: 3/6)[-]\n[FFB400]Mechanic Impact Gun Required (2 Car Wheels)[-],,,,,

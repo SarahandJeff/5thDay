@@ -902,7 +902,7 @@
 		</property> 
             <property class="UpgradeBlock">
             <property name="ToBlock" value="HOHVanilla4x4Breakable5"/>
-            <property name="Item" value="HOHTansmissionComplete"/>
+            <property name="Item" value="HOHTransmissionComplete"/>
             <property name="ItemCount" value="2"/>
             <property name="UpgradeHitCount" value="4"/>
           </property>
