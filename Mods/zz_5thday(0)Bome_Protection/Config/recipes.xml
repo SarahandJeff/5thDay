@@ -9,7 +9,7 @@
 		</recipe>
 		<recipe name="modAcidRain" count="1" craft_time="180" craft_area="workbench" tags="workbenchCrafting">
 			<ingredient name="resourceAcid" count="5"/>
-			<ingredient name="armorBikerOutfit" count="1"/>
+			<ingredient name="armorFarmerOutfit" count="1"/>
 			<ingredient name="modArmorInsulatedLiner" count="1"/>
 			<ingredient name="modDyeGreen" count="1"/>
 			<ingredient name="biomePartbf" count="1"/>
