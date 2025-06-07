@@ -99,7 +99,15 @@
 			</effect_group>
 		</buff>
 
-
+	<buff name="SickleBlockTrackerActivate" hidden="true" icon="ui_game_symbol_add" icon_color="255,0,0" icon_blink="true">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SickleDisplay" operation="set" value="255"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SickleDisplay" operation="set" value="255"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="SickleDisplay" operation="set" value="0"/>
+			</effect_group>
+		</buff>
 
 
 

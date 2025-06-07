@@ -94,6 +94,119 @@
 	</effect_group>
 </item>
 
+
+<item name="animalPiglet">
+	<property name="CustomIcon" value="animalPiglet"/>
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="@:Other/Items?Misc/sackPrefab.prefab"/>
+	<property name="DropMeshfile" value="@:Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="Morganic"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="Group" value="tools/Traps"/>
+	<property name="EconomicValue" value="1500"/>
+	<property name="SellableToTrader" value="true"/>
+	
+	<property name="DescriptionKey" value="animalPigletDesc"/>
+</item>
+<item name="animalCalf">
+	<property name="CustomIcon" value="animalCalf"/>
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="@:Other/Items?Misc/sackPrefab.prefab"/>
+	<property name="DropMeshfile" value="@:Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="Morganic"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="Group" value="tools/Traps"/>
+	<property name="EconomicValue" value="1500"/>
+	<property name="SellableToTrader" value="true"/>
+	<property name="DescriptionKey" value="animalCalfDesc"/>
+</item>
+<item name="AnimalChickenFeed">
+	<property name="CustomIcon" value="AnimalFeed"/>
+	<property name="HoldType" value="3"/>
+	<property name="Meshfile" value="#@modfolder:Assets/AnimalFeed.unity3d?AnimalFeed"/>
+    <property name="DropMeshfile" value="#@modfolder:Assets/AnimalFeed.unity3d?AnimalFeed"/>
+	<property name="Material" value="Morganic"/>
+	<property name="Stacknumber" value="500"/>
+	<property name="EconomicValue" value="0"/>
+	<property name="SellableToTrader" value="false"/>
+	<property name="Group" value="AnimalFood"/>
+	<property name="DescriptionKey" value="AnimalFeedDesc"/>
+	<property class="Action1"> <!-- UseAction -->
+					<property name="Class" value="Repair"/>
+					<property name="Delay" value="1"/>
+					<property name="Upgrade_hit_offset" value="-1"/>
+					<property name="Allowed_upgrade_items" value="AnimalChickenFeed"/>
+				</property>
+				<effect_group name="Base Effects" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="MaxRange" operation="base_set" value="200"/>
+					<passive_effect name="DegradationMax" operation="base_set" value="6000"/>
+					<passive_effect name="DegradationPerUse" operation="base_set" value="0"/>
+				</effect_group>
+</item>
+<item name="AnimalPigFeed">
+	<property name="CustomIcon" value="AnimalFeed"/>
+	<property name="CustomIconTint" value="e819b7"/>
+	<Property name="TintColor" value="e819b7"/>
+	<property name="HoldType" value="3"/>
+	<property name="Meshfile" value="#@modfolder:Assets/AnimalFeed.unity3d?AnimalFeed"/>
+    <property name="DropMeshfile" value="#@modfolder:Assets/AnimalFeed.unity3d?AnimalFeed"/>
+	<property name="Material" value="Morganic"/>
+	<property name="Stacknumber" value="500"/>
+	<property name="EconomicValue" value="0"/>
+	<property name="SellableToTrader" value="false"/>
+	<property name="Group" value="AnimalFood"/>
+	<property name="DescriptionKey" value="AnimalFeedDesc"/>
+	<property class="Action1"> <!-- UseAction -->
+					<property name="Class" value="Repair"/>
+					<property name="Delay" value="1"/>
+					<property name="Upgrade_hit_offset" value="-1"/>
+					<property name="Allowed_upgrade_items" value="AnimalPigFeed"/>
+				</property>
+				<effect_group name="Base Effects" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="MaxRange" operation="base_set" value="200"/>
+					<passive_effect name="DegradationMax" operation="base_set" value="6000"/>
+					<passive_effect name="DegradationPerUse" operation="base_set" value="0"/>
+				</effect_group>
+</item>
+<item name="AnimalCowFeed">
+	<property name="CustomIcon" value="AnimalFeed"/>
+	<property name="CustomIconTint" value="122,56,27"/>
+	<Property name="TintColor" value="7A381B"/>
+	<property name="HoldType" value="3"/>
+	<property name="Meshfile" value="#@modfolder:Assets/AnimalFeed.unity3d?AnimalFeed"/>
+    <property name="DropMeshfile" value="#@modfolder:Assets/AnimalFeed.unity3d?AnimalFeed"/>
+	<property name="Material" value="Morganic"/>
+	<property name="Stacknumber" value="500"/>
+	<property name="EconomicValue" value="0"/>
+	<property name="SellableToTrader" value="false"/>
+	<property name="Group" value="AnimalFood"/>
+	<property name="DescriptionKey" value="AnimalFeedDesc"/>
+	<property class="Action1"> <!-- UseAction -->
+					<property name="Class" value="Repair"/>
+					<property name="Delay" value="1"/>
+					<property name="Upgrade_hit_offset" value="-1"/>
+					<property name="Allowed_upgrade_items" value="AnimalCowFeed"/>
+				</property>
+				<effect_group name="Base Effects" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="MaxRange" operation="base_set" value="200"/>
+					<passive_effect name="DegradationMax" operation="base_set" value="6000"/>
+					<passive_effect name="DegradationPerUse" operation="base_set" value="0"/>
+				</effect_group>
+</item>
+<item name="foodMilk">
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="@:Other/Items?Misc/sackPrefab.prefab"/>
+	<property name="DropMeshfile" value="@:Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="Morganic"/>
+	<property name="Stacknumber" value="25"/>
+	<property name="EconomicValue" value="50"/>
+	<property name="SellableToTrader" value="true"/>
+	<property name="DescriptionKey" value="foodMilkDesc"/>
+</item>
+
 </append>
 	
 

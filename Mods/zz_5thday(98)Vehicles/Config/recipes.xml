@@ -1,6 +1,6 @@
 <snj>
 
-
+<!--
 <remove xpath="//recipe[@name='Quadchassis']"/>
 <remove xpath="//recipe[@name='Quadbars']"/>
 <remove xpath="//recipe[@name='vehicleWitosQuadPlaceable']"/>
@@ -10,6 +10,7 @@
 <remove xpath="//recipe[@name='BMXbars']"/>
 <remove xpath="//recipe[@name='vehicleBMXETPlaceable']"/>
 <remove xpath="//recipe[@name='vehicleBMXPlaceable']"/>
+-->
 <append xpath="/recipes">
 	
 	<recipe name="5DInternationalBodyComplete" count="1" craft_time="300" craft_area="Workshop" craft_tool="HOHRatchetSet" tags="workbenchCrafting">

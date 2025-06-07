@@ -21,7 +21,7 @@
 						
 						<!--<requirement name="PlayerLevel" operation="GTE" value="20"/>-->
 						<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="GTE" value="1"/>
-						<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="3"/>
+						<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="6"/>
 					</triggered_effect>	
 					</effect_group>	
 					<effect_group name="SpawnR3dHot">
@@ -29,7 +29,7 @@
 						<requirement name="CVarCompare" cvar="HOH_Questing_lvl" operation="GTE" value="20"/>
 						<!--<requirement name="PlayerLevel" operation="GTE" value="20"/>-->
 						<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="GTE" value="1"/>
-						<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="3"/>
+						<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="6"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="hoh_boss_BurntForrest" allow_client_call="true"/>
 					</effect_group>	
 					<effect_group name="SpawnReveka">
@@ -37,7 +37,7 @@
 						<requirement name="CVarCompare" cvar="HOH_Questing_lvl" operation="GTE" value="30"/>
 						<!--<requirement name="PlayerLevel" operation="GTE" value="35"/>-->
 						<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="GTE" value="1"/>
-						<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="3"/>
+						<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="6"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="hoh_boss_Desert" allow_client_call="true"/>
 					</effect_group>	
 					<effect_group name="SpawnKim">
@@ -45,7 +45,7 @@
 						<!--<requirement name="PlayerLevel" operation="GTE" value="50"/>-->
 						<requirement name="CVarCompare" cvar="HOH_Questing_lvl" operation="GTE" value="40"/>
 						<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="GTE" value="1"/>
-						<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="3"/>
+						<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="6"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="hoh_boss_Snow" allow_client_call="true"/>
 					</effect_group>	
 					<effect_group name="SpawnSchavikk">
@@ -53,7 +53,7 @@
 						<!--<requirement name="PlayerLevel" operation="GTE" value="60"/>-->
 						<requirement name="CVarCompare" cvar="HOH_Questing_lvl" operation="GTE" value="45"/>
 						<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="GTE" value="1"/>
-						<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="3"/>
+						<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="6"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="hoh_boss_WasteLand" allow_client_call="true"/>
 					</effect_group>	
 					

@@ -203,7 +203,7 @@
 					</triggered_effect>
 				</effect_group>
 			</perk>
-			<perk name="PerkHOHKnifes" parent="skillActionSkills" max_level="500" base_skill_point_cost="0" name_key="Knife Skills" desc_key="PerkHOHKnifeDesc" icon="ui_game_symbol_deep_cuts">
+			<perk name="PerkHOHKnifes" parent="skillActionSkills" max_level="250" base_skill_point_cost="0" name_key="Knife Skills" desc_key="PerkHOHKnifeDesc" icon="ui_game_symbol_deep_cuts">
 				
 				<effect_group name="Knife Effects">
 					<requirement name="ItemHasTags" tags="PerkHOHKnifes"/>
@@ -418,6 +418,37 @@
 					<passive_effect name="LootProb" operation="perc_add" level="1,500" value="0,0" tags="rangersProb">
 						<requirement name="ProgressionLevel" progression_name="perkRangersComplete" operation="Equals" value="1"/>
 					</passive_effect>
+				</effect_group>
+				<effect_group name="primary, always">
+					<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
+					<requirement name="ItemHasTags" tags="PerkHOHBows"/>
+					<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
+				</effect_group>
+				<effect_group>
+					<!-- all attacks refresh / extend bleeding even if no stacks can be added -->
+					<requirement name="ItemHasTags" tags="PerkHOHBows"/>
+					<requirement name="CVarCompare" cvar="bleedCounter" operation="GT" value="0" target="other"/>
+					<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
+				</effect_group>
+				<effect_group name="Secondary">
+					<requirement name="ItemHasTags" tags="PerkHOHBows"/>
+					<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="2">
+						<requirement name="ProgressionLevel" progression_name="perkHOHBows" operation="GTE" value="2"/>
+						<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="3" target="other"/>
+					</triggered_effect>
+				</effect_group>
+				<effect_group>
+					<requirement name="ItemHasTags" tags="PerkHOHBows"/>
+					<requirement name="ProgressionLevel" progression_name="perkHOHBows" operation="GTE" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="perkHOHBows" operation="LTE" value="4"/>
+					<requirement name="CVarCompare" cvar="$bleedSlowdown" operation="GT" value="-.1" target="other"/>
+					<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="$bleedSlowdown" operation="set" value="-.1"/>
+					<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar="$bleedSlowdown" operation="set" value="-.1"/>
+				</effect_group>
+				<effect_group>
+					<requirement name="ItemHasTags" tags="PerkHOHBows"/>
+					<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
+					<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 				</effect_group>
 			</perk>
 			<perk name="perkHOHPistols" parent="skillActionSkills" max_level="150"  base_skill_point_cost="0" name_key="Pistol Skills" desc_key="perkGunslingerDesc" icon="ui_game_symbol_gunslinger">
@@ -2268,23 +2299,26 @@
 					<passive_effect name="CraftingTier" operation="base_add" level="43,51,59,67,75" value="1,2,3,4,5" tags="meleeWpnKnucklesT3SteelKnuckles"/>
 				</effect_group>
 			</crafting_skill>
-			<crafting_skill name="perkKnifes" max_level="500" parent="attCrafting" name_key="PerkHOHKnife" desc_key="" long_desc_key="" icon="ui_game_symbol_tool">
+			<crafting_skill name="perkKnifes" max_level="250" parent="attCrafting" name_key="PerkHOHKnifes" desc_key="" long_desc_key="" icon="ui_game_symbol_tool">
 				<display_entry item="meleeWpnBladeT0BoneKnife" unlock_level="1,10,20,30,40,50" />
 				<display_entry item="meleeWpnBladeT1HuntingKnife" unlock_level="75,85,95,105,115,125" />
-				<display_entry item="meleeWpnBladeT3Machete" unlock_level="150,175,200,225,250,275" />
+				<display_entry item="meleeWpnBladeT3Machete" unlock_level="130,135,140,145,150,155" />
 			<effect_group>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,500" value="1" tags="meleeWpnBladeT0BoneKnife"/>
-				<passive_effect name="CraftingTier" operation="base_add" level="10,20,30,40,50,500" value="1,2,3,4,5,5" tags="meleeWpnBladeT0BoneKnife"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,500" value="1" tags="meleeWpnBladeT1HuntingKnife"/>
-				<passive_effect name="CraftingTier" operation="base_add" level="85,95,105,115,125,500" value="1,2,3,4,5,5" tags="meleeWpnBladeT1HuntingKnife"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="150,500" value="1" tags="meleeWpnBladeT3Machete,RiddicUlak"/>
-				<passive_effect name="CraftingTier" operation="base_add" level="175,200,225,250,275,500" value="1,2,3,4,5,5" tags="meleeWpnBladeT3Machete,RiddicUlak"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,250" value="1" tags="meleeWpnBladeT0BoneKnife"/>
+				<passive_effect name="CraftingTier" operation="base_add" level="10,20,30,40,50,250" value="1,2,3,4,5,5" tags="meleeWpnBladeT0BoneKnife"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,250" value="1" tags="meleeWpnBladeT1HuntingKnife"/>
+				<passive_effect name="CraftingTier" operation="base_add" level="85,95,105,115,125,250" value="1,2,3,4,5,5" tags="meleeWpnBladeT1HuntingKnife"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="150,250" value="1" tags="meleeWpnBladeT3Machete"/>
+				<passive_effect name="CraftingTier" operation="base_add" level="135,140,145,150,155,250" value="1,2,3,4,5,5" tags="meleeWpnBladeT3Machete"/>
         	</effect_group>
 			</crafting_skill>
 			<crafting_skill name="perkSpears" max_level="100" parent="attCrafting" name_key="PerkHOHJavelin" desc_key="" long_desc_key="" icon="ui_game_symbol_tool">
+				<display_entry item="meleeWpnSpearT0StoneSpear" unlock_level="1" />
 				<display_entry item="meleeWpnSpearT1IronSpear" unlock_level="35" />
 				<display_entry item="meleeWpnSpearT3SteelSpear" unlock_level="70" />
 				<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,100" value="1" tags="meleeWpnSpearT0StoneSpear"/>
+				<passive_effect name="CraftingTier" operation="base_add" level="2,4,6,8,10,100" value="1,2,3,4,5,5" tags="meleeWpnSpearT0StoneSpear"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="35,100" value="1" tags="meleeWpnSpearT1IronSpear"/>
 				<passive_effect name="CraftingTier" operation="base_add" level="40,45,50,55,60,100" value="1,2,3,4,5,5" tags="meleeWpnSpearT1IronSpear"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="70,100" value="1" tags="meleeWpnSpearT3SteelSpear"/>
@@ -2551,7 +2585,7 @@
 				 <unlock_entry item="foodGrilledMeat,foodPorkChop,foodPumpkinBread,foodVegetableStew,foodBread" unlock_tier="1" />
 				 </display_entry>
 				<display_entry icon="drinkJarCoffee" name_key="Cooking-Tier 4" has_quality="false" unlock_level="25,28" >
-				 <unlock_entry item="drinkJarCoffee,WorkingGasGrill,WorkingCharcoalGrill,HOH_Collection_workstations_Range,foodGrilledChickenSandwich,HOH_Collection_workstations_CoffeeMaker,fryingpan,kettle,stockpot,toolBakingPan" unlock_tier="1" />
+				 <unlock_entry item="drinkJarCoffee,WorkingGasGrill,HOH_Collection_workstations_Range,foodGrilledChickenSandwich,HOH_Collection_workstations_CoffeeMaker,fryingpan,kettle,stockpot,toolBakingPan" unlock_tier="1" />
 				 <unlock_entry item="foodBacon,foodBaconAndEggs,foodSteakAndEggs" unlock_tier="2" />
 				 </display_entry>
 				<display_entry icon="drinkJarGoldenRodTea" name_key="Cooking-Tier 5" has_quality="false" unlock_level="30,35" >
@@ -2567,7 +2601,7 @@
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,100" value="1" tags="foodCornOnTheCob,foodFriedEggs"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="foodBakedPotato,foodBoiledMeat,foodCornBread,foodGrilledChicken"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="foodGrilledMeat,foodPumpkinBread,foodVegetableStew,foodPorkChop,foodBread"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="drinkJarCoffee,WorkingCharcoalGrill,WorkingGasGrill,5thday_Range,foodGrilledChickenSandwich,HOH_Collection_workstations_CoffeeMaker,,fryingpan,kettle,stockpot,toolBakingPan"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="drinkJarCoffee,WorkingGasGrill,5thday_Range,foodGrilledChickenSandwich,HOH_Collection_workstations_CoffeeMaker,,fryingpan,kettle,stockpot,toolBakingPan"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="28,100" value="1" tags="foodBaconAndEggs,foodSteakAndEggs,foodBacon"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="30,100" value="1" tags="drinkJarGoldenRodTea,drinkJarRedTea,foodShamChowder"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="35,100" value="1" tags="drinkJarYuccaJuice,foodSteakAndPotato"/>

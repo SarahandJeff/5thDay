@@ -986,6 +986,34 @@
 		<ingredient name="ammo57Case" count="3"/>
 		<ingredient name="ammoPrimerMed" count="3"/>
 	</recipe>
+
+
+
+<recipe name="tanto" count="1" craft_area="workbench" craft_time="60" tags="learnable,workbenchCrafting">
+	<ingredient name="meleeWpnBladeT3MacheteParts" count="1"/>
+	<ingredient name="resourceForgedSteel" count="10"/>
+	<ingredient name="resourceScrapPolymers" count="10"/>
+	<ingredient name="resourceDuctTape" count="3"/>
+	<ingredient name="resourceLegendaryParts" count="0"/>
+	<effect_group>
+		<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value="1,5" tags="meleeWpnBladeT3MacheteParts,resourceForgedSteel,resourceScrapPolymers,resourceDuctTape"/>
+		<passive_effect name="CraftingIngredientCount" level="6" operation="base_add" value="1" tags="resourceLegendaryParts"/>
+	</effect_group>
+</recipe>
+
+<recipe name="5d_katana" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+	<ingredient name="partKatanaBlade" count="1"/>
+	<ingredient name="resourceForgedIron" count="2"/>
+	<ingredient name="resourceWood" count="10"/>
+	<ingredient name="resourceGlue" count="1"/>
+	<ingredient name="resourceBrassIngot" count="2"/>
+	
+</recipe>
+
+	<recipe name="partKatanaBlade" count="1" craft_time="50" craft_area="PowerHammer">
+		<ingredient name="ResourceForgedBilletLng" count="1"/>
+		<ingredient name="resourceBoraxPowder" count="30"/>
+	</recipe>
 </append>
 
 

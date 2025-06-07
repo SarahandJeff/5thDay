@@ -48,6 +48,8 @@
 	<drop event="Harvest" name="resourceAnimalFat" count="10" tag="butcherHarvest"/>
 	<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="30"/>
 	<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/>
+	<drop event="Harvest" name="animalCalf" tag="butcherHarvest" count="1"/>
+	
 	<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
 	<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
 	<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
@@ -102,6 +104,7 @@
 	<drop event="Harvest" name="resourceAnimalFat" count="10" tag="butcherHarvest"/>
 	<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="30"/>
 	<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/>
+	<drop event="Harvest" name="animalCalf" tag="butcherHarvest" count="1"/>
 	<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
 	<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
 	<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
@@ -156,6 +159,7 @@
 	<drop event="Harvest" name="resourceAnimalFat" count="10" tag="butcherHarvest"/>
 	<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="30"/>
 	<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/>
+	<drop event="Harvest" name="animalCalf" tag="butcherHarvest" count="1"/>
 	<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
 	<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
 	<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>

@@ -630,6 +630,8 @@
 		<passive_effect name="DamageModifier" operation="perc_add" value=".6" tags="organic"/>
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
 		<!--<passive_effect name="BlockDamage" operation="perc_add" value="4" tags="blockButcher"/>-->
+		<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="MacheteKillTrackerActivate"/>
+		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="MacheteKillTrackerActivate"/>
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="base_add" value="5.1" tags="secondary"/>
@@ -645,6 +647,7 @@
 			<passive_effect name="EntityDamage" operation="perc_add" value="4" tags="perkDeepCuts"/>
 			<display_value name="dEntityDamageSneak" value="4"/>
 	</effect_group>
+	
   </item>
 
 
@@ -2803,7 +2806,7 @@
 		</item>
 
 	<item name="sickle">
-	<property name="Tags" value="melee,light,tool,repairTool,longshaft,attStrength,perkMiner69r,perkMotherLode,canHaveCosmetic,repairingTools,perkWrenches"/>
+	<property name="Tags" value="melee,light,tool,repairTool,longshaft,attStrength,perkMiner69r,perkMotherLode,canHaveCosmetic,repairingTools,PerkHOHFarming"/>
 	<property name="DisplayType" value="meleeRepairTool"/>
 	<property name="HoldType" value="32"/>
 	<property name="Meshfile" value="#@modfolder:Assets/HOH_Melee_Tools.unity3d?sickle.prefab"/>
@@ -2816,7 +2819,7 @@
 	<property name="SoundDestroy" value="wooddestroy1"/>
 	<property name="EconomicValue" value="500"/>
 	<property name="TraderStageTemplate" value="baseTier1"/><!-- meleeToolRepairT1ClawHammer -->
-	<property name="UnlockedBy" value="perkWrenches"/>
+	<property name="UnlockedBy" value="perkFarming"/>
 	<property name="ShowQuality" value="true"/>
 	<property name="Group" value="Tools/Traps"/>
 	<property name="RepairExpMultiplier" value="5.5"/>
@@ -2836,31 +2839,23 @@
 		<property name="SwingAngle" value="135"/>
 		<property name="UseGrazingHits" value="true"/>
 	</property>
-	<property class="Action1"> <!-- UseAction -->
-		<property name="Class" value="Repair"/>
-		<property name="Delay" value=".64"/> <!-- Repair actions still need the delay amount -->
-		<property name="Repair_amount" value="400"/>
-		<property name="Upgrade_hit_offset" value="-2"/>
-		<property name="Sound_start" value="repair_block"/>
-		<property name="Allowed_upgrade_items" value="resourceWood,resourceClayLump,resourceSnowBall,resourceScrapIron,resourceForgedIron,resourceForgedSteel,resourceConcreteMix,resourceCobblestones,ironDoorBlockVariantHelper,ironDoorDoubleBlockVariantHelper,vaultDoor01,vaultDoor01Double,ironHatchBlockVariantHelper,vaultHatch01,cellarDoorDoubleIron,cellarDoorDoubleSteel,shuttersIronBlockVariantHelper,shuttersSteelBlockVariantHelper,resourceYuccaFibers,resourceCloth,resourceScrapPolymers,resourceNail,glassBulletproofBlockVariantHelper"/>
-		<property name="UsePowerAttackAnimation" value="false"/>
-	</property>
+	
 	<effect_group name="meleeToolRepairT1ClawHammer">
-		<passive_effect name="AttacksPerMinute" operation="base_set" value="70" tags="perkMiner69r"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="70" tags="PerkHOHFarming"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="17.1" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="300,1000" tier="1,6" tags="perkMiner69r"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
-		<passive_effect name="MaxRange" operation="base_set" value="2.2" tags="perkMiner69r"/>
-		<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkMiner69r"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300,1000" tier="1,6" tags="PerkHOHFarming"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="PerkHOHFarming"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.2" tags="PerkHOHFarming"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3" tags="PerkHOHFarming"/>
 		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="12" tags="perkMiner69r"/>
-		<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random EntityDmg -->
-		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
-		<passive_effect name="BlockDamage" operation="base_set" value="22" tags="perkMiner69r"/>
-		<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkMiner69r"/> <!-- random BlockDmg -->
-		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
+		<passive_effect name="EntityDamage" operation="base_set" value="12" tags="PerkHOHFarming"/>
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="PerkHOHFarming"/> <!-- random EntityDmg -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="PerkHOHFarming"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="base_set" value="22" tags="PerkHOHFarming"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="PerkHOHFarming"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="PerkHOHFarming"/> <!-- tier bonus -->
 		<!-- <passive_effect name="DegradationMax" operation="perc_add" value="-.08,.08" tier="1,6" tags="perkMiner69r"/> --> <!-- random DegMax -->
 		<!-- <passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05" tags="perkMiner69r"/> --> <!-- random APM -->
 		<!-- <passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> --> <!-- random StamLoss -->
@@ -2868,14 +2863,221 @@
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="wood"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="earth"/>
 
-		<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WrenchBlockTrackerActivate"/>
-		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WrenchBlockTrackerActivate"/>
-		<triggered_effect trigger="onSelfDestroyedBlock" action="ModifyCVar" cvar="WrenchBlockCounter" operation="add" value="1"/>
+		<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="SickleBlockTrackerActivate"/>
+		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="SickleBlockTrackerActivate"/>
+		
 
 	</effect_group>
 
 	
 </item>	
+
+<item name="tanto">
+	<property name="Tags" value="knife,melee,grunting,light,perkFlurryOfAgility,weapon,meleeWeapon,attAgility,perkDeepCuts,perkTheHuntsman,canHaveCosmetic,bladeSkill,corpseRemoval,PerkHOHKnifes"/>
+	<property name="DisplayType" value="meleeKnife"/>
+	<property name="HoldType" value="36"/>
+	<property name="Meshfile" value="#@modfolder:Assets/HOH_Melee_Tools.unity3d?tanto"/>
+	<property name="Material" value="MresourceBone"/>
+	<property name="ScrapTimeOverride" value="10.0"/>
+	<property name="RepairTools" value="resourceBone"/>
+	<property name="EconomicValue" value="200"/>
+	<property name="TraderStageTemplate" value="baseTier0"/><!-- meleeWpnBladeT0BoneKnife -->
+	<property name="SellableToTrader" value="false"/>
+	<property name="SoundDestroy" value="wooddestroy1"/>
+	<property name="ShowQuality" value="true"/>
+	<property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+	<property name="SoundUnholster" value="weapon_unholster"/>
+	<property name="SoundHolster" value="weapon_holster"/>
+	<property name="SoundPickup" value="boneknife_grab"/>
+	<property name="SoundPlace" value="boneknife_place"/>
+	<property name="UnlockedBy" value="perkKnifes"/>
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Damage_type" value="Piercing"/>
+		<property name="Sphere" value=".1"/>
+		<property name="Sound_start" value="knife_bone_swinglight"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4.5"/>
+		<property name="UseGrazingHits" value="false"/>
+		<property name="GrazeStart" value=".25"/>
+		<property name="GrazeEnd" value=".35"/>
+		<property name="SwingDegrees" value="90"/>
+		<property name="SwingAngle" value="90"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalstaborganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Damage_type" value="Piercing"/>
+		<property name="Sphere" value=".1"/>
+		<property name="Sound_start" value="knife_bone_swingheavy"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4.5"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+		<property name="UseGrazingHits" value="false"/>
+		<property name="GrazeStart" value=".2"/>
+		<property name="GrazeEnd" value=".3"/>
+		<property name="SwingDegrees" value="80"/>
+		<property name="SwingAngle" value="140"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalstaborganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<effect_group name="meleeWpnBladeT0BoneKnife">
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="120" tags="PerkHOHKnifes"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="7.3" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6" tags="PerkHOHKnifes"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="PerkHOHKnifes"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.0" tags="PerkHOHKnifes"/>
+		<passive_effect name="BlockRange" operation="base_set" value="2.5" tags="PerkHOHKnifes"/>
+		<passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="20" tags="PerkHOHKnifes,knife"/> <!-- meleeWpnBladeT0BoneKnife -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="PerkHOHKnifes"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="base_set" value="4" tags="PerkHOHKnifes"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="PerkHOHKnifes"/> <!-- tier bonus -->
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value=".6" tags="organic"/>
+		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+		<!--<passive_effect name="BlockDamage" operation="perc_add" value="4" tags="blockButcher"/>-->
+		<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="MacheteKillTrackerActivate"/>
+		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="MacheteKillTrackerActivate"/>
+		
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="base_add" value="5.1" tags="secondary"/>
+		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="AttacksPerMinute" operation="base_add" value="-60" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="10.9" tags="secondary"/> <!-- using perc_add here increases StaminaOT for no obvious reason -->
+	</effect_group>
+	<effect_group name="sneak damage bonus">
+		<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+		<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+			<passive_effect name="DamageBonus" operation="base_add" value="4"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="4" tags="PerkHOHKnifes"/>
+			<display_value name="dEntityDamageSneak" value="4"/>
+	</effect_group>
+  </item>
+
+
+<item name="5d_katana">
+	<property name="Tags" value="knife,melee,grunting,light,perkFlurryOfAgility,weapon,meleeWeapon,attAgility,perkDeepCuts,perkTheHuntsman,canHaveCosmetic,bladeSkill,corpseRemoval,PerkHOHKnifes"/>
+	<property name="DisplayType" value="melee"/>
+	<property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+	<property name="HoldType" value="65"/>
+	<property name="Meshfile" value="#@modfolder:Assets/HOH_Melee_Tools.unity3d?Katana"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="TintColor" value="194, 116, 0"/>
+	<property name="ScrapTimeOverride" value="10.0"/>
+	<property name="RepairTools" value="repairKitTools"/>
+	<property name="SoundDestroy" value="wooddestroy1"/>
+	<property name="RepairExpMultiplier" value="5.5"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property name="EconomicValue" value="500"/>
+	<property name="TraderStageTemplate" value="baseTier1"/><!-- meleeWpnClubT1BaseballBat -->
+	<property name="UnlockedBy" value="perkKnifes"/><!-- PerkHOHClubs,meleeWpnClubT1BaseballBatSchematic, -->
+	<property name="ShowQuality" value="true"/>
+	<property name="SoundUnholster" value="weapon_unholster"/>
+	<property name="SoundHolster" value="weapon_holster"/>
+	<property name="SoundPickup" value="club_wood_grab"/>
+	<property name="SoundPlace" value="club_wood_place"/>
+
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sound_start" value="club_swinglight"/>
+		<property name="Sphere" value=".1"/>
+		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+		<property name="UseGrazingHits" value="true"/>
+		<property name="GrazeStart" value=".25"/>
+		<property name="GrazeEnd" value=".32"/>
+		<property name="SwingDegrees" value="65"/>
+		<property name="SwingAngle" value="180"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalslashorganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sound_start" value="club_swingheavy"/>
+		<property name="Sphere" value=".15"/>
+		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+		<property name="UseGrazingHits" value="true"/>
+		<property name="IsHorizontalSwing" value="true"/>
+		<property name="GrazeStart" value=".25"/>
+		<property name="GrazeEnd" value=".32"/>
+		<property name="SwingDegrees" value="120"/>
+		<property name="SwingAngle" value="90"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalslashorganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<effect_group name="meleeWpnClubT1BaseballBat">
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="62" tags="PerkHOHKnifes"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="20.9" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="200,500" tier="1,6" tags="PerkHOHKnifes"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="PerkHOHKnifes"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="PerkHOHKnifes"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3" tags="PerkHOHKnifes"/>
+		<passive_effect name="ModSlots" operation="base_set" value="1,2,3,4,5,6" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="20" tags="PerkHOHKnifes"/> <!-- meleeWpnClubT1BaseballBat -->
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="PerkHOHKnifes"/> <!-- random EntityDmg -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="PerkHOHKnifes"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="base_set" value="18" tags="PerkHOHKnifes"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="PerkHOHKnifes"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="PerkHOHKnifes"/> <!-- tier bonus -->
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
+		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
+		<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+		<!-- Bat Buff -->
+	
+		<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="MacheteKillTrackerActivate"/>
+		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="MacheteKillTrackerActivate"/>
+		
+	
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="35.6" tags="secondary"/>
+	</effect_group>
+</item>
+
+
+
+<item name="partKatanaBlade">
+		<property name="CustomIcon" value="partKatanaBlade"/>
+		<property name="HoldType" value="45"/>
+		<property name="Meshfile" value="@:Other/Items?Misc/sackPrefab.prefab"/>
+		<property name="DropMeshfile" value="@:Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="Material" value="MresourceScrapIron"/>
+		<property name="Stacknumber" value="5"/>
+		<property name="Group" value="partBarrelsDraw"/>
+		<property name="SellableToTrader" value="false"/>
+		<property name="DescriptionKey" value="Drawn out unsharpened sword blade"/>
+		</item>	
 </append>
 		
 

@@ -337,7 +337,7 @@
 
 
 
-tier6_flogi 
+
 	<remove xpath="/quests/quest/reward[starts-with(@id,'groupQuestT1SkillMagazineBundle')]"/>
 
 <remove xpath="/quests/quest/reward[starts-with(@id,'groupQuestMotorcycleParts')]"/>
@@ -354,7 +354,7 @@ tier6_flogi
 	<set xpath="//quest/reward[@id='groupQuestSchematics,groupQuestT1SkillMagazineBundle']/@id">groupQuestSchematics</set>
 
 
-<set xpath="//quest/reward[@id='groupQuestAmmo,groupQuestSchematics,groupQuestMods,groupQuestT1SkillMagazineBundle']/@id">groupQuestAmmo,groupQuestSchematics,groupQuestMods</set>
+<!--<set xpath="//quest/reward[@id='groupQuestAmmo,groupQuestSchematics,groupQuestMods,groupQuestT1SkillMagazineBundle']/@id">groupQuestAmmo,groupQuestSchematics,groupQuestMods</set>-->
 
 
 	
@@ -407,6 +407,17 @@ tier6_flogi
 
 <remove xpath="/quests/quest/reward[starts-with(@id,'questRewardPipe')]"/>
 <remove xpath="/quests/quest/reward[starts-with(@type,'SkillPoints')]"/>
+
+<remove xpath="/quests/quest/reward[starts-with(@id,'modArmorPerception')]"/>
+<remove xpath="/quests/quest/reward[starts-with(@id,'modArmorStrength')]"/>
+<remove xpath="/quests/quest/reward[starts-with(@id,'modArmorFortitude')]"/>
+<remove xpath="/quests/quest/reward[starts-with(@id,'modArmorAgility')]"/>
+<remove xpath="/quests/quest/reward[starts-with(@id,'modArmorIntellect')]"/>
+
+
+
+
+
 
 <insertAfter xpath="//quest[@id='intro_buried_supplies']/reward[@type='Exp']">
 	<reward type="Item" id="questRewardGlock9T2Bundle" ischosen="true" value="1" />

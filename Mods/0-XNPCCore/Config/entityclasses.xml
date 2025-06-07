@@ -2499,7 +2499,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/>
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="ItemsOnEnterGame.GameModeSurvival" value="meleeNPCEmptyHand,medicalFirstAidBandage"/> <!-- example for extra items on spawn  -->
 			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="meleeNPCEmptyHand,medicalFirstAidBandage"/>
 			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="meleeNPCEmptyHand,medicalFirstAidBandage"/> 
@@ -2530,7 +2530,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/> 
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2557,7 +2557,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/> 
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2584,7 +2584,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/> 
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2611,7 +2611,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/> 
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2639,7 +2639,7 @@
 			<property name="Titles" value="Batter,Smacker,Hitter" />
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/> 
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2666,7 +2666,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/> 
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2692,7 +2692,7 @@
 			<property name="Names" value="Nancy,Nan,Nanny,Nanna,Ratchet,Nightingale" />	
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/> 
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="DanceType" value="2" />
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
@@ -2721,7 +2721,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/>
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2748,7 +2748,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/>
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2775,7 +2775,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/>
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2803,7 +2803,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/>
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2830,7 +2830,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/>
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2857,7 +2857,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/>
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2884,7 +2884,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/>
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2911,7 +2911,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/>
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2939,7 +2939,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/>
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2966,7 +2966,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/>
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -2993,7 +2993,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/>
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -3020,7 +3020,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/>
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -3047,7 +3047,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/>
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -3074,7 +3074,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/>
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -3101,7 +3101,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/> 
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -3128,7 +3128,7 @@
 			<property name="NPCID" value="NPCGenericNurse"/> 
 			<property name="DanceType" value="2" />
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?NurseNancy_X"/> 
-			<property name="PickUpItem" value="nursePickUpNPC" />
+			<!--<property name="PickUpItem" value="nursePickUpNPC" />-->
 			<property name="SoundHurt" value="player2painlg"/>
 			<property name="SoundHurtSmall" value="player2painsm"/>
 			<property name="SoundDeath" value="player2death"/>
@@ -3817,7 +3817,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 			<effect_group name="HasBackpack"> <!-- This activates the backpack -->
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="HasBackpack"/>		
 			</effect_group>	
@@ -3834,7 +3834,7 @@
 			<property name="Faction" value="whiteriver"/> 
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/>
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>
 		
 		<entity_class name="npcBakerKnife" extends="npcAdvancedKnifeTemplate"> 
@@ -3843,7 +3843,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>	
 		
 		<entity_class name="npcBakerBat" extends="npcAdvancedBatTemplate"> 
@@ -3852,7 +3852,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 			<!-- <property name="CanCollideWithLeader" value="false" /> -->
 		</entity_class>				
 		
@@ -3862,7 +3862,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>	
 
 		<entity_class name="npcBakerAxe" extends="npcAdvancedAxeTemplate"> 
@@ -3871,7 +3871,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>				
 		
 		<entity_class name="npcBakerSpear" extends="npcAdvancedSpearTemplate"> 
@@ -3880,7 +3880,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>	
 		
 		<entity_class name="npcBakerPipePistol" extends="npcAdvancedPipePistolTemplate"> 
@@ -3889,7 +3889,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>		
 		
 		<entity_class name="npcBakerPipeRifle" extends="npcAdvancedPipeRifleTemplate"> 
@@ -3898,7 +3898,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>			
 		
 		<entity_class name="npcBakerPipeMG" extends="npcAdvancedPipeMGTemplate"> 
@@ -3907,7 +3907,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>			
 		
 		<entity_class name="npcBakerPipeShotgun" extends="npcAdvancedPipeShotgunTemplate"> 		
@@ -3916,7 +3916,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>			
 	
 		<entity_class name="npcBakerSMG" extends="npcAdvancedSMGTemplate"> 
@@ -3925,7 +3925,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>	
 		
 		<entity_class name="npcBakerM60" extends="npcAdvancedM60Template"> 
@@ -3934,7 +3934,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>	
 
 		<entity_class name="npcBakerPistol" extends="npcAdvancedPistolTemplate"> 
@@ -3943,7 +3943,7 @@
 			<property name="Faction" value="whiteriver"/> 
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/>
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>				
 		
 		<entity_class name="npcBakerDPistol" extends="npcAdvancedDPistolTemplate"> 
@@ -3952,7 +3952,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>	
 		
 		<entity_class name="npcBakerAK47" extends="npcAdvancedAK47Template"> 
@@ -3961,7 +3961,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>
 		
 		<entity_class name="npcBakerTRifle" extends="npcAdvancedTRifleTemplate"> 
@@ -3970,7 +3970,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>		
 		
 		<entity_class name="npcBakerHRifle" extends="npcAdvancedHRifleTemplate"> 
@@ -3979,7 +3979,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
         </entity_class>    		
 		
 		<entity_class name="npcBakerSRifle" extends="npcAdvancedSRifleTemplate"> 
@@ -3988,7 +3988,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
         </entity_class>  
 		
 		<entity_class name="npcBakerPShotgun" extends="npcAdvancedPShotgunTemplate"> 
@@ -3997,7 +3997,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>
  		
 		<entity_class name="npcBakerAShotgun" extends="npcAdvancedAShotgunTemplate"> 
@@ -4006,7 +4006,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class> 			
 
 		<entity_class name="npcBakerLBow" extends="npcAdvancedLBowTemplate"> 
@@ -4015,7 +4015,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class> 		
 		
 		<entity_class name="npcBakerXBow" extends="npcAdvancedXBowTemplate"> 
@@ -4024,7 +4024,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class>	 
 		
 		<entity_class name="npcBakerRocketL" extends="npcAdvancedRocketLTemplate"> 
@@ -4033,7 +4033,7 @@
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />	
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
-			<property name="PickUpItem" value="bakerPickUpNPC" />
+			<!--<property name="PickUpItem" value="bakerPickUpNPC" />-->
 		</entity_class> 
 
 	
@@ -4194,7 +4194,7 @@
 			<property name="IsEntityAnimal" value="true"/> 
 			<property name="IsEnemyEntity" value="false"/> 			
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?ArcticFox_X"/>
-			<property name="PickUpItem" value="foxPickUpNPC" />
+			<!--<property name="PickUpItem" value="foxPickUpNPC" />-->
 			<property name="HandItem" value="meleeHandAnimalFox"/>
 			<property name="RightHandJointName" value="articfox_Head_bone" />
 			<property name="ExperienceGain" value="300"/>

@@ -1,7 +1,19 @@
 <snj>
 
 <append xpath="/progression/crafting_skills/crafting_skill[@name='perkKnifes']">
+			
+				<display_entry item="tanto" unlock_level="150" />
 				<display_entry item="RiddicUlak" unlock_level="175" />
+				<display_entry item="5d_katana" unlock_level="200" />
+				<effect_group>
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" level="150,250" value="1" tags="tanto"/>
+					<passive_effect name="CraftingTier" operation="base_add" level="160,170,180,190,200,250" value="1,2,3,4,5,5" tags="tanto"/>
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" level="175,250" value="1" tags="RiddicUlak"/>
+					<passive_effect name="CraftingTier" operation="base_add" level="180,190,200,210,220,250" value="1,2,3,4,5,5" tags="RiddicUlak"/>
+					<passive_effect name="RecipeTagUnlocked" operation="base_set" level="200,250" value="1" tags="5d_katana"/>
+					<passive_effect name="CraftingTier" operation="base_add" level="205,210,220,230,240,250" value="1,2,3,4,5,5" tags="5d_katana"/>					
+				</effect_group>
+				
 </append>
 
 

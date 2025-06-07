@@ -3,9 +3,9 @@
 	<append xpath="/recipes">
 		<recipe name="Composter" count="1" craft_area="workbench">
 			<ingredient name="resourceScrapPolymers" count="30"/>
-			<ingredient name="resourceMetalPipe" count="1"/>
-			<ingredient name="resourceDuctTape" count="5"/>
-			<ingredient name="cntDishwasherFullWhite" count="1"/>
+			<ingredient name="resourceMetalPipe" count="3"/>
+			<ingredient name="resourceNail" count="50"/>
+			<ingredient name="resourceWood" count="50"/>
 		</recipe>
 
 		<recipe name="foodRottingFlesh" count="1" craft_area="composter">
@@ -16,6 +16,30 @@
 			<ingredient name="resourceClayLump" count="5"/>
 			<ingredient name="foodScraps" count="5"/>
 			
+		</recipe>
+		<recipe name="resourceCompost" count="3" craft_area="composter">
+			<ingredient name="resourceChickenPoop" count="1"/>
+			<ingredient name="resourceClayLump" count="5"/>
+			<ingredient name="resourceYuccaFibers" count="5"/>
+			<ingredient name="foodCropPumpkin" count="5"/>
+		</recipe>
+		<recipe name="resourceCompost" count="3" craft_area="composter">
+			<ingredient name="resourceChickenPoop" count="1"/>
+			<ingredient name="resourceClayLump" count="5"/>
+			<ingredient name="resourceYuccaFibers" count="5"/>
+			<ingredient name="foodCropCorn" count="5"/>
+		</recipe>
+		<recipe name="resourceCompost" count="3" craft_area="composter">
+			<ingredient name="resourceChickenPoop" count="1"/>
+			<ingredient name="resourceClayLump" count="5"/>
+			<ingredient name="resourceYuccaFibers" count="5"/>
+			<ingredient name="foodRottingFlesh" count="5"/>
+		</recipe>
+		<recipe name="resourceCompost" count="3" craft_area="composter">
+			<ingredient name="resourceChickenPoop" count="1"/>
+			<ingredient name="resourceClayLump" count="5"/>
+			<ingredient name="resourceYuccaFibers" count="5"/>
+			<ingredient name="foodCharredMeat" count="5"/>
 		</recipe>
 		
 	</append>

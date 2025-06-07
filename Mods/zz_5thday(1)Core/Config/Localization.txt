@@ -345,7 +345,7 @@ PerkHOHAxe,Axe Skill
 PerkHOHPickAxe,Pick Axe Skill
 PerkHOHShovel,Shovel Skill
 PerkHOHFist,Hand to Hand Skill
-PerkHOHKnife,Knife Skill
+PerkHOHKnifes,Knife Skill
 PerkHOHJavelin,Javelin Skill
 PerkHOHClubsBats,Art of ancient warefare Skills
 PerkHOHClubs,Art of ancient warefare Skills
@@ -460,3 +460,32 @@ foodSundayChickenDinner,Chicken Dinner
 foodGrilledChicken,Cooked Chicken
 foodFriedEggs,Fried Eggs
 foodBacon,Bacon
+
+
+
+
+
+tier1_flogi_explosives_name,Tier 1 Loot Explosives part 1: Get the boom booms
+tier2_flogi_explosives_name,Tier 2 Loot Explosives part 1: Get the boom booms
+tier3_flogi_explosives_name,Tier 3 Loot Explosives part 1: Get the boom booms
+tier4_flogi_explosives_name,Tier 4 Loot Explosives part 1: Get the boom booms
+tier5_flogi_explosives_name,Tier 5 Loot Explosives part 1: Get the boom booms
+tier6_flogi_explosives_name,Tier 6 Loot Explosives part 1: Get the boom booms
+flogi_explosives_subtitle,Loot the explosives!
+flogi_explosives_description,I have detected a heavily infested POI. We have made several attempts clearing it but the zombies always come back. First find the explosives on the given coordinates. Then report back to me and grab the Raze POI Quest.
+flogi_explosives_offer,I have detected a heavily infested POI. We have made several attempts clearing it but the zombies always come back. First find the explosives on the given coordinates. Then report back to me and grab the Raze POI Quest.
+flogi_explosives_statement,Loot the explosives!
+flogi_explosives_response,Loot Explosives ([DECEA3]{poi.name}[-]) ([DECEA3]{poi.distance} {poi.direction}[-])
+flogi_explosives_completion,Uh Baby! Now we can blow something up.
+tier1_flogi_raze_name,Tier 1 Loot Explosives part 2: Destroy the Infested Building
+tier2_flogi_raze_name,Tier 2 Loot Explosives part 2: Destroy the Infested Building
+tier3_flogi_raze_name,Tier 3 Loot Explosives part 2: Destroy the Infested Building
+tier4_flogi_raze_name,Tier 4 Loot Explosives part 2: Destroy the Infested Building
+tier5_flogi_raze_name,Tier 5 Loot Explosives part 2: Destroy the Infested Building
+tier6_flogi_raze_name,Tier 6 Loot Explosives part 2: Destroy the Infested Building
+flogi_raze_subtitle,Destroy the Infested Building!
+flogi_raze_description,The super infested POI is located. Bring it to the ground!
+flogi_raze_offer,The super infested POI is located. Bring it to the ground!
+flogi_raze_statement,Destroy the Infested Building!
+flogi_raze_response,Destroy the Infested Building ([DECEA3]{poi.name}[-]) ([DECEA3]{poi.distance} {poi.direction}[-])
+flogi_raze_completion,Thanks for destroying that POI to the ground. We are a lot safer now!

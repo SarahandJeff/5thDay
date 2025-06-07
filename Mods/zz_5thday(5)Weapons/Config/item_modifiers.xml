@@ -335,6 +335,22 @@
 
 
         </item_modifier>
+
+    <item_modifier name="modExtraSharpArrows" installable_tags="PerkHOHBows" modifier_tags="damage" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="UnlockedBy" value="modMeleeSerratedBladeSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
+
+		<effect_group tiered="false">
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+			<requirement name="CVarCompare" cvar="bleedCounter" operation="LT" value="@$maxBleedCounter" target="other"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="bleedCounter" operation="add" value="1"/>
+		</effect_group>
+		<effect_group tiered="false">
+			<requirement name="CVarCompare" cvar="bleedCounter" operation="GT" value="0" target="other"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
+		</effect_group>
+	</item_modifier>
 </append>
 
 </snj>

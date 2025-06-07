@@ -2,7 +2,7 @@
 
 <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedRecipes']/property[@name='ReadFromContainers']/@value">true</set>
 <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedLockpicking']/property[@name='AdvancedLocks']/@value">true</set>
-	<set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedLockpicking']/property[@name='LockPrefab']/@value">#@modfolder(Locks):Resources/Locks.unity3d?Lockset01</set>
+	<set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedLockpicking']/property[@name='LockPrefab']/@value">#@modfolder(Locks):Resources/Locks.unity3d?padlock01</set>
 <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedPlayerFeatures']/property[@name='VehicleNoTake']/@value">true</set>
 <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedNPCFeatures']/property[@name='MakeTraderVulnerable']/@value">true</set>
 	<set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedItemFeatures']/property[@name='DurabilityAffectsDamage']/@value">false</set>
@@ -143,12 +143,8 @@
 	<insertBefore xpath="//block[@name='terrSand']/property[@name='Material']">
 		<property name="Tags" value="ShovelXPGain"/>
 	</insertBefore>
-	<insertBefore xpath="//block[@name='terrGravel']/property[@name='Material']">
-		<property name="Tags" value="ShovelXPGain"/>
-	</insertBefore>
-	<insertBefore xpath="//block[@name='terrGravel']/property[@name='Material']">
-		<property name="Tags" value="ShovelXPGain"/>
-	</insertBefore>
+	<append xpath="//block[@name='terrGravel']/property[@name='Tags']/@value">,ShovelXPGain</append>
+	
 	<append xpath="//block[starts-with(@name, 'palletBricks')]">
 		<property name="Tags" value="Stone"/>
 	</append>
@@ -410,10 +406,10 @@
 			<property name="ActiveRadiusEffects" value="buffCampfireAOE(2)"/>
 			<property class="Workstation">
 				<property name="Modules" value="tools,output,fuel,input"/>
-				<property name="CraftingAreaRecipes" value="campfire" />
+				<property name="CraftingAreaRecipes" value="CharcoalGrill" />
 				<property name="Collide" value="melee,bullet,arrow,rocket"/>
 			</property>
-			<property name="UnlockedBy" value="perkCooking"/>
+			
 			<property name="WorkstationIcon" value="ui_game_symbol_campfire"/>
 			<property name="CraftActionName" value="lblContextActionCook"/>
 			<property name="CraftIcon" value="ui_game_symbol_spatula"/>
@@ -493,10 +489,13 @@
 	</append>
 	<remove xpath="/blocks/block[@name='cntGasGrillRandomLootHelper']/drop"/>
 	<append xpath="/blocks/block[@name='cntGasGrillRandomLootHelper']">
+<property name="EconomicValue" value="587"/>
+<property name="SellableToTrader" value="true" />
 		<property name="Tags" value="Car,WrenchXPGain"/>
 		<drop event="Destroy" name="cntGasGrillClosed" count="1" tool_category="Disassemble"  prob="1" />
 		<drop event="Destroy" count="0" />
-		<property name="CanPickup" value="true" />
+
+		<!--<property name="CanPickup" value="true" />-->
 	</append>
 	
 <remove xpath="/blocks/block[@name='cntStoveOldVer2Open']/drop"/>
@@ -2125,6 +2124,58 @@ Harvest
  <append xpath="//block[@name='MiliShelfLrg']">
      <drop event="Destroy" name="MiliShelfLrg" count="1" tool_category="Disassemble" />
   </append>
+
+
+<remove xpath="//block[@name='decoComputerMonitorKeyboardMouse']"/>
+<append xpath="/blocks">
+<block name="decoComputerMonitorKeyboardMouse">
+    <property name="Extends" value="decoEntityMetalMaster" param1="RepairItems,CustomIcon" />
+    
+	<property name="DisplayType" value="blockMulti" />
+    <property name="Model" value="Entities/Electrical/monitorKeyboardMousePrefab" />
+    <property name="ModelOffset" value=".5,.5,0" />
+    <property name="MultiBlockDim" value="2,1,1" />
+    <property name="SortOrder2" value="0002" />
+    <property name="Class" value="Loot">
+      <!--Element appended by: "SNJ-LootableChanges"-->
+    </property>
+    <property name="LootList" value="computer1">
+      <!--Element appended by: "SNJ-LootableChanges"-->
+    </property>
+	
+	
+	
+	
+    <property name="WaterFlow" value="permitted" />
+    <property name="Path" value="solid" />
+    <property class="RepairItems">
+      <property name="resourceScrapPolymers" value="4" />
+      <property name="resourceElectricParts" value="6" />
+      <property name="resourceForgedIron" value="1" />
+    </property>
+    <property name="SortOrder1" value="B163" />
+    <property name="SortOrder2" value="0001" />
+    <property name="FilterTags" value="MC_building,SC_electrical" />
+    <property name="Tags" value="challenge_elec_parts,WrenchXPGain">
+    
+    </property>
+    <property name="EconomicValue" value="350">
+    
+    </property>
+    <property name="Stacknumber" value="100">
+    
+    </property>
+    <property name="TakeDelay" value="10">
+    </property>
+	  <drop event="Destroy" name="decoComputerMonitorKeyboardMouse" count="1" tool_category="Disassemble" />
+  </block>
+  </append>
+
+
+
+
+
+
 
 <include filename="Items/block_weights.xml"/>
 

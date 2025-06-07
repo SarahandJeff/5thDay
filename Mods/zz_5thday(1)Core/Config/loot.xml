@@ -36,6 +36,8 @@
 <remove xpath="//lootgroup/item[starts-with(@name, 'modArmorAgility')]"/>
 <remove xpath="//lootgroup/item[starts-with(@name, 'modArmorIntellect')]"/>
 
+<remove xpath="//lootgroup/item[starts-with(@name, 'vehicleBicycleChassis')]"/>
+
 
 
 

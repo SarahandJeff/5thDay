@@ -1247,7 +1247,7 @@
         <property name="Mass" value="130" />
         <property name="IsMale" value="false" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianTestFemaleKhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianTestFemaleKhzPickUp" />-->
         <property name="SoundHurt" value="civilianplayer2painlg" />
         <property name="SoundHurtSmall" value="Player_Female/player2painsm" />
         <property name="SoundDeath" value="Player_Female/player2death" />
@@ -1277,7 +1277,7 @@
         <property name="Mass" value="170" />
         <property name="IsMale" value="true" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianTestMaleKhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianTestMaleKhzPickUp" />-->
         <property name="SoundRandom" value="civilianplayer1sigh" />
         <property name="SoundRandomTime" value="60" />
         <property name="SoundAlert" value="civilianmalesense" />
@@ -1299,7 +1299,7 @@
         <property name="Mass" value="130" />
         <property name="IsMale" value="false" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianFemaleAgedKhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianFemaleAgedKhzPickUp" />-->
         <property name="SoundHurt" value="civilianplayer2painlg" />
         <property name="SoundHurtSmall" value="Player_Female/player2painsm" />
         <property name="SoundDeath" value="Player_Female/player2death" />
@@ -1331,7 +1331,7 @@
         <property name="Mass" value="130" />
         <property name="IsMale" value="false" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianFemaleScrubsKhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianFemaleScrubsKhzPickUp" />-->
         <property name="SoundHurt" value="civilianplayer2painlg" />
         <property name="SoundHurtSmall" value="Player_Female/player2painsm" />
         <property name="SoundDeath" value="Player_Female/player2death" />
@@ -1362,7 +1362,7 @@
         <property name="Mass" value="130" />
         <property name="IsMale" value="false" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianFemaleYoung1KhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianFemaleYoung1KhzPickUp" />-->
         <property name="SoundHurt" value="youngcivilianplayer2painlg" />
         <property name="SoundHurtSmall" value="youngcivilianplayer2painsm" />
         <property name="SoundDeath" value="Player_Female/player2death" />
@@ -1397,7 +1397,7 @@
         <property name="Mass" value="130" />
         <property name="IsMale" value="false" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianFemaleYoung2KhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianFemaleYoung2KhzPickUp" />-->
         <property name="SoundHurt" value="youngcivilianplayer2painlg" />
         <property name="SoundHurtSmall" value="youngcivilianplayer2painsm" />
         <property name="SoundDeath" value="Player_Female/player2death" />
@@ -1428,7 +1428,7 @@
         <property name="Mass" value="130" />
         <property name="IsMale" value="false" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianFemaleYoung3KhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianFemaleYoung3KhzPickUp" />-->
         <property name="SoundHurt" value="youngcivilianplayer2painlg" />
         <property name="SoundHurtSmall" value="youngcivilianplayer2painsm" />
         <property name="SoundDeath" value="Player_Female/player2death" />
@@ -1460,7 +1460,7 @@
         <property name="Mass" value="130" />
         <property name="IsMale" value="false" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianFemaleYoung4KhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianFemaleYoung4KhzPickUp" />-->
         <property name="SoundHurt" value="youngcivilianplayer2painlg" />
         <property name="SoundHurtSmall" value="youngcivilianplayer2painsm" />
         <property name="SoundDeath" value="Player_Female/player2death" />
@@ -1495,7 +1495,7 @@
         <property name="Mass" value="130" />
         <property name="IsMale" value="false" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianFemaleYoung5KhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianFemaleYoung5KhzPickUp" />-->
         <property name="SoundHurt" value="youngcivilianplayer2painlg" />
         <property name="SoundHurtSmall" value="youngcivilianplayer2painsm" />
         <property name="SoundDeath" value="Player_Female/player2death" />
@@ -1528,7 +1528,7 @@
         <property name="Mass" value="170" />
         <property name="IsMale" value="true" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianMaleAgedKhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianMaleAgedKhzPickUp" />-->
         <property name="SoundRandom" value="civilianplayer1sigh" />
         <property name="SoundRandomTime" value="60" />
         <property name="SoundAlert" value="civilianmalesense" />
@@ -1550,7 +1550,7 @@
         <property name="Mass" value="170" />
         <property name="IsMale" value="true" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianMaleAgedScrubsKhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianMaleAgedScrubsKhzPickUp" />-->
         <property name="SoundRandom" value="civilianplayer1sigh" />
         <property name="SoundRandomTime" value="60" />
         <property name="SoundAlert" value="civilianmalesense" />
@@ -1571,7 +1571,7 @@
         <property name="Mass" value="170" />
         <property name="IsMale" value="true" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianMaleAged2KhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianMaleAged2KhzPickUp" />-->
         <property name="SoundRandom" value="civilianplayer1sigh" />
         <property name="SoundRandomTime" value="60" />
         <property name="SoundAlert" value="civilianmalesense" />
@@ -1593,7 +1593,7 @@
         <property name="Mass" value="250" />
         <property name="IsMale" value="true" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianMaleCowboyKhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianMaleCowboyKhzPickUp" />-->
         <property name="SoundRandom" value="civilianplayer1sigh" />
         <property name="SoundRandomTime" value="60" />
         <property name="SoundAlert" value="civilianmalesense" />
@@ -1617,7 +1617,7 @@
         <property name="Mass" value="250" />
         <property name="IsMale" value="true" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianMaleJKhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianMaleJKhzPickUp" />-->
         <property name="SoundRandom" value="civilianplayer1sigh" />
         <property name="SoundRandomTime" value="60" />
         <property name="SoundAlert" value="civilianmalesense" />
@@ -1641,7 +1641,7 @@
         <property name="Mass" value="170" />
         <property name="IsMale" value="true" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianMaleYoung1KhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianMaleYoung1KhzPickUp" />-->
         <property name="SoundRandom" value="civilianplayer1sigh" />
         <property name="SoundRandomTime" value="60" />
         <property name="SoundAlert" value="civilianmalesense" />
@@ -1663,7 +1663,7 @@
         <property name="Mass" value="130" />
         <property name="IsMale" value="true" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianMaleYoung2KhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianMaleYoung2KhzPickUp" />-->
         <property name="SoundRandom" value="youngcivilianplayer1sigh" />
         <property name="SoundRandomTime" value="60" />
         <property name="SoundAlert" value="youngcivilianmalesense" />
@@ -1689,7 +1689,7 @@
         <property name="Mass" value="130" />
         <property name="IsMale" value="true" />
         <property name="LookAtAngle" value="45" />
-        <property name="PickUpItem" value="civilianMaleYoung3KhzPickUp" />
+        <!--<property name="PickUpItem" value="civilianMaleYoung3KhzPickUp" />-->
         <property name="SoundRandom" value="youngcivilianplayer1sigh" />
         <property name="SoundRandomTime" value="60" />
         <property name="SoundAlert" value="youngcivilianmalesense" />

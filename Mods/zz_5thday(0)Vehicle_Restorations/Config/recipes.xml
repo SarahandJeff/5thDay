@@ -14,7 +14,7 @@
 	<remove xpath="//recipe[@name='vehicleGyrocopterPlaceable']"/>
 	<remove xpath="//recipe[@name='vehicleGyroCopterChassis']"/>
 	<remove xpath="//recipe[@name='vehicleGyroCopterAccessories']"/>
-	<remove xpath="//recipe[contains(@name,'carBodyAssembly')]"/>
+	<!--<remove xpath="//recipe[contains(@name,'carBodyAssembly')]"/>--> 
 
 	<remove xpath="//recipe[@name='carBattery']"/>
 	<remove xpath="//recipe[@name='vehicleWheels']"/>

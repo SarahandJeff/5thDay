@@ -39,7 +39,8 @@ quest_tier4_buried_supplies,Tier 4 Buried Supplies possible Ancient weapons
 5thday_M82Desc,"Now this is what you want when you want zombie ketchup red myst, and dont want to go walking around hunting."
 5thdayAR15_556,AR15 556mm
 5thdayAR15_556Desc,"Converted AR15 9mm into 556mm"
-
+5d_katana,"Old ass sword"
+5d_katanaDesc,"just an old ass sword asian sword"
 
 5thday_Vector,Vector 9mm SMG
 5thday_VectorDesc,"Cute little SMG\n (Craftable or Trader only)"

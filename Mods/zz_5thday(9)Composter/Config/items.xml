@@ -82,6 +82,20 @@
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="Group" value="Chemicals"/>
 		</item>
+		<item name="resourceChickenPoop">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Weight" value="10"/>
+			<property name="Stacknumber" value="500"/> <!-- STK resource -->
+			<property name="EconomicValue" value="1"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="Group" value="Resources"/>
+		</item>
+
+
+
 	</append>
 
 </snj>

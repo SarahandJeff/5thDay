@@ -4,7 +4,7 @@
 <!-- Ear Protection / Ear Protection / Ear Protection -->
 
 
-
+<!--
     <recipe name="modEarDefsGBAP" count="1" craft_time="300" craft_area="workbench" tags="learnable,workbenchCrafting">
 	    <ingredient name="resourceForgedIron" count="20"/>
 	    <ingredient name="resourceMechanicalParts" count="5"/>
@@ -12,7 +12,7 @@
 	    <ingredient name="resourceScrapPolymers" count="50"/>
     </recipe>
  
-<!-- Gear Reduction / Gear Reduction / Gear Reduction -->
+
  
 
 
@@ -39,7 +39,7 @@
 	    <ingredient name="meleeToolAllSteelParts" count="15"/>
 	</recipe>
  
-<!-- Auger / Auger / Auger -->
+
  
 
 
@@ -50,7 +50,7 @@
 	    <ingredient name="resourceForgedSteel" count="50"/>
 	</recipe>
 
-<!-- Auger Screw/ Auger Screw / Auger Screw -->
+
 
  
 	<recipe name="modDiamondScrewGBAP" count="1" craft_time="300" craft_area="workbench" tags="learnable,workbenchCrafting">
@@ -76,7 +76,7 @@
 	    <ingredient name="meleeToolAllSteelParts" count="24"/>
 	</recipe>
 
-<!-- Pick Head / Pick Head / Pick Head -->
+
  
 
 
@@ -102,8 +102,6 @@
 	    <ingredient name="resourceMechanicalParts" count="60"/>
 	    <ingredient name="meleeToolAllSteelParts" count="24"/>
     </recipe>
- 
-<!-- Chainsaw / Chainsaw / Chainsaw -->
 
 
     <recipe name="modChainBodyGBAP" count="1" craft_time="600" craft_area="workbench" tags="learnable,workbenchCrafting">
@@ -112,8 +110,6 @@
 	    <ingredient name="modMeleeStructuralBrace" count="1"/>
 	    <ingredient name="resourceForgedSteel" count="50"/>
     </recipe>
-
-<!-- Chainsaw Blade / Chainsaw Blade / Chainsaw Blade -->
  
 
 
@@ -140,7 +136,6 @@
 	    <ingredient name="meleeToolAxeT3ChainsawParts" count="24"/>
     </recipe>
 
-<!-- Axe Head / Axe Head / Axe Head -->
 
 
 
@@ -167,7 +162,6 @@
 	    <ingredient name="meleeToolAxeT3ChainsawParts" count="24"/>
     </recipe>
     
-<!-- Handles / Handles / Handles --> 
 
 
 
@@ -194,7 +188,6 @@
 	    <ingredient name="meleeToolAllSteelParts" count="12"/>
     </recipe>
 
-<!-- Shovel Handles / Shovel Handles / Shovel Handles -->
 
 
     <recipe name="modHandleGBAP" count="1" craft_time="300" craft_area="workbench" tags="learnable,workbenchCrafting">
@@ -220,7 +213,6 @@
 	    <ingredient name="meleeToolAllSteelParts" count="12"/>
     </recipe>
 
-<!-- Shovel Heads / Shovel Heads / Shovel Heads --> 
 
 
 	<recipe name="modHeadGBAP" count="1" craft_time="300" craft_area="workbench" tags="learnable,workbenchCrafting">
@@ -247,7 +239,6 @@
 	    <ingredient name="meleeToolAllSteelParts" count="12"/>
     </recipe>
  
- <!-- Shovel Plates / Shovel Plates / Shovel Plates --> 
 
 
 	<recipe name="modStompPlatesGBAP" count="1" craft_time="300" craft_area="workbench" tags="learnable,workbenchCrafting">
@@ -273,7 +264,6 @@
 	    <ingredient name="meleeToolAllSteelParts" count="12"/>
     </recipe>
 
-<!-- Drill + Battery / Drill + Battery / Drill + Battery -->
  
 
 	<recipe name="modDrillTeethGBAP" count="1" craft_time="600" craft_area="workbench" tags="learnable,workbenchCrafting">
@@ -301,7 +291,7 @@
     </recipe> 	
 
 
-<!--
+
 	<recipe name="modDrillSpikeGBAP" count="1" craft_time="600" craft_area="workbench" tags="learnable,workbenchCrafting">
 	    <ingredient name="resourceForgedSteel" count="50"/>
 	    <ingredient name="resourceMechanicalParts" count="15"/>

@@ -416,6 +416,52 @@
 	<append xpath="//item[starts-with(@name, 'gunBot')]/property[@name='Tags']/@value">,PerkHOHTraps</append>
 	
 	
+    <remove xpath="//item[@name='ammoArrowSteelAP']"/>
+
+	<insertAfter xpath="//item[@name='ammoArrowIron']">
+<item name="ammoArrowSteelAP">
+    <property name="Extends" value="ammoArrowIron" />
+	<property name="Tags" value="ammo,ranged,attAgility,perkArchery,perkPenetrator,PerkHOHBows,perkHOHBows" />
+    <property name="DisplayType" value="ammoArrowAP" />
+    <property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Bows/Arrows/arrow_steelPrefab.prefab" />
+    <property name="HoldType" value="45" />
+    <property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab" />
+    <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
+    <property name="EconomicValue" value="57" />
+    <property name="TraderStageTemplate" value="arrowsTier2" />
+    <!-- ammoArrowSteelAP -->
+    <property name="EconomicBundleSize" value="5" />
+    <property name="StickyOffset" value=".13" />
+    <property name="SoundPickup" value="arrows_grab" />
+    <property name="SoundPlace" value="arrows_place" />
+    <property name="UnlockedBy" value="perkRangersAPAmmo" />
+    <!-- BOOK_PERK -->
+    <effect_group name="ammoArrowSteelAP" tiered="false">
+      <!-- ammoArrowSteelAP -->
+      <passive_effect name="EntityDamage" operation="base_set" value="42" tags="perkArchery" />
+      <passive_effect name="BlockDamage" operation="base_set" value="5" tags="perkArchery" />
+      <passive_effect name="TargetArmor" operation="perc_add" value="-.5" />
+      <display_value name="dTargetArmor" value="-.5" />
+      <passive_effect name="DamageModifier" operation="perc_set" value=".1" tags="wood" />
+      <passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth,metal,cloth" />
+      <passive_effect name="ProjectileVelocity" operation="base_set" value="55" tags="perkArchery" />
+    </effect_group>
+    <effect_group name="perkPenetrator" tiered="false">
+      <passive_effect name="TargetArmor" operation="perc_add" value="-.1" tags="perkArchery">
+        <requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="1" />
+      </passive_effect>
+      <passive_effect name="TargetArmor" operation="perc_add" value="-.15" tags="perkArchery">
+        <requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="2" />
+      </passive_effect>
+      <passive_effect name="TargetArmor" operation="perc_add" value="-.2" tags="perkArchery">
+        <requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="3" />
+      </passive_effect>
+      <passive_effect name="TargetArmor" operation="perc_add" value="-.3" tags="perkArchery">
+        <requirement name="ProgressionLevel" progression_name="perkPenetrator" operation="Equals" value="4" />
+      </passive_effect>
+    </effect_group>
+  </item>
+	</insertAfter>
 	
 	
 	
@@ -2677,7 +2723,9 @@
 	<set xpath="/items/item[@name='resourceRadiator']/property[@name='Stacknumber']/@value">50</set>
 	<set xpath="/items/item[@name='bucketEmpty']/property[@name='Stacknumber']/@value">10</set>
 	<set xpath="/items/item[@name='bucketRiverWater']/property[@name='Stacknumber']/@value">10</set>
-
+	<!--<append xpath="/items/item[@name='ammoArrowSteelAP']">
+	<property name='Stacknumber' value='600'/>
+	</append>-->
 	
 
 <append xpath="/items">
@@ -3209,7 +3257,16 @@
 			</effect_group>
 		</item>
 		
-
+<item name="spearlevelRedeem">
+			<property name="Extends" value="schematicMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="adminQuestTicketMaster"/>
+			<property name="CustomIconTint" value="FF0000"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="HOH_Spears_XP" operation="set" value="@HOH_Spears_lvl_Next_Needed"/>
+				
+			</effect_group>
+		</item>
 
 </append>		
 			
@@ -3223,7 +3280,6 @@
 		<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WrenchBlockTrackerActivate"/>
 		<triggered_effect trigger="onSelfDestroyedBlock" action="ModifyCVar" cvar="WrenchBlockCounter" operation="add" value="1"/>
 	</append>
-
 
 
 <include filename="items/item_weights.xml"/>
