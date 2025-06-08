@@ -12,7 +12,7 @@
         <response_entry id="Command Menu" ref_text="Command Menu" />
         <response_entry id="Weapon Menu" ref_text="Weapon Menu" />
         <response_entry id="Admin Menu" ref_text="Admin Menu" />
-        <response_entry id="Pickup" ref_text="Pick Me up!" />
+       <!--<response_entry id="Pickup" ref_text="Pick Me up!" />-->
         <response_entry id="ShowMe" ref_text="Show Me your inventory" />
         <response_entry id="done" ref_text="Nevermind." />
       </statement>

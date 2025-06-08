@@ -807,6 +807,7 @@
 	<item name="HOHMiniBikefluidKit">
 		<property name="DescriptionKey" value="HOHMiniBikefluidKit"/>
 		<property name="HoldType" value="45"/>
+		<property name="EconomicValue" value="50"/>
 		<property name="Meshfile" value="Items/Misc/sackPrefab"/>
 		<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
 		<property name="Material" value="MresourceOil"/> 
@@ -819,6 +820,7 @@
 		<property name="DescriptionKey" value="HOHBikefluidKit"/>
 		<property name="CustomIcon" value="HOHBikefluidKit"/>
 		<property name="HoldType" value="45"/>
+		<property name="EconomicValue" value="50"/>
 		<property name="Meshfile" value="Items/Misc/sackPrefab"/>
 		<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
 		<property name="Material" value="MresourceOil"/> 
@@ -830,6 +832,7 @@
 	<item name="HOHJeepfluidKit">
 		<property name="DescriptionKey" value="HOHJeepfluidKit"/>
 		<property name="HoldType" value="45"/>
+		<property name="EconomicValue" value="50"/>
 		<property name="Meshfile" value="Items/Misc/sackPrefab"/>
 		<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
 		<property name="Material" value="MresourceOil"/> 
@@ -841,6 +844,7 @@
 	<item name="HOHTruckfluidKit">
 		<property name="DescriptionKey" value="HOHTruckfluidKit"/>
 		<property name="HoldType" value="45"/>
+		<property name="EconomicValue" value="50"/>
 		<property name="Meshfile" value="Items/Misc/sackPrefab"/>
 		<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
 		<property name="Material" value="MresourceOil"/> 
@@ -852,6 +856,7 @@
 	<item name="HOHCommercialTruckfluidKit">
 		<property name="DescriptionKey" value="HOHCommercialTruckfluidKit"/>
 		<property name="HoldType" value="45"/>
+		<property name="EconomicValue" value="50"/>
 		<property name="Meshfile" value="Items/Misc/sackPrefab"/>
 		<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
 		<property name="Material" value="MresourceOil"/> 

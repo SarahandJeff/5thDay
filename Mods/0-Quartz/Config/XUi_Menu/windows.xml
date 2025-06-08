@@ -14,9 +14,10 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.*/-->
-<!--
+
 	<append xpath="/windows">
 		<window name="UiSpritesWindow" anchor="CenterCenter" pos="-600,375" width="1185" height="780" cursor_area="true" controller="Quartz.Debugging.UiAtlasList, Quartz" clear_selection_on_open="false" clear_searchtext_on_open="true">
+			<!-- Header -->
 			<panel name="header" pos="0,0" height="43" depth="1" backgroundspritename="ui_game_panel_header" bordercolor="[black]" borderthickness="3" >
 				<label style="header.name" name="windowheader" pos="10,-6" width="550" text_key="quartzUiSpriteWindowHeader" />
 				<button depth="1" name="btnShowModSprites" style="icon32px, press, hover" pivot="center" pos="1169, -21" sprite="ui_game_symbol_electric_switch" tooltip_key="quartzTooltipShowModSprites" sound="[paging_click]" />
@@ -52,5 +53,5 @@ limitations under the License.*/-->
 			</rect>
 		</window>
 	</append>
--->
+	
 </Quartz>

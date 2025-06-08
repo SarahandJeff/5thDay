@@ -9,6 +9,7 @@
 		<property name="CustomIcon" value="EarDefs"/>
 		<property name="UnlockedBy" value="modEarDefsGBAPSchematic"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		
 		<item_property_overrides name="*">
 			<property name="Material" value="Mmetal"/>
@@ -26,6 +27,7 @@
 		<property name="CustomIcon" value="modGearRed"/>
 	    <property name="UnlockedBy" value="modGearRedGBAPSchematic"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="RoundsPerMinute" operation="perc_add" value=".5"/>			
 			<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5"/>
@@ -37,6 +39,7 @@
 		<property name="CustomIcon" value="modGearRedT2"/>
 	    <property name="UnlockedBy" value="modGearRedGBAPSchematic"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="RoundsPerMinute" operation="perc_add" value="1"/>			
 			<passive_effect name="AttacksPerMinute" operation="perc_add" value="1"/>
@@ -48,6 +51,7 @@
 		<property name="CustomIcon" value="modGearRedT3"/>
 	    <property name="UnlockedBy" value="perkWrenches"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="RoundsPerMinute" operation="perc_add" value="2"/>			
 			<passive_effect name="AttacksPerMinute" operation="perc_add" value="2"/>
@@ -61,6 +65,7 @@
 		<property name="CustomIcon" value="modAugerBody"/>
 	    <property name="UnlockedBy" value="PerkWrenches"/>
 		<property name="Stacknumber" value="1"/> 
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="KickDegreesVerticalMin" operation="perc_add" value="-1"/>
 			<passive_effect name="KickDegreesVerticalMax" operation="perc_add" value="-1"/>
@@ -75,6 +80,7 @@
 		<property name="CustomIcon" value="modDiamondScrew"/>
 	    <property name="UnlockedBy" value="modDiamondScrewGBAPSchematic"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value="0.75" tags="earth"/>
 			<passive_effect name="MaxRange" operation="perc_add" value=".25"/>
@@ -87,6 +93,7 @@
 		<property name="CustomIcon" value="modDiamondScrewT2"/>
 	    <property name="UnlockedBy" value="modDiamondScrewGBAPSchematic"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value="0.75" tags="stone"/>
 			<passive_effect name="DamageModifier" operation="perc_add" value="0.75" tags="earth"/>
@@ -100,6 +107,7 @@
 		<property name="CustomIcon" value="modDiamondScrewT3"/>
 	    <property name="UnlockedBy" value="perkWrenches"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value="0.75" tags="stone"/>
 			<passive_effect name="DamageModifier" operation="perc_add" value="0.75" tags="metal"/>
@@ -116,6 +124,7 @@
 		<property name="CustomIcon" value="modDiamondTip"/>
 	    <property name="UnlockedBy" value="modDiamondTipGBAPSchematic"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value="0.75" tags="earth"/>			
 			<passive_effect name="MaxRange" operation="perc_add" value=".25"/>
@@ -128,6 +137,7 @@
 		<property name="CustomIcon" value="modDiamondTipT2"/>
 	    <property name="UnlockedBy" value="modDiamondTipGBAPSchematic"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value="0.75" tags="stone"/>
 			<passive_effect name="DamageModifier" operation="perc_add" value="0.75" tags="earth"/>			
@@ -141,6 +151,7 @@
 		<property name="CustomIcon" value="modDiamondTipT3"/>
 	    <property name="UnlockedBy" value="perkWrenches"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value="0.75" tags="stone"/>
 			<passive_effect name="DamageModifier" operation="perc_add" value="0.75" tags="metal"/>
@@ -157,6 +168,7 @@
 		<property name="CustomIcon" value="modChainBody"/>
 	    <property name="UnlockedBy" value="perkWrenches"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="KickDegreesVerticalMin" operation="perc_add" value="-1"/>
 			<passive_effect name="KickDegreesVerticalMax" operation="perc_add" value="-1"/>
@@ -171,6 +183,7 @@
 		<property name="CustomIcon" value="modChainBlade"/>
 	    <property name="UnlockedBy" value="modChainBladeGBAPSchematic"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".33" tags="wood"/>
 	    	<passive_effect name="DamageModifier" operation="base_set" value="0" tags="frameShapes"/>
@@ -183,6 +196,7 @@
 		<property name="CustomIcon" value="modChainBladeT2"/>
 	    <property name="UnlockedBy" value="modChainBladeGBAPSchematic"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value="66" tags="wood"/>
 	    	<passive_effect name="DamageModifier" operation="base_set" value="0" tags="frameShapes"/>
@@ -195,6 +209,7 @@
 		<property name="CustomIcon" value="modChainBladeT3"/>
 	    <property name="UnlockedBy" value="perkWrenches"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="wood"/>
 	    	<passive_effect name="DamageModifier" operation="base_set" value="0" tags="frameShapes"/>
@@ -209,6 +224,7 @@
 		<property name="CustomIcon" value="modCarbideHead"/>
 	    <property name="UnlockedBy" value="modCarbideHeadGBAPSchematic"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".33" tags="wood"/>
 			<passive_effect name="MaxRange" operation="perc_add" value=".25"/>
@@ -220,6 +236,7 @@
 		<property name="CustomIcon" value="modCarbideHeadT2"/>
 	    <property name="UnlockedBy" value="modCarbideHeadGBAPSchematic"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".66" tags="wood"/>
 			<passive_effect name="MaxRange" operation="perc_add" value=".75"/>
@@ -231,6 +248,7 @@
 		<property name="CustomIcon" value="modCarbideHeadT3"/>
 	    <property name="UnlockedBy" value="perkWrenches"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="wood"/>
 			<passive_effect name="MaxRange" operation="perc_add" value="1.25"/>
@@ -243,6 +261,7 @@
 	<item_modifier name="modFiberHandleGBAP" installable_tags="tool,axe,metalBat" modifier_tags="AttacksPerMinute,StaminaLoss" blocked_tags="Reduction,motorTool,shovel,Drill" type="attachment">
 		<property name="CustomIcon" value="modFiberHandle"/>
 	    <property name="UnlockedBy" value="modFiberHandleGBAPSchematic"/>
+		<property name="EconomicValue" value="2500"/>
 		<property name="Stacknumber" value="1"/>
 		<effect_group tiered="false">
 			<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5"/>	
@@ -253,6 +272,7 @@
 	<item_modifier name="modFiberHandleT2GBAP" installable_tags="tool,axe,metalBat" modifier_tags="AttacksPerMinute,StaminaLoss" blocked_tags="Reduction,motorTool,shovel,Drill" type="attachment">
 		<property name="CustomIcon" value="modFiberHandleT2"/>
 	    <property name="UnlockedBy" value="modFiberHandleGBAPSchematic"/>
+		<property name="EconomicValue" value="2500"/>
 		<property name="Stacknumber" value="1"/>
 		<effect_group tiered="false">
 			<passive_effect name="AttacksPerMinute" operation="perc_add" value="1"/>	
@@ -263,6 +283,7 @@
 	<item_modifier name="modFiberHandleT3GBAP" installable_tags="tool,axe,metalBat" modifier_tags="AttacksPerMinute,StaminaLoss" blocked_tags="Reduction,motorTool,shovel,Drill" type="attachment">
 		<property name="CustomIcon" value="modFiberHandleT3"/>
 	    <property name="UnlockedBy" value="perkWrenches"/>
+		<property name="EconomicValue" value="2500"/>
 		<property name="Stacknumber" value="1"/>
 		<effect_group tiered="false">
 			<passive_effect name="AttacksPerMinute" operation="perc_add" value="2"/>	
@@ -276,6 +297,7 @@
 	<item_modifier name="modHandleGBAP" installable_tags="shovel" modifier_tags="StaminaLoss" blocked_tags="motorTool,Drill,miningTool" type="attachment">
 		<property name="CustomIcon" value="modHandle"/>
 	    <property name="UnlockedBy" value="modHandleGBAPSchematic"/>
+		<property name="EconomicValue" value="2500"/>
 		<property name="Stacknumber" value="1"/>
 		<effect_group tiered="false">
 			<passive_effect name="StaminaLoss" operation="perc_add" value="-0.25"/>			
@@ -285,6 +307,7 @@
 	<item_modifier name="modHandleT2GBAP" installable_tags="shovel" modifier_tags="StaminaLoss" blocked_tags="motorTool,Drill,miningTool" type="attachment">
 		<property name="CustomIcon" value="modHandleT2"/>
 	    <property name="UnlockedBy" value="modHandleGBAPSchematic"/>
+		<property name="EconomicValue" value="2500"/>'
 		<property name="Stacknumber" value="1"/>
 		<effect_group tiered="false">
 			<passive_effect name="StaminaLoss" operation="perc_add" value="-0.37"/>			
@@ -294,6 +317,7 @@
 	<item_modifier name="modHandleT3GBAP" installable_tags="shovel" modifier_tags="StaminaLoss" blocked_tags="motorTool,Drill,miningTool" type="attachment">
 		<property name="CustomIcon" value="modHandleT3"/>
 	    <property name="UnlockedBy" value="perkWrenches"/>
+		<property name="EconomicValue" value="2500"/>
 		<property name="Stacknumber" value="1"/>
 		<effect_group tiered="false">
 			<passive_effect name="StaminaLoss" operation="perc_add" value="-.5"/>			
@@ -305,6 +329,7 @@
     <item_modifier name="modHeadGBAP" installable_tags="shovel" modifier_tags="damageDirt" blocked_tags="motorTool,Drill" type="attachment">
 		<property name="CustomIcon" value="modHead"/>
 	    <property name="UnlockedBy" value="modHeadGBAPSchematic"/>
+		<property name="EconomicValue" value="2500"/>
 		<property name="Stacknumber" value="1"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value=".50" tags="earth"/>
@@ -316,6 +341,7 @@
     <item_modifier name="modHeadT2GBAP" installable_tags="shovel" modifier_tags="damageDirt" blocked_tags="motorTool,Drill" type="attachment">
 		<property name="CustomIcon" value="modHeadT2"/>
 	    <property name="UnlockedBy" value="modHeadGBAPSchematic"/> 
+		<property name="EconomicValue" value="2500"/>
 		<property name="Stacknumber" value="1"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="earth"/>
@@ -327,6 +353,7 @@
     <item_modifier name="modHeadT3GBAP" installable_tags="shovel" modifier_tags="damageDirt" blocked_tags="motorTool,Drill" type="attachment">
 		<property name="CustomIcon" value="modHeadT3"/>
 	    <property name="UnlockedBy" value="perkWrenches"/>
+		<property name="EconomicValue" value="2500"/>
 		<property name="Stacknumber" value="1"/>
 		<effect_group tiered="false">
 			<passive_effect name="DamageModifier" operation="perc_add" value="1.5" tags="earth"/>
@@ -341,6 +368,7 @@
 		<property name="CustomIcon" value="modStompPlates"/>
 	    <property name="UnlockedBy" value="modStompPlatesGBAPSchematic"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="AttacksPerMinute" operation="perc_add" value=".5"/>			
 		</effect_group>	
@@ -350,6 +378,7 @@
 		<property name="CustomIcon" value="modStompPlatesT2"/>
 	    <property name="UnlockedBy" value="modStompPlatesGBAPSchematic"/>
 		<property name="Stacknumber" value="1"/>
+		<property name="EconomicValue" value="2500"/>
 		<effect_group tiered="false">
 			<passive_effect name="AttacksPerMinute" operation="perc_add" value="1"/>			
 		</effect_group>	
@@ -358,6 +387,7 @@
 	<item_modifier name="modStompPlatesT3GBAP" installable_tags="shovel" modifier_tags="AttacksPerMinute" blocked_tags="motorTool,Drill" type="attachment">
 		<property name="CustomIcon" value="modStompPlatesT3"/>
 	    <property name="UnlockedBy" value="perkWrenches"/>
+		<property name="EconomicValue" value="2500"/>
 		<property name="Stacknumber" value="1"/>
 		<effect_group tiered="false">
 			<passive_effect name="AttacksPerMinute" operation="perc_add" value="2"/>			
@@ -391,6 +421,7 @@
 	<item_modifier name="modDrillSocketGBAP" installable_tags="Sockets,Drill" modifier_tags="damage" blocked_tags="motorTool,axe,shovel,chainsaw" type="attachment">
 		<property name="CustomIcon" value="modDrillSocket"/>
 	    <property name="UnlockedBy" value="perkWrenches"/>
+		<property name="EconomicValue" value="2500"/>
 		<property name="Stacknumber" value="1"/>
 		<effect_group tiered="false">			
 			<passive_effect name="DamageModifier" operation="perc_add" value="1.5" tags="salvageHarvest"/>

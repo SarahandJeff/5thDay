@@ -24,11 +24,11 @@
 	<remove xpath="//trader_item_group/item[contains(@name, 'vehicleBicyclePlaceable')]"/>
 	<remove xpath="//trader_item_group/item[contains(@name, 'vehicleMinibikePlaceable')]"/>
 	
-	<remove xpath="//trader_item_group/item[contains(@name, 'modArmorPerception')]"/>
-	<remove xpath="//trader_item_group/item[contains(@name, 'modArmorStrength')]"/>
-	<remove xpath="//trader_item_group/item[contains(@name, 'modArmorFortitude')]"/>
-	<remove xpath="//trader_item_group/item[contains(@name, 'modArmorAgility')]"/>
-	<remove xpath="//trader_item_group/item[contains(@name, 'modArmorIntellect')]"/>
+	<remove xpath="/trader_item_groups/trader_item_group/item[contains(@name, 'modArmorPerception')]"/>
+	<remove xpath="/trader_item_groups/trader_item_group/item[contains(@name, 'modArmorStrength')]"/>
+	<remove xpath="/trader_item_groups/trader_item_group/item[contains(@name, 'modArmorFortitude')]"/>
+	<remove xpath="/trader_item_groups/trader_item_group/item[contains(@name, 'modArmorAgility')]"/>
+	<remove xpath="/trader_item_groups/trader_item_group/item[contains(@name, 'modArmorIntellect')]"/>
 
 
 
